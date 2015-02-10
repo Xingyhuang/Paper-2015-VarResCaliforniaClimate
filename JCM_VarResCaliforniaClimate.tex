@@ -1,0 +1,231 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% amspaper.tex --  LaTeX-based template for submissions to American 
+% Meteorological Society journals
+%
+% Template developed by Amy Hendrickson, 2013, TeXnology Inc., 
+% amyh@texnology.com, http://www.texnology.com
+% following earlier work by Brian Papa, American Meteorological Society
+%
+% Email questions to latex@ametsoc.org.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PREAMBLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Start with one of the following:
+% DOUBLE-SPACED VERSION FOR SUBMISSION TO THE AMS
+\documentclass{ametsoc}
+
+% TWO-COLUMN JOURNAL PAGE LAYOUT---FOR AUTHOR USE ONLY
+% \documentclass[twocol]{ametsoc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% To be entered only if twocol option is used
+
+\journal{jamc}
+
+%  Please choose a journal abbreviation to use above from the following list:
+% 
+%   jamc     (Journal of Applied Meteorology and Climatology)
+%   jtech     (Journal of Atmospheric and Oceanic Technology)
+%   jhm      (Journal of Hydrometeorology)
+%   jpo     (Journal of Physical Oceanography)
+%   jas      (Journal of Atmospheric Sciences)	
+%   jcli      (Journal of Climate)
+%   mwr      (Monthly Weather Review)
+%   wcas      (Weather, Climate, and Society)
+%   waf       (Weather and Forecasting)
+%   bams (Bulletin of the American Meteorological Society)
+%   ei    (Earth Interactions)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Citations should be of the form ``author year''  not ``author, year''
+\bibpunct{(}{)}{;}{a}{}{,}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% To be entered by author:
+
+%% May use \\ to break lines in title:
+
+\title{High-resolution regional climate modeling evaluation based on varres-CESM and WRF over California}
+
+%%% Enter authors' names, as you see in this example:
+%%% Use \correspondingauthor{} and \thanks{Current Affiliation:...}
+%%% immediately following the appropriate author.
+%%%
+%%% Note that the \correspondingauthor{} command is NECESSARY.
+%%% The \thanks{} commands are OPTIONAL.
+
+    \authors{Author One\correspondingauthor{Author One, 
+     American Meteorological Society, 
+     45 Beacon St., Boston, MA 02108.}
+ and Author Two\thanks{Current affiliation: American Meteorological Society, 
+     45 Beacon St., Boston, MA 02108.}}
+
+     \affiliation{American Meteorological Society, 
+     Boston, Massachusetts}
+
+\email{latex@ametsoc.org}
+
+
+    \extraauthor{Extra Author}
+    \extraaffil{Affiliation, City, State/Province, Country}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ABSTRACT
+%
+% Enter your Abstract here
+
+\abstract{} 
+
+\begin{document}
+
+
+%% Necessary!
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MAIN BODY OF PAPER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\section{Introduction}
+
+Global climate models (GCMs) have been widely used to simulate both past and future climate. Although GCMs have been demonstrated to successfully represent large-scale features of the climate system, they have usually been employed at coarse resolutions ($\sim$1 degree), largely due to computation limitations. The climate reanalysis datasets, which assimilate climate observations within climate model, can represent a best estimate of historical weather patterns, but still have low resolution no finer than 0.5 degree. Under this circumstance, regional climate is not well captured by global climate models (GCMs) and global reanalysis datasets which are employed at coarse resolutions. And dynamic processes at unrepresented scales are significantly drivers for regional and local climate variability especially over complex terrain \citep{soares2012wrf}. In order to capture those fine-scale dynamical features, high horizontal resolution is needed to allow a more accurate representation of fine scale forcing, and the better representation of processes and interactions, as former studies have already showed \citep{leung2003regional, rauscher2010resolution}. Also, better represented regional climate information can lead to effective action for responses to climate change and mitigation of negative impacts taken by local stakeholders and policymakers.
+
+In order to model regional climate at a higher spatial and temporal resolution over a limited area, downscaling methods have been developed. There are two main downscaling ways. One is statistical methodology, it aims to estimate finer scale properties through analyzing the relationships between observed variables at different scales (Fowler et al. 2007). This method is empirical and cannot be used if the observed relationships do not hold with a changing climate \citep{soares2012wrf}. The other is called dynamical downscaling, using numerical model to simulate higher spatial resolution conditions in greater detail. The dynamical downscaling method is most popular and commonly used. Two type of models are used including nested limited-area models (LAMs) and variable-resolution (including stretched-grid) global climate models (VRGCMs) \citep{laprise2008challenging}. The more commonly used LAMs are often referred as regional climate models (RCMs) when applying to climate scales. RCMs are forced by output of GCMs or reanalysis data, and have been widely used, showing the ability to capture physically consistent regional and local circulations at the needed spatial and time scales \citep{christensen2007regional, bukovsky2009precipitation, caldwell2009evaluation, mearns2012north}. For the VRGCM approach, it uses a variable-resolution global model composing high-resolution over a specific region and lower resolution over the rest of the globe \citep{staniforth1978variable, fox1997finite}. VRGCMs have been shown to be an alternative way for regional climate studies and applications, owning the advantages of traditional GCMs in representing large-scale features, and also being computationally less expensive than uniform GCMs \citep{fox2001variable, fox2006variable}. 
+
+Compared with RCMs, a key advantage of VRGCMs is the use a single model rather than the combinations of GCM and RCM. Thus, VRGCMs avoid potential lack of consistency between the driver and model, and naturally allow two-way interaction between the high-resolution area and the global domain without nudging \citep{warner1997tutorial, mcdonald2003transparent, laprise2008challenging, mesinger2013limited}. In order to get deeper insight for the performances of these two different modeling methods, it is necessary to compare them directly. The goal of this paper is to evaluate the performance of VRGCMs together with the traditional method of RCMs for the first time to see whether VRGCMs can show similar or even better ability in regional climate modeling. And simulations will be conducted at higher resolution than most former studies. This will add value in modeling mean regional climatology and improve our understanding about the effects of multi-scale processes in regional climate regulation. In this study, WRF (Weather Research and Forecasting) is used as a traditional RCM method \citep{skamarock2005coauthors}. WRF has gained wide acceptance to study regional climate over the past decade, showing its adequate capability in representation of mean fine-scale climate properties \citep{lo2008assessment, leung2009atmospheric, soares2012wrf}. For the VRGCM approach, the newly developed variable-resolution CESM (varres-CESM) is adopted here. CESM is a state-of-the-art Earth modeling framework developed at NCAR, consisting of atmospheric, oceanic, land and sea ice components \citep{neale2010description}. However, variable-resolution in Community Atmosphere ModelÕs (CAM) Spectral Element (SE) dynamical core is a recently available technique which has never be applied for long-term regional climate simulation \citep{taylor2010compatible, zarzycki2014using}.
+
+Simulations using both methods have been implemented for 26 years historical climate centered on the state of California (CA). With the complex topography, coastal influence, and wide latitude range, it makes CA a suitable test bed for high-resolution climate studies. Also, it is necessary to learn detailed local climate variability in California with its important agricultural role and socioeconomic status, and particular vulnerability to anthropogenically-induced climate change \citep{hayhoe2004emissions, cayan2008overview}. RCM simulations over California have been conducted in previous studies \citep{leung2004mid, kanamitsu2007fifty, caldwell2009evaluation, pan2011influences, pierce2013probabilistic}. Caldwell et al. (2009) presented results from WRF (Weather Research and Forecasting) at 12km spatial resolution showing both the overall consistent and certain bias between the simulations and observations \citep{caldwell2009evaluation}. The paper is organized as follows. Section 2 describes the model set up, evaluation methods and verification data. In Section 3, results are demonstrated focusing on 2 m temperature (Ts) and precipitation (Pr). Key results are summarized and further discussion is made in section 4.
+
+\section{Models and Methodology}
+
+\subsection{Simulation design} 
+
+\subsubsection{WRF} 
+
+The fully compressible non-hydrostatic WRF-ARW model in version 3.5.1 is used. ERA-Interim pressure-level reanalysis was used to provide initial, lateral conditions and SST for the domains every 6 h. ERA-Interim reanalysis ($\sim$ 80 km) has been widely used and shows its strong reliability as forcing data \citep{dee2011era}. Two simulations are conducted for 27km (WRF27) and 9km (WRF9) horizontal resolution separately from 1979-01-01 to 2005-12-31 (UTC). The ~10 km resolutions are actually finer than most former studies for long-term climate. 
+
+For the coarser resolution, one domain is used. For the WRF9, two nested domains are settled with outer domain at 27km (same as the WRF27) and inner domain at 9km horizontal grid spacing, with two-way nesting. Both grids are centered at CA and have respectively, 120$*$110 and 151$*$172 grid points. 10 grid points are used as lateral relaxation zones. Sea surface temperature (SST) was updated due to the long-term climate modeling. In order to reduce the drift between forcing data and RCM over time, grid nudging \citep{stauffer1990use} was applied to the outer domain per 6 hours at all levels except the planetary boundary layer (PBL) as suggested by Lo et al. \citep{lo2008assessment}. This setup uses 41 vertical levels with top pressure at 50hpa.
+
+%(check if other settings should add here)
+
+We use the following parameterization options for the standard settings: WSM 6-class graupel microphysics scheme \citep{hong2006wrf}, Kain-Fritsch cumulus scheme \citep{kain2004kain}, CAM shortwave and longwave radiation schemes \citep{collins2004description} (??). These settings are supported by the one-year test running result with different options. Also, the Yonsei University (YSU) boundary layer scheme \citep{hong2006new}, and Noah Land Surface Model \citep{chen2001coupling} are chosen as commonly used (?? add citations here) for climate applications considering long-term reliability and computational cost. Figure 1 shows the study region and topography for each domain.
+
+\subsubsection{Varres-CESM}
+
+CESM has been under development for nearly two decades, and has been used heavily in better understanding the effects of global climate change \citep{hurrell2013community}. Here, CAM version 5 (CAM5) and Community Land Model (CLM) version 4 are used. As we have mentioned, recently, SE as the default dynamical core in CAM has added variable resolution support. Here, the variable-resolution cubed-sphere grids are generated within both CAM and CLM with the open-source software package SQuadGen (citation??). Simulations at 0.25 degree ($\sim$ 28km) and 0.125 degree ($\sim$ 14km) horizontal resolution are developed, remaining regrid is at 1 degree, also with time period from 1979-01-01 to 2005-12-31 (UTC). Corresponding fine-scale topography is produced. Land surface data at 50 km resolution is used. Tuning parameters and other necessary setting options are tested to reach our need. Greenhouse gas (GHG) concentrations are prescribed based on observations. SSTs and ice coverage are supplied by the 1degree Hadley Centre Sea Ice and Sea Surface Temperature dataset (HadISST) \citep{hurrell2008new}. 
+
+Settings for Varres-CESM (adding). Figure 2 shows the grid mesh for each simulation.
+
+\subsection{Methodology}
+
+The evaluation focuses on near surface air temperature and precipitation to display the mean regional climate variability both annually and seasonally. Reanalysis and gridded observational datasets (described in Table 1) are employed as reference data compared against simulation results to assess the models' performances. Due to the uncertainties in observations, we use different sources of datasets including measurements from stations, high-resolution reanalysis data or satellite information. Though these products are generally based on similar measurements, they are scaled and gridded using different techniques, causing processing uncertainty except of measurement error. And we acknowledge that reanalysis products can not be treated as truth.
+
+The UW daily gridded meteorological data is obtained from the Surface Water Modeling group at the University of Washington \citep{maurer2002long}. The PRISM monthly gridded climate observations is produced by the PRISM (Parameter elevation Regression on Independent Slopes Model) Climate Group, and the dataset is based on a larger network of station data and accounts for elevation and topographic effects (cite??). UW Ts dataset is computed similarly to Pr, but without the topographic adjustment towards PRISM, and using a simple 6.1 K/km lapse rate. The Daymet gridded daily meteorological observations also take into account areas of complex terrain. The National Oceanic and Atmospheric Administration (NOAA) Climate Prediction Center (CPC) dataset uses more stations than the UW data, but without topographic correction (cite??). The National Centers for Environmental Prediction (NCEP) North American Regional Reanalysis (NARR) is NCEP's high resolution combined model and assimilated dataset (cite??).
+
+In order to keeping consistency, reference data are interpolated to models' output resolution when showing the differences or calculating related statistical values (e.g. root mean square error (RMSE), bias, and correlation). Bilinear interpolation method is used for regular 2D grid. Also, output from globally uniform CESM with 25km spatial resolution is compared together to see if variable-resolution CESM perform similarly or even better in modeling mean climatology \citep{bacmeister2014exploratory}. The first year was treated as model spin-up, thus, all the data analysis are based on the period from 1980 to 2005, i.e. 26 years.
+
+%Since the future simulations by RCMs can only be forced by GCM output, here, ~1 degree output of CESM is also used to force WRF to explore the effects of different boundary and initial conditions comparing with ERA-Interim. 
+
+%In order to get in-depth analysis of California's varied climate regions, here we divide the state into 11 regional zones following Abatzoglou et alÕs approach \citep{abatzoglou2009classification}, as Figure 1 shows. Among these zones, xxx are studied in detail here.
+
+
+\section{Results}
+
+Topographic details within different models and diverse horizontal scales are showed in Figure 3. We can see that higher resolutions own better representation of topography, which is important driver for fine-scale dynamic processes especially at complex terrain. In this part, we will show the models' performances in both temperature and precipitation. In this section, comparisons and analysis are focused on daily maximum, minimum and average 2m temperatures (Tmax, Tmin and Tavg), and daily precipitation (Pr) both annually and seasonally. These variables are most relevant for climate assessment.
+
+\subsection{Temperature}
+
+The long-term annual average climatology of Tmax, Tmin and Tavg from varres-CESM, uniform CESM, WRF and reference dataset are displayed by Fig. 4, 5 and 6. Generally, simulations show similar regional patterns as observations, with warmer central valley and southern deserts, and colder northern coastal area and Sierra mountainous region. Both WRF and variable-resolution CESM demonstrate satisfactory modeling ability. And higher resolution simulations perform better capturing fine features close to observations, especially for WRF 9km. Comparing with uniform CESM, varres-CESM performed similarly or even better in some cases, showing both improved modeling ability at high resolution and reduced computation cost. 
+
+However, they do display some differences in different sub zones. In particular, Tmax are a little higher mainly at central valley in both CESM and WRF, and WRF 9km shows much more obvious cold bias in other regions than other simulations. Varres-CESM perform better than WRF and uniform CESM, especially at higher resolution. However, Tmin is obviously warmer by both WRF and CESM, especially at coastal region and southern desert, resulting under-prediction of diurnal range. WRF and uniform CESM perform better than varres-CESM. The differences between models and reference data are plotted in Fig. 7 for Tavg, in order to show the output comparison more clearly. Varres-CESM and WRF perform similarly, better than uniform CESM. Comparing with PRISM, models show overall underestimation, especially at coastal and mountain regions, however with relatively small bias at most region. The RMSE for these models are basically ranges from 1 to 3 K, as showed by Table 2. Overall, variable-resolution CESM 0.125 deg performs best for long-term annual results, however,WRF 9km has larger error than WRF 27km. (varres-CESM > WRF > uniform CESM). And  Correlations are high between simulations and observations ($>$0.95), especially for Tmax and Tavg. There are about $+$2 K SST bias near the coast between varres-CESM and WRF. This may explain part of the reason for the above results. NARR shows obvious differences from other gridded observations, however, uncertainty between observational datasets are much smaller than the models' biases, unlikely impacting our results.
+
+%For annual Tmax: Overestimate for WRF 9km. RMSE: CESM0.125<CESM 0.25<WRF27<WRF9<CESM uniform 0.25 around 1 to 3
+%For annual Tmin: WRF 27<WRF9<CESM uniform<CESM 0.125<CESM 0.25 RMSE: similar around 1-3; Obviously overestimate, 
+%For annual Tavg: Ranked from best to worst, we observe variable-resolution CESM 0.125 $>$ WRF 9km $>$ WRF 27km $>$ variable-resolution CESM 0.25 $>$ uniform CESM.
+
+The seasonal cycle of Tavg is showed in Figure 8. Models do show good consistent with reference data with about no larger than 2 K bias. However, varres-CESM do show smaller bias than WRF at summer season, and WRF did better at winter season. Varres-CESM seems to be colder in winter and WRF is not hot enough in summer. And varres-CESM showed larger variability among seasons than observations, while WRF shows opposite trend. No obvious divergence can be detected between multi-scales, though coarser simulations even result a littler better than finer ones.
+
+For CA, we are more interested in the summer season, especially the Tmax value for heat extreme analysis. Here, the annually average summer Tmax from models and reference data are displayed in Figure 9 and 10. CESM generally overestimate Tmax especially for uniform CESM except at coastal region, while WRF showed obviously negative bias expect at central valley. Varres-CESM with higher resolution performed best as proved by the statistics in Table 3, however, WRF 27km show less error than WRF 9km. Overall, models especially varres-CESM 0.125d and WRF 9km still show fairly accuracy over most regions. The underlying reasons behind those differences can be manifold including the models' inner mechanism, the forcing data and the scale effects. In order to further investigate the models' ability for heat extreme detection, we also depicted the frequency distribution of Tmax constructed from 26 years summer daily data in Figure 11. Normal distributions are showed by models and observations. Varres-CESM is quite consistent with observations, and WRF especially at 9km own obvious bias, tending to be colder. For hot events detection, both varres-CESM and WRF 27km exhibit satisfactory performance with slightly over-prediction. No improvement is showed by higher resolution in varres-CESM.
+
+%WRF9 tends to be obviously colder than WRF27. No sure why???. And this results differ from Soares and Caldwell
+%JJA Tmax: Variable resolution CESM with higher resolution performs better than at coarser resolution. RMSE 2 to 4; CESM 0.125<WRF9km<CESM 0.25<WRF27<CESM uniform; They have high correlations and the error is controlled between 1-2 Celsius. Overestimate for CESM, especially for uniform; underestimate for WRF;
+
+%Figure Annual cycle of monthly average of Tmax (or Tmin or Tavg) for each region (for fine res)
+%if add error bars (variability between 26 years) ???
+%Figure Frequency of each subregion (central valley, coastal region, mountain region, ...) 
+
+\subsection{Precipitation}
+
+The long-term annual average climatology of daily precipitation (Pr) from varres-CESM, WRF and reference dataset are displayed by Fig. 12 and 13. Comparing with observations, simulations do capture regional patterns of precipitation. Precipitation distributes mostly along the north coastal part and Sierra mountains, and relatively low over other regions. However, there exist obvious differences among simulations. Varres-CESM overestimate a little especially for coarser simulation at the western side of Sierras, and finer simulation has reduced that bias showing the improvement of orographic effects. Notably, large difference showed between WRF 27km and WRF 9km. WRF 27km underestimated a little, but WRF 9 greatly showed obvious positive absolute error at North coastal part and the Sierra where maximum precipitation is distributed, and the relative bias can reach 50 percent. Overall, models perform satisfactorily except for WRF 9km, and varres-CESM 0.125d perform a little better than CESM 0.25d and WRF 27km, as further showed by the RMSE and bias value in Table 4. Observations also demonstrate noticeable differences indicating uncertainty inherent in interpolating station data to a grid. However, these observations are still of the highest quality available and the uncertainty is relatively small comparing the simulations, and our conclusions can hold.
+
+%annual Pr: WRF 9km can be high as 12mm (1.5 times); CESM 0.125<CESM 0.25 and WRF 27<WRF 9.
+%PRISM and Daymet are similar, so did not show PRISM here.
+%plot the relative error??
+%the reasons behind the large bias of WRF 9???
+
+%add some percentage descriptions???
+
+The climatological annual cycle of precipitation averaged over CA is presented in Fig. 14. It can be seen that bias mainly occurred during rainy seasons especially in winter. WRF 27km is more consistent with observations than others. Varres-CESM is wetter especially in winter season. WRF 9km is too wetter. And WRF 27km is dryer. As temperature, varres-CESM showed larger variability among seasons than observations, while WRF 27km shows opposite trend. The seasonal trend proves what we know about the strong seasonality of California Pr with high values during the winter and almost no precipitation during the summer. 
+
+In this way, we particularly showed the annually average winter precipitation from models and reference data as plotted in Figure 15 and 16. We can see that models and reference data show similar pattern as annual, though the precipitations almost doubles in winter comparing with annual value. Varres-CESM still overestimate with larger absolute bias, especially at central valley. WRF 27km underestimate a little, and WRF 9km still greatly overestimate at North coastal region and the sierra region. Considering the relatively heavy winter precipitation, the relative error is still acceptable for Varres-CESM, and WRF 27km, with RMSE and bias values showed in Table 5. Further, the frequency distribution of winter Pr constructed from 26 years daily data is depicted in Figure 17. For strong precipitation events, varres-CESM is more consistent with observations than WRF, though showing slightly over-prediction of heavy rainy days. Varres-CESM 0.25d and varres-CESM 0.125d do not show meaningful differences. However, WRF 27km shows underprediction of rainy days, especially for moderately rainy events, and, not surprisingly, WRF 9km obviously over-prediction rainy days particular when raining goes stronger. 
+
+%This gives confidence for using varres-CESM in extreme precipitation studies. 
+
+The positive bias of precipitation using WRF at high resolution has also been found in former studies \citep{caldwell2009evaluation}. Caldwell et al. (2009) gave a detailed discuss of the possible reasons, stating that bias comes from a variety of source like the model itself and partly the physics schemes. And this is out of the scope of this paper, further discussion can be found in former studies \citep{jankov2005impact, gallus2006comparison}.
+
+
+%DJF Pr: WRF 9km can be high as 24mm (also 1.5 times). For RMSE value is around one for CESM 0.125<WRF 27<CESM 0.25 <WRF 9 (around 4) 
+
+%Figure Annual cycle of monthly average of Tmax (or Tmin or Tavg) for each region with error bars (for fine res)
+
+%Figure Frequency of each subregion (central valley, coastal region, mountain region, ...)
+%Figure convective precipitation VS micro-physics scheme especially for WRF 9km
+
+At last, a concise summary of model performance is provided by the Taylor diagram (Figure 18).  (add short summary here)
+
+%The angle between the x axis and the vector connecting the symbol and the origin indicates the spatial correlation between the simulated and ob- served fields. The distance from the origin indicates the RMS variability in the simulations normalized by that in the observations. Perfect agreement with verification data, with mean biases removed, would appear as a symbol plotted at (1, 0). Movement closer to (1, 0) between two simulations indicates improvement. 
+
+\section{Discussions and summary}
+
+\section{Figures and tables}
+
+\subsection{Figures}
+
+\begin{figure}
+\begin{center}
+%\includegraphics[width=5in]{filename}
+\end{center}
+\caption{This is my caption.} \label{fig:Figure1}
+\end{figure}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{lcccc}
+%\hline \textbf{Data source} & \textbf{Variables used} & \textbf{Spatial resolution} & \textbf{Temporal resolution} \\
+%\hline \textbf{UW} & Pr, T$_{min}$, T$_{max}$ & 0.125$^\circ$ & daily \\
+%\hline
+\end{tabular}
+\end{center}
+\caption{This is my table.} \label{tab:Table1}
+\end{table}
+
+Reference to Figure \ref{fig:Figure1}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACKNOWLEDGMENTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\acknowledgments
+
+ \bibliographystyle{ametsoc2014}
+ \bibliography{database2015}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END OF AMSPAPER.TEX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

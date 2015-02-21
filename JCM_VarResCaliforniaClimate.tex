@@ -24,6 +24,8 @@
 
 \journal{jamc}
 
+\usepackage{color}
+
 %  Please choose a journal abbreviation to use above from the following list:
 % 
 %   jamc     (Journal of Applied Meteorology and Climatology)
@@ -48,7 +50,7 @@
 
 %% May use \\ to break lines in title:
 
-\title{High-resolution regional climate modeling evaluation using variable resolution CESM over California}
+\title{High-resolution regional climate model evaluation using variable resolution CESM over California}
 
 %%% Enter authors' names, as you see in this example:
 %%% Use \correspondingauthor{} and \thanks{Current Affiliation:...}
@@ -91,9 +93,9 @@
 %
 \section{Introduction}
 
-Global climate models (GCMs) have been widely used to simulate both past and future climate. Although GCMs have been demonstrated to successfully represent large-scale features of the climate system, they have usually been employed at coarse resolutions ($\sim$1 degree), largely due to computation limitations. The climate reanalysis datasets, which assimilate climate observations within climate model, can represent a best estimate of historical weather patterns, but still have low resolution no finer than 0.5 degree. Under this circumstance, regional climate is not well captured by global climate models (GCMs) and global reanalysis datasets which are employed at coarse resolutions. And dynamic processes at unrepresented scales are significantly drivers for regional and local climate variability especially over complex terrain \citep{soares2012wrf}. In order to capture those fine-scale dynamical features, high horizontal resolution is needed to allow a more accurate representation of fine scale forcing, and the better representation of processes and interactions, as former studies have already showed \citep{leung2003regional, rauscher2010resolution}. Also, better represented regional climate information can lead to effective action for responses to climate change and mitigation of negative impacts taken by local stakeholders and policymakers.
+Global climate models (GCMs) have been widely used to simulate both past and future climate. Although GCMs have been demonstrated to successfully represent large-scale features of the climate system, they are usually employed at coarse resolutions ($\sim$1 degree), largely due to computational limitations. Global climate reanalysis datasets, which assimilate climate observations using a climate model, can represent a best estimate of historical weather patterns, but still have relatively low resolutions no finer than 0.5$^\circ$ {\color{red}[References]}. Consequently, regional climate is not well captured by either GCMs or global reanalysis datasets.  However, dynamical processes at unrepresented scales are significantly drivers for regional and local climate variability, especially over complex terrain \citep{soares2012wrf}. In order to capture these fine-scale dynamical features, high horizontal resolution is needed to allow a more accurate representation of fine scale forcing, processes and interactions (see, for example, \cite{leung2003regional, rauscher2010resolution}). We anticipate a better representation of regional climate information can better inform local stakeholders and policymakers towards action on climate change and mitigation.
 
-In order to model regional climate at a higher spatial and temporal resolution over a limited area, downscaling methods have been developed. There are two main downscaling ways. One is statistical methodology, it aims to estimate finer scale properties through analyzing the relationships between observed variables at different scales (Fowler et al. 2007). This method is empirical and cannot be used if the observed relationships do not hold with a changing climate \citep{soares2012wrf}. The other is called dynamical downscaling, using numerical model to simulate higher spatial resolution conditions in greater detail. The dynamical downscaling method is most popular and commonly used. Two type of models are used including nested limited-area models (LAMs) and variable-resolution (including stretched-grid) global climate models (VRGCMs) \citep{laprise2008challenging}. The more commonly used LAMs are often referred as regional climate models (RCMs) when applying to climate scales. RCMs are forced by output of GCMs or reanalysis data, and have been widely used, showing the ability to capture physically consistent regional and local circulations at the needed spatial and time scales \citep{christensen2007regional, bukovsky2009precipitation, caldwell2009evaluation, mearns2012north}. For the VRGCM approach, it uses a variable-resolution global model composing high-resolution over a specific region and lower resolution over the rest of the globe \citep{staniforth1978variable, fox1997finite}. VRGCMs have been shown to be an alternative way for regional climate studies and applications, owning the advantages of traditional GCMs in representing large-scale features, and also being computationally less expensive than uniform GCMs \citep{fox2001variable, fox2006variable}. 
+In order to model regional climate at high spatial and temporal resolution over a limited area, downscaling methods have been developed. There are largely two approaches for downscaling:  The first is statistical downscaling, which aims to estimate fine scale behavior via analysis of the relationships between observed variables at different scales \citep{fowler2007linking}. This method is empirical and cannot be used if the observed relationships do not hold with a changing climate \citep{soares2012wrf}. The second approach is dynamical downscaling, which uses a numerical model to simulate higher spatial resolution conditions in greater detail. Dynamical downscaling is popular and commonly employed, using nested limited-area models (LAMs) to model regional scales  \citep{laprise2008challenging}.  In this context, LAMs are typically referred as regional climate models (RCMs) when applying to climate scales. RCMs are forced by output of GCMs or reanalysis data, and have been widely used, particularly to capture physically consistent regional and local circulations at the needed spatial and time scales \citep{christensen2007regional, bukovsky2009precipitation, caldwell2009evaluation, mearns2012north}. More recently, variable-resolution global climate models (VRGCMs) have been more widely employed for modeling regional climate.  This approach uses a global model that includes high-resolution over a specific region and lower resolution over the remainder of the globe \citep{staniforth1978variable, fox1997finite}. VRGCMs have been demonstrated to be effective for regional climate studies and applications, owing to the advantages of traditional GCMs in representing large-scale features, at a reduced computational cost compared to uniform GCMs \citep{fox2001variable, fox2006variable, rauscher2013exploring, zarzycki2014using, zarzycki2014multidecadal, zarzycki2015localizedgrid}. 
 
 Compared with RCMs, a key advantage of VRGCMs is the use a single model rather than the combinations of GCM and RCM. Thus, VRGCMs avoid potential lack of consistency between the driver and model, and naturally allow two-way interaction between the high-resolution area and the global domain without nudging \citep{warner1997tutorial, mcdonald2003transparent, laprise2008challenging, mesinger2013limited}. In order to get deeper insight for the performances of these two different modeling methods, it is necessary to compare them directly. The goal of this paper is to evaluate the performance of VRGCMs together with the traditional method of RCMs for the first time to see whether VRGCMs can show similar or even better ability in regional climate modeling. And simulations will be conducted at higher resolution than most former studies. This will add value in modeling mean regional climatology and improve our understanding about the effects of multi-scale processes in regional climate regulation. In this study, WRF (Weather Research and Forecasting) is used as a traditional RCM method \citep{skamarock2005coauthors}. WRF has gained wide acceptance to study regional climate over the past decade, showing its adequate capability in representation of mean fine-scale climate properties \citep{lo2008assessment, leung2009atmospheric, soares2012wrf}. For the VRGCM approach, the newly developed variable-resolution CESM (varres-CESM) is adopted here. CESM is a state-of-the-art Earth modeling framework developed at NCAR, consisting of atmospheric, oceanic, land and sea ice components \citep{neale2010description}. However, variable-resolution in Community Atmosphere Model’s (CAM) Spectral Element (SE) dynamical core is a recently available technique which has never be applied for long-term regional climate simulation \citep{taylor2010compatible, zarzycki2014using}.
 
@@ -303,35 +305,35 @@ scale effect, extreme analysis, precipitation parameterization
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=6in]{topo.pdf}
+\includegraphics[angle=90,width=8.5in]{topo.pdf}
 \end{center}
-\caption{Topography representations of simulations and ERA-Interim (unit: m)} \label{fig:Figure3}
+\caption{Topography fields in meters (m) for (top left to bottom right) varres-CESM 28km, varres-CESM 14km, uniform CESM 25km, WRF 27km, WRF 9km and ERA-Interim. {\color{red}Use only a single color bar for all plots.  Change 25km to 28km and 12.5km to 14km.}} \label{fig:Figure3}
 \end{figure}
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=6in]{t2max.pdf}
+\includegraphics[angle=90,width=8.5in]{t2max.pdf}
 \end{center}
 \caption{Annual average daily maximum 2m temperatures (Tmax) from models and reference datasets (unit: $C$)} \label{fig:Figure4}
 \end{figure}
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=6in]{t2min.pdf}
+\includegraphics[angle=90,width=8.5in]{t2min.pdf}
 \end{center}
 \caption{Similar as Fig. 4, but for daily minimum 2m temperatures (Tmin)} \label{fig:Figure5}
 \end{figure}
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=6in]{t2avg.pdf}
+\includegraphics[angle=90,width=8.5in]{t2avg.pdf}
 \end{center}
 \caption{Similar as Fig.4, but for daily mean 2m temperatures (Tavg)} \label{fig:Figure6}
 \end{figure}
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=6in]{t2avg_dif.pdf}
+\includegraphics[angle=90,width=8.5in]{t2avg_dif.pdf}
 \end{center}
 \caption{Difference between simulations and reference data for daily Tavg} \label{fig:Figure7}
 \end{figure}

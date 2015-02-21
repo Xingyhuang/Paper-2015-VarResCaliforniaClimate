@@ -209,13 +209,13 @@ scale effect, extreme analysis, precipitation parameterization
 
 \begin{table}
 \begin{center}
-\caption{RMSE for annual Temperature} \label{tab:Table2}
+\caption{RMSE for annual temperature (California)} \label{tab:Table2}
 \begin{tabular}{lcccc}
 \hline \textbf{RMSE} & \textbf{UW}  & \textbf{PRISM} & \textbf{DAYMET} \\
 \hline $    $ & T$_{max}$ $\     $  T$_{min}$ & T$_{max}$ $\     $  T$_{min}$ $\     $ T$_{avg}$& T$_{max}$ $\     $  T$_{min}$\\
 \hline \textbf{Varres CESM 0.25d} & 1.605 $\     $ 3.035  & 2.098 $\     $ 2.393 $\     $ 1.753	&  2.109 $\     $ 3.170 \\
 \textbf{Varres CESM 0.125d} & 1.226 $\     $ 2.804  & 1.772	$\     $ 2.227	$\     $1.501 &	1.871 $\     $	2.884\\
-\textbf{uniform CESM 0.25d} & 2.566 $\     $	2.558 &	2.949$\     $	2.437$\     $	2.418&	2.958$\     $	2.826 \\
+\textbf{Uniform CESM 0.25d} & 2.566 $\     $	2.558 &	2.949$\     $	2.437$\     $	2.418&	2.958$\     $	2.826 \\
 \textbf{WRF 27km} & 1.710	 $\      $ 2.506	 $\     $ & 2.240	 $\     $1.729 $\     $	1.721 &	2.105	 $\     $2.691 \\
 \textbf{WRF 9km} & 2.517	$\      $2.769&	2.732$\      $	1.764$\      $	1.420 & 2.581	$\      $ 2.752 \\
 \hline
@@ -225,13 +225,13 @@ scale effect, extreme analysis, precipitation parameterization
 
 \begin{table}
 \begin{center}
-\caption{Bias for annual Temperature} \label{tab:Table3}
+\caption{Bias for annual temperature (California)} \label{tab:Table3}
 \begin{tabular}{lcccc}
 \hline \textbf{BIAS} & \textbf{UW}  & \textbf{PRISM} & \textbf{DAYMET} \\
 \hline $    $ & T$_{max}$ $\     $  T$_{min}$ & T$_{max}$ $\     $  T$_{min}$ $\     $ T$_{avg}$& T$_{max}$ $\     $  T$_{min}$\\
 \hline \textbf{Varres CESM 0.25d} & -0.082$\     $	2.385 &	-0.353$\     $	1.296$\     $	-0.269 & 	-0.037 $\     $	2.256 \\
 \textbf{Varres CESM 0.125d} & -0.241$\     $	2.229	& -0.559$\     $	1.130$\     $	-0.438 &	-0.224	$\     $ 2.031\\
-\textbf{uniform CESM 0.25d} & -0.409 $\     $	1.402	& -0.672	$\     $ 0.312	$\     $ -0.907	& -0.361$\     $	1.272 \\
+\textbf{Uniform CESM 0.25d} & -0.409 $\     $	1.402	& -0.672	$\     $ 0.312	$\     $ -0.907	& -0.361$\     $	1.272 \\
 \textbf{WRF 27km} & -0.379$\     $	1.409 &	-0.649$\     $	0.321$\     $	-0.729 &	-0.336$\     $	1.282 \\
 \textbf{WRF 9km} & -1.805 $\     $	2.166 &	-2.123	$\     $ 1.067$\     $	-0.891	& -1.786$\     $	1.967 \\
 \hline
@@ -241,7 +241,7 @@ scale effect, extreme analysis, precipitation parameterization
 
 \begin{table}
 \begin{center}
-\caption{RMSE and Bias for summer Tmax} \label{tab:Table4}
+\caption{RMSE and Bias for summer (JJA) maximum temperature (Tmax) (California)} \label{tab:Table4}
 \begin{tabular}{lcccc}
 \hline \textbf{Tmax} & \textbf{UW}  & \textbf{PRISM} & \textbf{DAYMET} \\
 \hline $    $ & RMSE $\     $  Bias & RMSE $\     $  Bias & RMSE $\     $  Bias \\
@@ -257,7 +257,7 @@ scale effect, extreme analysis, precipitation parameterization
 
 \begin{table}
 \begin{center}
-\caption{RMSE and Bias for annual Pr} \label{tab:Table5}
+\caption{RMSE and Bias for annual Precipitation (all California)} \label{tab:Table5}
 \begin{tabular}{lcccc}
 \hline \textbf{Pr} & \textbf{CPC}  & \textbf{UW} & \textbf{PRISM} & \textbf{DAYMET} \\
 \hline $    $ & RMSE $\     $  Bias & RMSE $\     $  Bias & RMSE $\     $  Bias & RMSE $\     $  Bias \\
@@ -293,119 +293,119 @@ scale effect, extreme analysis, precipitation parameterization
 \begin{center}
 \includegraphics[width=6in]{wrf_domains.pdf}
 \end{center}
-\caption{Domains of WRF simulations (left: 9km, right: 27km) and topography (unit: m)} \label{fig:Figure1}
+\caption{Domains of WRF simulations (left: 9km, right: 27km) and topography height (meters). {\color{red}Use a single color bar for both plots. Try to match style of Figure 3. }} \label{fig:Figure1}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{varres-cesm_gridmesh.pdf}
 \end{center}
-\caption{The grid mesh of varres-CESM (left:0.25 degree, right:0.125 degree)} \label{fig:Figure2}
+\caption{The regionally refined mesh used for our varres-CESM simulations (Left: 0.25 degree, Right: 0.125 degree) {\color{red} The grid lines are too thick, making this image hard to see.  May need to re-render.}} \label{fig:Figure2}
 \end{figure}
 
 \begin{figure}
 \begin{center}
-\includegraphics[angle=90,width=8.5in]{topo.pdf}
+\includegraphics[width=6in]{topo.pdf}
 \end{center}
-\caption{Topography fields in meters (m) for (top left to bottom right) varres-CESM 28km, varres-CESM 14km, uniform CESM 25km, WRF 27km, WRF 9km and ERA-Interim. {\color{red}Use only a single color bar for all plots.  Change 25km to 28km and 12.5km to 14km.}} \label{fig:Figure3}
+\caption{Topography fields in meters (m) for (top left to bottom right) varres-CESM 28km, varres-CESM 14km, uniform CESM 25km, WRF 27km, WRF 9km and ERA-Interim. {\color{red}Use only a single color bar for all plots.  Match color scheme of Figure1.  Change 25km to 0.25$^\circ$ and 12.5km to 0.125$^\circ$.  Need to add a figure showing our 5 climate zones.}} \label{fig:Figure3}
 \end{figure}
 
 \begin{figure}
 \begin{center}
-\includegraphics[angle=90,width=8.5in]{t2max.pdf}
+\includegraphics[width=6in]{t2max.pdf}
 \end{center}
-\caption{Annual average daily maximum 2m temperatures (Tmax) from models and reference datasets (unit: $C$)} \label{fig:Figure4}
+\caption{Annual average daily maximum 2m temperatures (Tmax) from models and reference datasets (unit: $^\circ C$) {\color{red}Use only a single color bar for all plots.  Font size is also too small -- change to three rows -- first row CESM varres, second row CESM uniform + WRF, third row reference} } \label{fig:Figure4}
 \end{figure}
 
 \begin{figure}
 \begin{center}
-\includegraphics[angle=90,width=8.5in]{t2min.pdf}
+\includegraphics[width=6in]{t2min.pdf}
 \end{center}
-\caption{Similar as Fig. 4, but for daily minimum 2m temperatures (Tmin)} \label{fig:Figure5}
+\caption{As Figure 4, but for daily minimum 2m temperatures (Tmin) {\color{red}Again switch to three rows, use only one label bar.}} \label{fig:Figure5}
 \end{figure}
 
 \begin{figure}
 \begin{center}
-\includegraphics[angle=90,width=8.5in]{t2avg.pdf}
+\includegraphics[width=6in]{t2avg.pdf}
 \end{center}
-\caption{Similar as Fig.4, but for daily mean 2m temperatures (Tavg)} \label{fig:Figure6}
+\caption{As Figure 4, but for daily mean 2m temperatures (Tavg). {\color{red}Again switch to three rows, use only one label bar.}} \label{fig:Figure6}
 \end{figure}
 
 \begin{figure}
 \begin{center}
-\includegraphics[angle=90,width=8.5in]{t2avg_dif.pdf}
+\includegraphics[width=6in]{t2avg_dif.pdf}
 \end{center}
-\caption{Difference between simulations and reference data for daily Tavg} \label{fig:Figure7}
+\caption{Difference between simulations and PRISM reference data for daily Tavg ($^\circ C$). {\color{red}Switch to two rows}} \label{fig:Figure7}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{trd_t2_allzones.pdf}
 \end{center}
-\caption{Seasonal cycle of monthly-average Tavg for each subzone (unit: $C$) Errorbars represent ? values} \label{fig:Figure8}
+\caption{Seasonal cycle of monthly-average Tavg for each subzone ($^\circ C$) Errorbars represent ? values. {\color{red} Remove word ``month'' from plots. Change major tickmarks to be at each month.  ? is standard deviation?  Change to be January through December}} \label{fig:Figure8}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{t2max_JJA.pdf}
 \end{center}
-\caption{Similar as Fig.4, but for summer Tmax} \label{fig:Figure9}
+\caption{As Figure 4, but for summer Tmax. {\color{red}Use a single label bar.  Switch to three rows.  Is it possible to use the CAM data for CESM uniform 0.25 degrees so the ocean is shown?}} \label{fig:Figure9}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{t2max_JJA_dif.pdf}
 \end{center}
-\caption{Similar as Fig. 7 but for summer Tmax (the number is RMSE value)} \label{fig:Figure10}
+\caption{As Figure 7 but for summer Tmax RMSE ($^\circ C$). {\color{red}Use a single label bar.  Switch to four rows.}} \label{fig:Figure10}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{PDF_t2max_allzones_JJA.pdf}
 \end{center}
-\caption{Frequency distribution of summer Tmax constructed from 26 years daily data (unit: $C$)} \label{fig:Figure11}
+\caption{Frequency distribution of summer Tmax ($^\circ C$). {\color{red}Change vertical range to [0,10] in all plots.  Change ``central valley'' to ``Central valley'', ``mountain'' to ``Mountain'', ``desert'' to ``Desert'' and ``CA'' to ``California.''  Use only one legend.  Remove ``Tmax'' from horizontal label in all plots.  Change vertical label to ``Frequency (\%)''.}} \label{fig:Figure11}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{pr.pdf}
 \end{center}
-\caption{Annual average daily precipitation (Pr) from models and reference datasets (unit: mm/d)} \label{fig:Figure12}
+\caption{Annual average daily total precipitation from models and reference datasets (mm/d). {\color{red} Change to four rows.  Use only one label bar.}} \label{fig:Figure12}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{pr_dif.pdf}
 \end{center}
-\caption{Difference between simulations and reference data for Pr} \label{fig:Figure13}
+\caption{Difference between simulations and reference data for total precipitation (mm/d). {\color{red} Only use UW and PRISM.  Change to four rows.  Use only one label bar.}} \label{fig:Figure13}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{trd_pr_allzones.pdf}
 \end{center}
-\caption{Simiarl as Figure 8, but for monthly-average Pr} \label{fig:Figure14}
+\caption{As Figure 8, but for monthly-average total precipitation (mm/d). {\color{red} Remove dots -- might need to put these on a separate plot.  Remove ``month'' from horizontal.  Change vertical label to Precipitation (mm/d).  Why do these plots start in September?  Change to January through December.}} \label{fig:Figure14}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{pr_DJF.pdf}
 \end{center}
-\caption{Similar as Figure 12, but for winter Pr} \label{fig:Figure15}
+\caption{As Figure 12, but for winter (DJF) total precipitation (mm/d). {\color{red} Change to four rows.  Use one label bar for all plots.}} \label{fig:Figure15}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{pr_DJF_dif.pdf}
 \end{center}
-\caption{Similar as Figure 13, but for winter Pr} \label{fig:Figure16}
+\caption{As Figure 13, but for winter (DJF) total precipitation (mm/d). {\color{red} Use only UW and PRISM.  Change to four rows.  Use only one label bar.}} \label{fig:Figure16}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{PDF_pr_allzones_log_JJA.pdf}
 \end{center}
-\caption{Frequency distribution of winter Pr constructed from 26 years daily data (unit: mm/d) (note: vertical scale is logarithmic)} \label{fig:Figure17}
+\caption{Frequency distribution of winter Pr constructed from 26 years daily data (mm/d) (note that the vertical scale is logarithmic). {\color{red}Change vertical label to log$_10$ Frequency (\%).  Capitalize labels and change CA to California.  Only use one legend for all plots.  Use same horizontal range for all plots [0,80].  Use same vertical range for all plots [-5,2].}} \label{fig:Figure17}
 \end{figure}
 
 \begin{figure}

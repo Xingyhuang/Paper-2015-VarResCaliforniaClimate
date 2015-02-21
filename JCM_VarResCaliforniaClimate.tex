@@ -48,7 +48,7 @@
 
 %% May use \\ to break lines in title:
 
-\title{High-resolution regional climate modeling evaluation based on varres-CESM and WRF over California}
+\title{High-resolution regional climate modeling evaluation using variable resolution CESM over California}
 
 %%% Enter authors' names, as you see in this example:
 %%% Use \correspondingauthor{} and \thanks{Current Affiliation:...}
@@ -57,20 +57,18 @@
 %%% Note that the \correspondingauthor{} command is NECESSARY.
 %%% The \thanks{} commands are OPTIONAL.
 
-    \authors{Author One\correspondingauthor{Author One, 
-     American Meteorological Society, 
-     45 Beacon St., Boston, MA 02108.}
- and Author Two\thanks{Current affiliation: American Meteorological Society, 
-     45 Beacon St., Boston, MA 02108.}}
+    \authors{Xingying Huang, \correspondingauthor{Xingying Huang, 
+     Department of Land, Air and Water Resources,
+     University of California Davis, Davis, CA 95616.}
+  Alan M. Rhoades and Paul A. Ullrich}
 
-     \affiliation{American Meteorological Society, 
-     Boston, Massachusetts}
+     \affiliation{Department of Land, Air and Water Resources, University of Califonia, Davis}
 
-\email{latex@ametsoc.org}
+\email{xyhuang@ucdavis.edu}
 
 
-    \extraauthor{Extra Author}
-    \extraaffil{Affiliation, City, State/Province, Country}
+    \extraauthor{Colin M. Zarzycki}
+    \extraaffil{National Center for Atmospheric Research}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -117,7 +115,7 @@ We use the following parameterization options for the standard settings: WSM 6-c
 
 \subsubsection{Varres-CESM}
 
-CESM has been under development for nearly two decades, and has been used heavily in better understanding the effects of global climate change \citep{hurrell2013community}. Here, CAM version 5 (CAM5) and Community Land Model (CLM) version 4 are used. As we have mentioned, recently, SE as the default dynamical core in CAM has added variable resolution support. Here, the variable-resolution cubed-sphere grids are generated within both CAM and CLM with the open-source software package SQuadGen (citation??). Simulations at 0.25 degree ($\sim$ 28km) and 0.125 degree ($\sim$ 14km) horizontal resolution are developed, remaining regrid is at 1 degree, also with time period from 1979-01-01 to 2005-12-31 (UTC). Corresponding fine-scale topography is produced. Land surface data at 50 km resolution is used. Tuning parameters and other necessary setting options are tested to reach our need. Greenhouse gas (GHG) concentrations are prescribed based on observations. SSTs and ice coverage are supplied by the 1degree Hadley Centre Sea Ice and Sea Surface Temperature dataset (HadISST) \citep{hurrell2008new}. 
+CESM has been under development for nearly two decades, and has been used heavily in better understanding the effects of global climate change \citep{hurrell2013community}. Here, CAM version 5 (CAM5) and Community Land Model (CLM) version 4 are used. As we have mentioned, recently, SE as the default dynamical core in CAM has added variable resolution support. Here, the variable-resolution cubed-sphere grids are generated within both CAM and CLM with the open-source software package SQuadGen \citep{ullrich2014squadgen}. Simulations at 0.25 degree ($\sim$ 28km) and 0.125 degree ($\sim$ 14km) horizontal resolution are developed, remaining regrid is at 1 degree, also with time period from 1979-01-01 to 2005-12-31 (UTC). Corresponding fine-scale topography is produced. Land surface data at 50 km resolution is used. Tuning parameters and other necessary setting options are tested to reach our need. Greenhouse gas (GHG) concentrations are prescribed based on observations. SSTs and ice coverage are supplied by the 1degree Hadley Centre Sea Ice and Sea Surface Temperature dataset (HadISST) \citep{hurrell2008new}. 
 
 %Settings for Varres-CESM (adding). 
 Figure 2 shows the grid mesh for each simulation.

@@ -22,7 +22,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% To be entered only if twocol option is used
 
-\journal{jamc}
+\journal{jcli}
 
 \usepackage{color}
 
@@ -229,6 +229,8 @@ At last, a concise summary of model performance annually over CA is provided by 
 
 scale effect, extreme analysis, precipitation parameterization
 
+This work will motivate the use of varres-CESM for assessing climate change in CA over the coming century.
+
 %\section{Figures and tables}
 
 % TABLES
@@ -314,7 +316,7 @@ scale effect, extreme analysis, precipitation parameterization
 
 \begin{table}
 \begin{center}
-\caption{RMSE and Bias for DJF Pr} \label{tab:Table6}
+\caption{RMSE and Bias for winter (DJF) Precipitation (California)} \label{tab:Table6}
 \begin{tabular}{lcccc}
 \hline \textbf{Pr} & \textbf{CPC}  & \textbf{UW} & \textbf{PRISM} & \textbf{DAYMET} \\
 \hline $    $ & RMSE $\     $  Bias & RMSE $\     $  Bias & RMSE $\     $  Bias & RMSE $\     $  Bias \\
@@ -348,56 +350,56 @@ scale effect, extreme analysis, precipitation parameterization
 \begin{center}
 \includegraphics[width=6in]{topo.pdf}
 \end{center}
-\caption{Topography fields in meters (m) for (top left to bottom right) varres-CESM 28km, varres-CESM 14km, uniform CESM 25km, WRF 27km, WRF 9km and ERA-Interim. {\color{red}Use only a single color bar for all plots.  Match color scheme of Figure1.  Change 25km to 0.25$^\circ$ and 12.5km to 0.125$^\circ$.  Need to add a figure showing our 5 climate zones.}} \label{fig:Figure3}
+\caption{Topography fields in meters (m) for (top left to bottom right) varres-CESM 0.25deg, varres-CESM 0.125deg, uniform CESM 0.25deg, WRF 27km, WRF 9km and ERA-Interim $\sim$80km. {\color{red} Need to add a figure showing our 5 climate zones.}} \label{fig:Figure3}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{t2max.pdf}
 \end{center}
-\caption{Annual average daily maximum 2m temperatures (Tmax) from models and reference datasets (unit: $^\circ C$) {\color{red}Use only a single color bar for all plots.  Font size is also too small -- change to three rows -- first row CESM varres, second row CESM uniform + WRF, third row reference} } \label{fig:Figure4}
+\caption{Annual average daily maximum 2m temperatures (Tmax) from models and reference datasets (unit: $^\circ C$)} \label{fig:Figure4}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{t2min.pdf}
 \end{center}
-\caption{As Figure 4, but for daily minimum 2m temperatures (Tmin) {\color{red}Again switch to three rows, use only one label bar.}} \label{fig:Figure5}
+\caption{As Figure 4, but for daily minimum 2m temperatures (Tmin)} \label{fig:Figure5}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{t2avg.pdf}
 \end{center}
-\caption{As Figure 4, but for daily mean 2m temperatures (Tavg). {\color{red}Again switch to three rows, use only one label bar.}} \label{fig:Figure6}
+\caption{As Figure 4, but for daily mean 2m temperatures (Tavg)} \label{fig:Figure6}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{t2avg_dif.pdf}
 \end{center}
-\caption{Difference between simulations and PRISM reference data for daily Tavg ($^\circ C$). {\color{red}Switch to two rows}} \label{fig:Figure7}
+\caption{Difference between simulations and PRISM reference data for daily Tavg ($^\circ C$)} \label{fig:Figure7}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{trd_t2_allzones.pdf}
 \end{center}
-\caption{Seasonal cycle of monthly-average Tavg for each subzone ($^\circ C$) Errorbars represent ? values. {\color{red} Remove word ``month'' from plots. Change major tickmarks to be at each month.  ? is standard deviation?  Change to be January through December}} \label{fig:Figure8}
+\caption{Seasonal cycle of monthly-average Tavg for each subzone ($^\circ C$) Errorbars represent standard deviation ($\sigma$) values. {\color{red} Remove word ``month'' from plots. Change major tickmarks to be at each month.  Change to be January through December}} \label{fig:Figure8}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{t2max_JJA.pdf}
 \end{center}
-\caption{As Figure 4, but for summer Tmax. {\color{red}Use a single label bar.  Switch to three rows.  Is it possible to use the CAM data for CESM uniform 0.25 degrees so the ocean is shown?}} \label{fig:Figure9}
+\caption{As Figure 4, but for summer Tmax.} \label{fig:Figure9}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{t2max_JJA_dif.pdf}
 \end{center}
-\caption{As Figure 7 but for summer Tmax RMSE ($^\circ C$). {\color{red}Use a single label bar.  Switch to four rows.}} \label{fig:Figure10}
+\caption{As Figure 7 but for summer Tmax RMSE ($^\circ C$).} \label{fig:Figure10}
 \end{figure}
 
 \begin{figure}
@@ -411,28 +413,30 @@ scale effect, extreme analysis, precipitation parameterization
 \begin{center}
 \includegraphics[width=6in]{pr.pdf}
 \end{center}
-\caption{Annual average daily total precipitation from models and reference datasets (mm/d). {\color{red} Change to four rows.  Use only one label bar.}} \label{fig:Figure12}
+\caption{Annual average daily total precipitation from models and reference datasets (mm/d). } \label{fig:Figure12}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{pr_dif.pdf}
 \end{center}
-\caption{Difference between simulations and reference data for total precipitation (mm/d). {\color{red} Only use UW and PRISM.  Change to four rows.  Use only one label bar.}} \label{fig:Figure13}
+\caption{Difference between simulations and reference data for total precipitation (mm/d). } \label{fig:Figure13}
 \end{figure}
+
+%relative difference or absolute???
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{trd_pr_allzones.pdf}
 \end{center}
-\caption{As Figure 8, but for monthly-average total precipitation (mm/d). {\color{red} Remove dots -- might need to put these on a separate plot.  Remove ``month'' from horizontal.  Change vertical label to Precipitation (mm/d).  Why do these plots start in September?  Change to January through December.}} \label{fig:Figure14}
+\caption{As Figure 8, but for monthly-average total precipitation (mm/d). {\color{red} might need to put these dots on a separate plot.}} \label{fig:Figure14}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{pr_DJF.pdf}
 \end{center}
-\caption{As Figure 12, but for winter (DJF) total precipitation (mm/d). {\color{red} Change to four rows.  Use one label bar for all plots.}} \label{fig:Figure15}
+\caption{As Figure 12, but for winter (DJF) total precipitation (mm/d).} \label{fig:Figure15}
 \end{figure}
 
 \begin{figure}
@@ -451,14 +455,11 @@ scale effect, extreme analysis, precipitation parameterization
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=6in]{taylor diagram.pdf}
+\includegraphics[width=6in]{taylor_diagram.pdf}
 \end{center}
 \caption{Taylor diagram of annual climatology for the region of CA, using PRISM dataset as reference} \label{fig:Figure18}
 \end{figure}
 
-\section{Conclusions}
-
-This work will motivate the use of varres-CESM for assessing climate change in CA over the coming century.
 
 %Reference to Figure \ref{fig:Figure1}.
 

@@ -20,3 +20,9 @@
 JCM_VarResCaliforniaClimate.pdf
 
 JCM_VarResCaliforniaClimate.pdf
+
+*.swp
+
+WorldMapPlot/worldmap.eps
+
+WorldMapPlot/worldmap.pdf

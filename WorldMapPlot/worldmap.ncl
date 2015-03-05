@@ -75,9 +75,9 @@ begin
 
   lineC1 = cubedsphereline(wks, map(1), -170.0, -70.0, 53.0, 53.0, 5, plres)
   lineC2 = cubedsphereline(wks, map(1), -70.0, -85.0, 53.0, 40.0, 5, plres)
-  lineC3 = cubedsphereline(wks, map(1), -85.0, -85.0, 40.0, 5.0, 1, plres)
-  lineC4 = cubedsphereline(wks, map(1), -85.0, -155.0, 5.0, 5.0, 2, plres)
-  lineC5 = cubedsphereline(wks, map(1), -155.0, -155.0, 5.0, 40.0, 2, plres)
+  lineC3 = cubedsphereline(wks, map(1), -85.0, -85.0, 40.0, 0.0, 1, plres)
+  lineC4 = cubedsphereline(wks, map(1), -85.0, -155.0, 0.0, 0.0, 2, plres)
+  lineC5 = cubedsphereline(wks, map(1), -155.0, -155.0, 0.0, 40.0, 2, plres)
   lineC6 = cubedsphereline(wks, map(1), -155.0, -170.0, 40.0, 53.0, 5, plres)
 
   lineD1 = cubedsphereline(wks, map(1), -147.0, -90.0, 50.0, 50.0, 5, plres2)

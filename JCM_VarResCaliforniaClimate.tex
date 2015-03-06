@@ -157,7 +157,9 @@ Our evaluation focuses on near surface air temperature and precipitation, repres
 
 \subsection{Post-processing}
 
-For sake of consistency, reference data are averaged to models' output resolution only when showing the differences or calculating related statistical values (e.g. root mean square error (RMSE), bias, and correlation). Bilinear interpolation method is used for regular 2D grid.  Bilinear interpolation is probably not the best technique; when the reference data is higher resolution than the model output you should average to a model grid cell. When the reference data is coarser resolution, it is usually not desirable to interpolate to a finer grid -- this does not take into account topographic features which can greatly affect the results. {\color{red} If bilinear interpolation is not the best technique, why do you use it?}
+For sake of consistency, reference data are averaged to models' output resolution only when showing the differences or calculating related statistical values (e.g. root mean square error (RMSE), bias, and correlation). Bilinear interpolation method is used for regular 2D grid. 
+
+%Bilinear interpolation is probably not the best technique; when the reference data is higher resolution than the model output you should average to a model grid cell. When the reference data is coarser resolution, it is usually not desirable to interpolate to a finer grid -- this does not take into account topographic features which can greatly affect the results. 
 
 In order to better assess the treatment of specific climate regions, we divide the state into 5 regional zones, including central valley, mountain region, North coast, South coast and desert, as shown in Figure \ref{fig:Figure1}.  When required, simulations and datasets are masked to restrict climate variables to each region. 
 
@@ -201,8 +203,6 @@ The seasonal cycle of Tavg is shown in Figure \ref{fig:Figure9} for varres-CESM 
 
 For the temperature climatology in California, we are more interested in the summer season, especially the Tmax value due to the impact of summer heat extremes. We depict the frequency distribution of Tmax constructed from 26 years summer daily data from the simulations, Daymet and UW datasets in Figure \ref{fig:Figure10}. Similar distribution shapes are shown for both models and observations, although some mismatch occurs even between the observational datasets. Models are more consistent with observations for higher values than the peak and less consistent at lower values. For representation of heat extremes, both varres-CESM and WRF 27km exhibit satisfactory performance over most regions except in central valley (CV). No obvious improvement is associated with higher resolution in varres-CESM. In the CV the models show a clear warm bias and associated long tail, with temperatures reaching near 50$^\circ$. As discussed above, all models do overestimate Tmax in the CV. In order to further assess the accuracy of the gridded observations, we examined the Tmax data directly from recorded weather station observations over the CV. The results show that it is true that Tmax values above 45$^\circ$ are extremely rare. The reason of the large bias of extreme hot days is likely due to the same reason for both varres-CESM and WRF: \cite{caldwell2009evaluation} states that this bias pattern is consistent with overly dry summertime soil moisture. This can be caused by insufficient physical parameterization and the lack of accurate land surface treatment in climate models. Other reasons may include limited observations and unevenly distributed stations for gridded datasets. 
 
-{\color{red}Table of first four moments of each frequency distribution.}
-
 
 %Former studies have already tried to alleviate this problem through parameterization (e.g. Liang et al. 2003; Yeh and Eltahir 2005; Stšckli et al. 2008) or through coupling with an explicit ground water model (e.g. York et al. 2005, Maxwell and Miller 2005; Maxwell et al. 2007). 
 
@@ -217,13 +217,22 @@ For the temperature climatology in California, we are more interested in the sum
 
 \subsection{Precipitation}
 
-Since almost all precipitation in California occurs during the winter season, only annual and DJF precipitation will be assessed.
+Since almost all precipitation in California occurs during the winter season, only DJF precipitation will be assessed.
 
-The long-term annual average climatology of daily precipitation (Pr) from varres-CESM, WRF and reference dataset are displayed by Figure \ref{fig:Figure11}. Comparing with observations, simulations do effectively capture regional patterns of precipitation. Precipitation is distributed mostly along the north coast and Sierra Nevada mountains, and is relatively sparse in other regions. However, there does exist clear differences among simulations.  Varres-CESM overestimates total precipitation, especially in the coarse resolution (28 km) simulation along the western side of Sierras.  The finer resolution simulation produces a reduction in that bias, likely due to improved treatment of orographic effects. Notably, there are large difference showed between WRF 27km and WRF 9km. WRF 27km underestimates total precipitation slightly, but WRF9 shows a very large positive bias in total precipitation along the North coast and the Sierra Nevada range, up to 50 percent. Overall, models perform satisfactorily except for WRF 9km.  Varres-CESM 0.125d performs slightly better than CESM 0.25d and WRF 27km, as further exhibited by the RMSE and bias values in Table \ref{tab:Table4}. Observations also demonstrate noticeable differences indicating uncertainty inherent in interpolating station data to a grid. However, these observations are still of the highest quality available and the uncertainty is relatively small compared with the simulations.
+The long-term average climatology of DJF daily precipitation (Pr) from varres-CESM, WRF and reference datasets are displayed in Figure \ref{fig:Figure11}. Comparing with observations, simulations do effectively capture regional patterns of precipitation. Precipitation is distributed mostly along the north coast and Sierra Nevada mountains, and is relatively sparse in other regions. However, there does exist clear differences among simulations.  Varres-CESM overestimates total precipitation, especially in the coarse resolution (28 km) simulation along the western side of Sierras.  The finer resolution simulation produces a reduction in that bias, likely due to improved treatment of orographic effects. Notably, there are large differences shown between WRF 27km and WRF 9km. WRF 27km underestimates total precipitation slightly, but WRF9 shows a very large positive bias in total precipitation along the North coast and the Sierra Nevada range, up to 50 percent. Overall, models perform satisfactorily except for WRF 9km.  Varres-CESM 0.125d performs slightly better than CESM 0.25d and WRF 27km, as further exhibited by the RMSE and bias values in Table \ref{tab:Table5}. Observations also demonstrate noticeable differences indicating uncertainty inherent in interpolating station data to a grid. However, these observations are still of the highest quality available and the uncertainty is relatively small compared with the simulations.
 
-{\color{red}Since annual average precipitation looks so similar to DJF precipitation, maybe we only need to include DJF precipitation.  Most of the same conclusions will hold.}
+%The long-term average climatology of DJF daily precipitation (Pr) from varres-CESM, WRF and reference datasets are displayed by Figure \ref{fig:Figure11}. Comparing with observations, simulations do capture regional patterns of precipitation. Precipitation is distributed mostly along the north coast and the Sierra Nevada mountains, and relatively low over other regions. However, there exist obvious differences among simulations. varres-CESM overestimate a little especially for coarser simulation at the western side of Sierras, and finer simulation has reduced that bias showing the improvementnt of orographic effects. Notably, large difference showed between WRF27 and WRF9. WRF27 underestimated a little, but WRF9 greatly showed obvious positive absolute error at North coastal part and the Sierra where maximum precipitation is distributed, and the relative bias can reach 50 percent. Overall, models perform satisfactorily except for WRF9, and varres-CESM 0.125d perform a little better than CESM 0.25d and WRF27, as further showed by the RMSE and bias value in Table \ref{tab:Table5}. Observations also demonstrate noticeable differences indicating uncertainty inherent in interpolating station data to a grid. However, these observations are still of the highest quality available and the uncertainty is relatively small comparing the simulations, and our conclusions can hold.
 
-The DJF precipitation from models and reference data as plotted in Figure \ref{fig:Figure12}. We can see that models and reference data show a similar pattern as annual precipitation, though the precipitations almost doubles in winter comparing with annual value {\color{red}You're averaging over a shorter period}.  Varres-CESM still overestimates total precipitation with larger absolute bias, especially at central valley {\color{red} (Possible reasons ??? -- Examine plots of PRECC and PRECL)}, and higher resolution still performs better. WRF 27km underestimates precipitation slightly, and WRF 9km still greatly overestimate in the North coastal region and the Sierra Nevada region. Considering the relatively heavy winter precipitation, the relative error is still acceptable for varres-CESM and WRF 27km, with RMSE and bias values showed in Table \ref{tab:Table4}.
+%<<<<<<< Updated upstream
+%{\color{red}Since annual average precipitation looks so similar to DJF precipitation, maybe we only need to include DJF precipitation.  Most of the same conclusions will hold.}
+
+%The DJF precipitation from models and reference data as plotted in Figure \ref{fig:Figure12}. We can see that models and reference data show a similar pattern as annual precipitation, though the precipitations almost doubles in winter comparing with annual value {\color{red}You're averaging over a shorter period}.  Varres-CESM still overestimates total precipitation with larger absolute bias, especially at central valley {\color{red} (Possible reasons ??? -- Examine plots of PRECC and PRECL)}, and higher resolution still performs better. WRF 27km underestimates precipitation slightly, and WRF 9km still greatly overestimate in the North coastal region and the Sierra Nevada region. Considering the relatively heavy winter precipitation, the relative error is still acceptable for varres-CESM and WRF 27km, with RMSE and bias values showed in Table \ref{tab:Table4}.
+%=======
+%The long-term annual average climatology of daily precipitation (Pr) from varres-CESM, WRF and reference dataset are displayed by Figure \ref{fig:Figure11}. Comparing with observations, simulations do capture regional patterns of precipitation. Precipitation distributes mostly along the north coastal part and Sierra mountains, and relatively low over other regions. However, there exist obvious differences among simulations. varres-CESM overestimate a little especially for coarser simulation at the western side of Sierras, and finer simulation has reduced that bias showing the improvementnt of orographic effects. Notably, large difference showed between WRF27 and WRF9. WRF27 underestimated a little, but WRF9 greatly showed obvious positive absolute error at North coastal part and the Sierra where maximum precipitation is distributed, and the relative bias can reach 50 percent. Overall, models perform satisfactorily except for WRF9, and varres-CESM 0.125d perform a little better than CESM 0.25d and WRF27, as further showed by the RMSE and bias value in Table \ref{tab:Table4}. Observations also demonstrate noticeable differences indicating uncertainty inherent in interpolating station data to a grid. However, these observations are still of the highest quality available and the uncertainty is relatively small comparing the simulations, and our conclusions can hold.
+
+%The long-term average climatology of DJF daily precipitation (Pr) from varres-CESM, WRF and reference datasets are displayed by Figure \ref{fig:Figure11}. Comparing with observations, simulations do capture regional patterns of precipitation. Precipitation is distributed mostly along the north coast and the Sierra Nevada mountains, and relatively low over other regions. However, there exist obvious differences among simulations. varres-CESM overestimate a little especially for coarser simulation at the western side of Sierras, and finer simulation has reduced that bias showing the improvementnt of orographic effects. Notably, large difference showed between WRF27 and WRF9. WRF27 underestimated a little, but WRF9 greatly showed obvious positive absolute error at North coastal part and the Sierra where maximum precipitation is distributed, and the relative bias can reach 50 percent. Overall, models perform satisfactorily except for WRF9, and varres-CESM 0.125d perform a little better than CESM 0.25d and WRF27, as further showed by the RMSE and bias value in Table \ref{tab:Table5}. Observations also demonstrate noticeable differences indicating uncertainty inherent in interpolating station data to a grid. However, these observations are still of the highest quality available and the uncertainty is relatively small comparing the simulations, and our conclusions can hold.
+
+%We can see that models and reference data show similar pattern as annual, though the precipitations almost doubles in winter comparing with annual value. varres-CESM still overestimate with larger absolute bias, especially at central valley {\color{red} (possible reasons ???)}, and higher resolution still performs better. WRF 27km underestimate a little, and WRF 9km still greatly overestimate at North coastal region and the sierra region. Considering the relatively heavy winter precipitation, the relative error is still acceptable for varres-CESM and WRF 27km, with RMSE and bias values showed in Table \ref{tab:Table4}.
 
 %annual Pr: WRF 9km can be high as 12mm (1.5 times); CESM 0.125<CESM 0.25 and WRF 27<WRF 9.
 %PRISM and Daymet are similar, so did not show PRISM here.
@@ -232,11 +241,20 @@ The DJF precipitation from models and reference data as plotted in Figure \ref{f
 
 %add some percentage descriptions???
 
-The climatological annual cycle of precipitation averaged over each sub-region is presented in Figure \ref{fig:Figure13}. It can be seen that bias mainly occurs during the rainy seasons, especially in winter. WRF 27km is dryer in all regions and WRF 9km is far wetter in all regions. WRF 9km also shows larger variability compared with observations.  Varres-CESM tracks well with observed precipitation everywhere except in the central valley, where precipitation is overestimated.  It also exhibits a slightly larger variability in the rainy season than observations, while WRF 27km shows reduced variability. Nonetheless the strong seasonal dependence on precipitation is apparent in all regions with extremely dry conditions during summer months.  A slight increase in summertime precipitation is apparent in the Desert region associated with the North American monsoon. Overall, varres-CESM is more consistent with observations in most regions and in all seasons compared with WRF, as can be seen in Table \ref{tab:Table5}. However, we also observe that the peak month for precipitation tends to occur earlier in varres-CESM than in observations. As a GCM, varres-CESM is not forced by reanalysis dataset like WRF, therefore, it is not surprising that time drift occurred when dealing with seasonal trend. {\color{red} add the plot of 26 years precipitation time trend?}
+The climatological annual cycle of precipitation averaged over each sub-region is presented in Figure \ref{fig:Figure12}. It can be seen that bias mainly occurs during the rainy seasons, especially in winter. WRF 27km is dryer in all regions and WRF 9km is far wetter in all regions. WRF 9km also shows larger variability compared with observations.  Varres-CESM tracks well with observed precipitation everywhere except in the central valley, where precipitation is overestimated.  It also exhibits a slightly larger variability in the rainy season than observations, while WRF 27km shows reduced variability. Nonetheless the strong seasonal dependence on precipitation is apparent in all regions with extremely dry conditions during summer months.  A slight increase in summertime precipitation is apparent in the Desert region associated with the North American monsoon. Overall, varres-CESM is more consistent with observations in most regions and in all seasons compared with WRF, as can be seen in Table \ref{tab:Table6}. However, we also observe that the peak month for precipitation tends to occur earlier in varres-CESM than in observations. As a GCM, varres-CESM is not forced by reanalysis dataset like WRF, therefore, it is not surprising that time drift occurred when dealing with seasonal trend.
+
+%{\color{red} add the plot of 26 years precipitation time trend?}
 
 %Caldwell: Description of temporal variability in the CCSM3 run is described in Bala et al. (2008). In particular, this simulation features a phase-locked ENSO with a period of 2 years.
 
-The frequency distribution of wintertime Pr has been constructed from 26 years of rainy days in winter (Pr$>$=0.1mm/d) and depicted in Figure \ref{fig:Figure14}. It can be seen that varres-CESM is more consistent with observations everywhere except in the CV.  In this region WRF 27km appears to better capture high-intensity precipitation events, but performs more poorly on low-intensity events.  The underestimation of rainfall frequency in WRF 27km appears consistent across regions.  WRF 9km produces a significantly better treatment of low-intensity events, but greatly overestimates the frequency of high-intensity events.  Notably, varres-CESM 0.25d and varres-CESM 0.125d do not show significant differences. For strong precipitation events, varres-CESM and WRF 27km show satisfactory performance over most regions except as noted above, although these conclusions are also constrained by observational uncertainty.
+The frequency distribution of wintertime Pr has been constructed from 26 years of rainy days in winter (Pr$>$=0.1mm/d) and depicted in Figure \ref{fig:Figure13}. It can be seen that varres-CESM is more consistent with observations everywhere except in the CV.  In this region WRF 27km appears to better capture high-intensity precipitation events, but performs more poorly on low-intensity events.  The underestimation of rainfall frequency in WRF 27km appears consistent across regions.  WRF 9km produces a significantly better treatment of low-intensity events, but greatly overestimates the frequency of high-intensity events.  Notably, varres-CESM 0.25d and varres-CESM 0.125d do not show significant differences. For strong precipitation events, varres-CESM and WRF 27km show satisfactory performance over most regions except as noted above, although these conclusions are also constrained by observational uncertainty.
+%=======
+%The climatological annual cycle of precipitation averaged over each sub regions is presented in Figure \ref{fig:Figure12}. It can be seen that bias mainly occurred during rainy seasons especially in winter. WRF 27km is dryer, and varres-CESM is wetter especially in winter season. WRF 9km is too wetter as found already and showed obviously larger variability than observations. varres-CESM showed a little larger variability among rainy seasons than observations, while WRF 27km shows opposite trend. The seasonal trend proves what we know about the strong seasonality of California Pr with high values in the winter and almost no precipitation during the summer. Overall, varres-CESM are better consistent with observations at most regions in all seasons comparing with WRF, as showed in Table \ref{tab:Table6}. We also notice the drift of the peak value between the varres-CESM and observations or even with the two varres-CESM runs due to the internal model variability of CESM. As a GCM, varres-CESM is not forced by reanalysis dataset like WRF, therefore, it is not surprising that time drift occurred when dealing with seasonal trend.
+
+%Caldwell: Description of temporal variability in the CCSM3 run is described in Bala et al. (2008). In particular, this simulation features a phase-locked ENSO with a period of 2 years.
+
+%Further, the frequency distribution of winter Pr constructed from 26 years rainy days in winter (Pr$>$=0.1mm/d) is depicted in Figure \ref{fig:Figure13}. It can be seen that varres-CESM is more consistent with observations except at Central Valley, where WRF 27km performs much better as former figures already showed. varres-CESM 0.25d and varres-CESM 0.125d do not show meaningful differences. However, WRF 27km shows underprediction of rainy days, especially for moderately rainy events, and, not surprisingly, WRF 9km obviously over-prediction rainy days particular when raining goes stronger. For strong precipitation events, varres-CESM and WRF 27 shows satisfactory modeling ability over most regions except at Central Valley for varres-CESM, though observations also show uncertainties.
+
 %This gives confidence for using varres-CESM in extreme precipitation studies. 
 
 The positive bias of precipitation using WRF at high resolution has also been found in former studies. \cite{caldwell2009evaluation} gave a detailed discuss of possible reasons, stating that bias comes from a variety of source including the model itself and the choice of physical parameterizations.  A comprehensive analysis of the cause of these errors is out of the scope of this paper; further discussion can be found in former studies \cite{jankov2005impact, gallus2006comparison, chin2010preliminary, caldwell2010california}.
@@ -245,14 +263,19 @@ The positive bias of precipitation using WRF at high resolution has also been fo
 
 %Figure convective precipitation VS micro-physics scheme especially for WRF 9km
 
-Finally, a concise summary of model performance over CA is provided by the Taylor diagram (Figure \ref{fig:Figure15}). This diagram includes the spatial correlation between the simulated and observed fields, the RMS variability of simulations normalized by that in the observations, and mean biases from reference data. It can be seen that models are very close to reference data (PRISM). Normalized standard deviation and bias are larger for precipitation, especialy for WRF 9km.  Varres-CESM performed better than WRF generally with essentially opposite bias value in many cases. Overall, varres-CESM has been demonstrated to be competitive in its ability to capture regional climatology against WRF.
+Finally, a concise summary of model performance over CA is provided by the Taylor diagram (Figure \ref{fig:Figure14}). This diagram includes the spatial correlation between the simulated and observed fields, the RMS variability of simulations normalized by that in the observations, and mean biases from reference data. It can be seen that models are very close to reference data (PRISM). Normalized standard deviation and bias are larger for precipitation, especialy for WRF 9km.  Varres-CESM performed better than WRF generally with essentially opposite bias value in many cases. Overall, varres-CESM has been demonstrated to be competitive in its ability to capture regional climatology against WRF.
+
+
+%At last, a concise summary of model performance annually over CA is provided by the Taylor diagram (Figure \ref{fig:Figure14}). This diagram includes the spatial correlation between the simulated and observed fields, the RMS variability of simulations normalized by that in the observations, and mean biases from verification data symboled at (1,0). It can be seen that models are close to reference data (PRISM), with small biases for temperature variables. Normalized standard deviation and bias are larger for precipitation, especialy for WRF 9km. varres-CESM performed better than WRF generally with opposite bias value in some cases. Overall, varres-CESM showed its comparable ability in studying high-resolution regional climatology against with regional climate model WRF.
 
 %The angle between the x axis and the vector connecting the symbol and the origin indicates the spatial correlation between the simulated and ob- served fields. The distance from the origin indicates the RMS variability in the simulations normalized by that in the observations. Perfect agreement with verification data, with mean biases removed, would appear as a symbol plotted at (1, 0). Movement closer to (1, 0) between two simulations indicates improvement.
 
 
 \subsection{varres-CESM and uniform CESM}
 
-The climatology simulations of both varres-CESM 0.25 deg and uniform CESM-FV 0.25 deg are given in Figure \ref{fig:Figure16} including Tmax, Tmin, Tavg and Pr. For JJA temperature, these two simulations show similar results. Differences are apparent in DJF temperature, where uniform CESM-FV exhibits smaller values than varres-CESM, leading to less bias over the central valley but larger bias over most other regions. For annual precipitation, compared with varres-CESM, uniform CESM-FV has less bias over central valley. However, uniform CESM-FV also overestimates northern coast and mountain region precipitation in winter months. Overall, performance of varres-CESM was comparable to uniform CESM-FV.
+The climatology simulations of both varres-CESM 0.25 deg and uniform CESM-FV 0.25 deg are given in Figure \ref{fig:Figure15} including Tmax, Tmin, Tavg and Pr. For JJA temperature, these two simulations show similar results. Differences are apparent in DJF temperature, where uniform CESM-FV exhibits smaller values than varres-CESM, leading to less bias over the central valley but larger bias over most other regions. For annual precipitation, compared with varres-CESM, uniform CESM-FV has less bias over central valley. However, uniform CESM-FV also overestimates northern coast and mountain region precipitation in winter months. Overall, performance of varres-CESM was comparable to uniform CESM-FV.
+
+%The climatology simulations of both varres-CESM 0.25 deg and uniform CESM-FV 0.25 deg are showed in Figure \ref{fig:Figure15} including Tmax, Tmin, Tavg and Pr. For JJA temperature, these two simulations show similar results. Differences are displayed in DJF temperature, uniform CESM showed smaller values than varres-CESM, which resulted less bias over central valley but larger bias over most other regions. For annual precipitation, comparing with varres-CESM, uniform CESM has obviously less bias over central valley. However, uniform CESM overestimated over part of northern coast and mountain regions in DJF Pr. In sum, Comparing with the uniform resolution CESM-FV simulation, varres-CESM performed similarly or even better in some cases.
 
 \section{Discussions and summary}
 
@@ -266,6 +289,8 @@ Generally, comparing with observations, simulations do capture regional climatol
 
 The importance and necessity of high resolution for regional climate studies has been widely stressed by previous studies. However, whether the current regional climate models can fulfill this demand when resolution is pushed to local scales is questionable. Based on our findings, WRF at 9km grid-scale produced larger biases than at 27km.  And further, varres-CESM at 14km resolution did not demonstrate clear improvement beyond 28km resolution. It is clear that further work is urgently needed to solve the scale limitation of current regional climate models at fine horizontal resolutions. The possible causes of the scale limitation may include a lack of accurate scare-aware physical parameterizations near or below 10 km horizontal resolution, the treatment of dynamics at fine scales, and the interactions among different components of RCMs or VR-GCMs (for example, land-atmosphere interactions).
 
+%In this way, VRGCMs can be expected to support longer simulations and incorporate more complicated physical parameter schemes. 
+%In the future, even when a globally uniform simulation (at the highest resolution) becomes feasible to get the most accurate solution, regional high-resolution climate modeling can still be much more computationally feasible for very long simulations or simulations with extremely fine scales.
 
 %SWE  Alan paper
 %ensemble smooth: starting date???, the trd plot
@@ -381,11 +406,35 @@ The importance and necessity of high resolution for regional climate studies has
 \end{center}
 \end{table}
 
-%%%%%%Table4%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%Table4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{table}
 \begin{center}
-\caption{RMSE and Bias for Precipitation (California)} \label{tab:Table4}
+\caption{The first four moments of the JJA Tmax frequency in each sub-zone} \label{tab:Table4}
+\begin{tabular}{lccccc}
+\hline \textbf{} & \textbf{Central valley}  & \textbf{Mountain} & \textbf{North coast} & \textbf{South coast} &\textbf{Desert}\\
+\hline & Avg $\ $\ $ Var$\ $\ $Skew$\ $\ $ Kurt$ & Avg $\ $\ $ Var$\ $\ $Skew$\ $\ $ Kurt$  & Avg $\ $\ $ Var$\ $\ $Skew$\ $\ $ Kurt$  & Avg $\ $\ $ Var$\ $\ $Skew$\ $\ $ Kurt$  & Avg $\ $\ $ Var$\ $\ $Skew$\ $\ $ Kurt$  \\
+%\hline \textbf{UW} &32.63$\ $	24.75	$\ $-0.77$\ $	0.91		& 26.68	$\ $33.17	$\ $-0.41$\ $	0.26&	25.92$\ $	 30.44	$\ $0.08	-0.51	&	25.92 $\ $ 30.44$\ $	0.08$\ $	-0.51 & 	37.01	$\ $ 22.87$\ $	-0.65 $\ $	0.68\\
+%\textbf{Daymet} & 32.66	$\ $ 23.47$\ $ 	-0.86 $\ $ 	1.47	&	25.89$\ $ 	39.34	$\ $ -0.52	$\ $ 0.45	&	26.47	$\ $ 30.12	$\ $ -0.31	$\ $ 0.42		& 26.47	$\ $ 30.12	$\ $ -0.31$\ $ 	0.42	&	37.01	$\ $ 24.32	$\ $ -0.60	$\ $ 0.65\\
+\hline \textbf{UW} &32.6$\ $	24.8	$\ $-0.8$\ $	0.9	&	26.7	$\ $33.2$\ $	-0.4	$\ $0.3	&	25.9	$\ $30.4	$\ $0.1$\ $	-0.5		&25.9$\ $	30.4	$\ $0.1$\ $	-0.5&		37.0	$\ $22.9$\ $	-0.6	$\ $0.7\\
+\textbf{Daymet} & 32.7$\ $	23.5$\ $	-0.9$\ $	1.5	&	25.9	$\ $39.3$\ $	-0.5$\ $	0.5	&	26.5	$\ $30.1	$\ $-0.3$\ $	0.4	&	26.5	$\ $30.1	$\ $-0.3	$\ $0.4		& 37.0	$\ $24.3	$\ $-0.6$\ $	0.6\\
+\hline\textbf{CESM 0.25d}& 34.1$\ $	26.2	$\ $-0.4$\ $	0.2	&	28.1	$\ $27.6$\ $	-0.4$\ $	0.3	&	26.4	$\ $37.4	$\ $0.1$\ $	-0.7		& 26.4$\ $	37.4	$\ $0.1$\ $	-0.7	&	37.6$\ $	19.0$\ $	-0.5	$\ $0.8\\
+\textbf{CESM 0.125d}& 34.3	$\ $28.5$\ $	-0.5	$\ $0.4	&	27.2	$\ $30.0$\ $	-0.4$\ $	0.3	&	26.3	$\ $37.4$\ $	0.1$\ $	-0.6		& 26.3$\ $	37.4$\ $	0.1	$\ $-0.6		& 37.3	$\ $21.3$\ $	-0.5	$\ $0.4\\
+\hline\textbf{WRF 27km} & 33.9	$\ $34.8	$\ $-0.5$\ $	0.2	&	24.9	$\ $34.8$\ $	-0.3	$\ $0.0	&	26.0	$\ $36.7	$\ $-0.1$\ $	-0.5		& 26.0$\ $	36.7	$\ $-0.1	$\ $-0.5		& 36.5$\ $	22.6$\ $	-0.6$\ $	0.5\\
+\textbf{WRF 9km}&32.4		$\ $33.1	$\ $	-0.7	$\ $	0.6	&	22.4		$\ $38.5		$\ $-0.5		$\ $0.6	&	24.9	$\ $	32.6		$\ $0.0		$\ $-0.6	&	24.9	$\ $	32.6	$\ $	0.0		$\ $-0.6	&	34.4		$\ $24.4		$\ $-0.5		$\ $0.4\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+%If skew>0 [skew<0], the distribution trails off to the right [left].
+%If kurtosis > 0 [<0], it is usually more sharply peaked [flatter] than the normal distribution (leptokurtic and platykurtic, respectively). E.g., a rectangular function has a kurtosis of -1.2 (=1.8-3) relative to the normal distribution.
+%average variance skewness kurtosis
+
+%%%%%%Table5%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}
+\begin{center}
+\caption{RMSE and Bias for Precipitation (California)} \label{tab:Table5}
 \begin{tabular}{lcccc}
 \hline \textbf{Annual} & \textbf{CPC}  & \textbf{UW} & \textbf{PRISM} & \textbf{DAYMET} \\
 \hline $    $ & RMSE $\     $  Bias & RMSE $\     $  Bias & RMSE $\     $  Bias & RMSE $\     $  Bias \\
@@ -410,9 +459,11 @@ The importance and necessity of high resolution for regional climate studies has
 \end{center}
 \end{table}
 
+%%%%%%%%%%%Table6%%%%%%%%%%%%%
+
 \begin{table}
 \begin{center}
-\caption{Seasonal Average Precipitation for five sub-divisions of California} \label{tab:Table5}
+\caption{Seasonal Average Precipitation for five sub-divisions of California} \label{tab:Table6}
 \begin{tabular}{lcccc}
 \hline \textbf{} & \textbf{SON}  & \textbf{DJF} & \textbf{MAM} & \textbf{JJA} \\
 \hline & CV $\ $\ $\  $Mt$\ $\ $\  $NC$\ $\ $\ $SC$\ $\ $\ $Dt& CV $\ $\ $\  $Mt$\ $\ $\  $NC$\ $\ $\ $SC$\ $\ $\ $Dt& CV $\ $\ $\  $Mt$\ $\ $\  $NC$\ $\ $\ $SC$\ $\ $\ $Dt & CV $\ $\ $\  $Mt$\ $\ $\  $NC$\ $\ $\ $SC$\ $\ $\ $Dt\\
@@ -506,12 +557,12 @@ The importance and necessity of high resolution for regional climate studies has
 \caption{Frequency distribution of summer Tmax ($^\circ C$).} \label{fig:Figure10}
 \end{figure}
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=6in]{pr.pdf}
-\end{center}
-\caption{Annual average daily total precipitation from models and reference datasets (mm/d).} \label{fig:Figure11}
-\end{figure}
+%\begin{figure}
+%\begin{center}
+%\includegraphics[width=6in]{pr.pdf}
+%\end{center}
+%\caption{Annual average daily total precipitation from models and reference datasets (mm/d).} \label{fig:Figure11}
+%\end{figure}
 
 %relative difference or absolute???
 
@@ -519,14 +570,14 @@ The importance and necessity of high resolution for regional climate studies has
 \begin{center}
 \includegraphics[width=6in]{pr_DJF.pdf}
 \end{center}
-\caption{As Figure 11, but for winter (DJF) total precipitation (mm/d).} \label{fig:Figure12}
+\caption{Annual DJF precipitation from models and reference datasets (mm/d).} \label{fig:Figure11}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{trd_pr_allzones.pdf}
 \end{center}
-\caption{As Figure 9, but for monthly-average total precipitation (mm/d).} \label{fig:Figure13}
+\caption{As Figure 9, but for monthly-average total precipitation (mm/d).} \label{fig:Figure12}
 \end{figure}
 
 %CPC is close to NARR for most regions, did not use these two here
@@ -535,23 +586,41 @@ The importance and necessity of high resolution for regional climate studies has
 \begin{center}
 \includegraphics[width=6in]{PDF_pr_allzones_DJF.pdf}
 \end{center}
-\caption{Frequency distribution of winter Pr constructed from 26 years daily data (mm/d) (note that the vertical scale is logarithmic).} \label{fig:Figure14}
+\caption{Frequency distribution of winter Pr constructed from 26 years daily data (mm/d) (note that the vertical scale is logarithmic).} \label{fig:Figure13}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{taylor_diagram.pdf}
 \end{center}
-\caption{Taylor diagram of annual climatology for the region of CA, using PRISM dataset as reference} \label{fig:Figure15}
+\caption{Taylor diagram of annual climatology for the region of CA, using PRISM dataset as reference} \label{fig:Figure14}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=6in]{vr_uni_CESM.pdf}
 \end{center}
-\caption{Climatology simulation comparison between varres-CESM 0.25 deg and uniform CESM-FV 0.25 deg} \label{fig:Figure16}
+\caption{Climatology simulation comparison between varres-CESM 0.25 deg and uniform CESM-FV 0.25 deg} \label{fig:Figure15}
 \end{figure}
 
+
+%%%%%%%other notes%%%%%%%%%%%%%%%%%%%
+%ERA-Interim is a global atmospheric reanalysis from 1979, continuously updated in real time. The spatial resolution of the data set is approximately 80 km with 60 vertical levels from the surface up to 0.1 hPa (http://www.ecmwf.int/en/research/climate-reanalysis/era-interim). The simulation started at 0000UTC 1 January 1979 and ended at 2400 UTC 31 December 2005 for 27 years. The first year was treated as model spin-up. 10 grid points are used as lateral relaxation zones.
+
+%As for the shortwave and longwave radiation schemes, based on former studies, CAM scheme of the NCAR Community Atmospheric model (Collins et al. 2004), and Rapid Radiation Transfer Model long-wave radiation (Mlawer et al. 1997) and Dudhia short-wave radiation (Dudhia 1989) are tested. As for the cumulus scheme, Kain-Fritsch (new Eta) scheme and Grell-Freitas ensemble scheme are both tested.
+
+%Table for test modeling
+%	Model 1	Model 2	Model 3	Model 4	Model 5 (without nudging)
+%Radiation scheme	CAM scheme for shortwave and longwave	CAM scheme for shortwave and longwave	Duhia scheme, RRTM scheme	Duhia scheme, RRTM scheme	Duhia scheme, RRTM scheme
+%Cumulus scheme	KF scheme	GF scheme	KF scheme	GF scheme	KF scheme
+
+%CESM: This framework has been under development for nearly two decades, and has been used heavily in better understanding the effects of global climate change. The spectral element method has several important properties including parallel scalability, exibility and accuracy, that make it a desirable choice for modeling atmospheric dynamics. The spectral element dynamical core (Fournier et al., 2004; Taylor and Fournier, 2010) is now the default dynamical core in CAM and so is a supported platform for scientific research. which allows for coupled climate simulations in CAM on a variable resolution atmospheric mesh. 
+
+%varres-CESM: Both atmospheric grids are coupled to ocean/ice and land models through the CPL7 tri-grid coupler (Craig et al. 2012), which allows fluxes passed between the atmosphere and other model components to be conservatively remapped to the different grids. We utilize the Community Land Model (CLM) version 4.0 which is run on a 0.9 by 1.25? latitude-longitude grid. The land model is not prescribed and freely adjusts with the climate system. 
+
+%%CAM5 is the newest set of physical parameterizations available within CESM and has been shown to be the superior choice within CAM for variable-resolution simulations due to improved scaling of cloud fraction and precipitation at multiple resolutions when compared to prior versions (Zarzycki et al. 2014b).
+
+%A description of the CESM framework has recently been provided by Hurrell et al. (2013). 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % END OF AMSPAPER.TEX

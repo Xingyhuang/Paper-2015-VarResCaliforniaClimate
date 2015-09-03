@@ -203,7 +203,7 @@ The results in the following section are obtained from simulated and observed da
 California's rugged topography and large latitudinal extent had led to a diverse variety of climate regions that are poorly captured in typical coarse global climate simulations.  In order to assess the performance of varres-CESM within each region, the state has been divided into five regional zones, including the Central Valley (CV), Mountain Region (MR), North Coast (NC), South Coast (SC), and Desert Region (DR).  The spatial extent of these regions is depicted in Figure \ref{fig:wrf_domains}. The division of these five zones is loosely based on the results of \cite{abatzoglou2009classification} and the climate zones used by the California Energy Commission. To restrict the analysis in each zone, simulations and datasets have been masked to restrict climate variables to each region. 
 
 
-Standard statistical measures have been used to quantify the model performance in comparison with the reference datasets. These statistical variables include the Root-mean-square deviation (RMSD), mean signed difference (MSD), mean relative absolute difference (MRD) and spatial correlation, and sample standard deviation ($s$). Among those, correlation is the uncentered pattern correlation spatially, i.e. Pearson product-moment coefficient of linear correlation between models and reference datasets at corresponding locations.
+Standard statistical measures have been used to quantify the model performance in comparison with the reference datasets. These statistical variables include the Root-mean-square deviation (RMSD), mean signed difference (MSD), mean relative absolute difference (MRD), and sample standard deviation ($s$). {\color{red}Spatial correlation is also computed and used for assessing the spatial pattern correlation, i.e. Pearson product-moment coefficient of linear correlation between climatological means in models and reference datasets.}
 \begin{align}
 \mbox{RMSD} &= \sqrt{\frac{1}{N} \sum_{i=1}^{N} (v_i - \hat{v}_i)^2} &\mbox{MSD} &= \frac{1}{N} \sum_{i=1}^{N} (v_i - \hat{v}_i) \\[2.0ex]
 \mbox{$s$} &= \sqrt{\frac{1}{M-1} \sum_{j=1}^{M} (v_j - \bar{v})^2} & \mbox{MRD} &= \left( \sum_{i=1}^{N} |v_i - \hat{v}_i| \right) \Bigg/ \left( \sum_{i=1}^{N} \hat{v}_i \right).
@@ -235,29 +235,30 @@ Complementary results to this study are provided in the online supplement, inclu
 
 \subsection{Gridded and Reanalysis Datasets}
 
-For validation purpose, reanalysis and gridded observational datasets of the highest available quality are employed (see Table \ref{tab:Datasets}). Differences between gridded observations can be due to choice of meteorological stations, interpolation techniques, elevation models and processing algorithms.  Consequently, the use of multiple reference datasets is necessary to understand the uncertainty underlying the observational data.  Although these products are employed to serve as realistic proxies for assessing the model results, we acknowledge that reanalysis products are particularly sensitive to model choice and choice of assimilated observations and so cannot be treated as truth. Detailed descriptions of these datasets are as follows.
+Reanalysis and gridded observational datasets of the highest available quality are employed (see Table \ref{tab:Datasets}). Differences between gridded observations can be due to choice of meteorological stations, interpolation techniques, elevation models and processing algorithms.  Consequently, the use of multiple reference datasets is necessary to understand the uncertainty underlying the observational data.  Although these products are employed to serve as realistic proxies for assessing the model results, we acknowledge that they may be sensitive to the choice of model and the set of assimilated observations and so cannot be treated as truth. Detailed descriptions of these datasets are as follows.
 
 %These data products incorporate station measurements or satellite information and other data. 
 
-\paragraph{NARR:}  The North American Regional Reanalysis (NARR) provides dynamically downscaled data over North America at $\sim$ 32 km resolution and 3 hourly intervals from 1979 through present \citep{mesinger2006north}. It is the National Centers for Environmental Prediction (NCEP)'s high resolution reanalysis product. All major climatological variables are present in NARR, making it an excellent candidate for assessment of regional climate. Nonetheless, some inaccuracies have been identified in NARR that must be accounted for, including deficiencies in precipitation fields away from the continental US \citep{bukovsky2007brief}.
+\paragraph{NARR:}  The North American Regional Reanalysis (NARR) is the National Centers for Environmental Prediction (NCEP)'s high-resolution reanalysis product and provides dynamically downscaled data over North America at $\sim$ 32 km resolution and 3 hourly intervals from 1979 through present \citep{mesinger2006north}. Although all major climatological variables are present in NARR, some inaccuracies have been identified in NARR that must be accounted for, including deficiencies in precipitation fields \citep{bukovsky2007brief}.
+%For this reason (and the relative coarseness of this product compared to gridded datasets) only temperature fields from NARR are used in this study.
 
 %The NARR model uses the very high resolution NCEP Eta Model (32km/45 layer) together with the Regional Data Assimilation System (RDAS) which, significantly, assimilates precipitation along with other variables. (http://www.esrl.noaa.gov/psd/data/gridded/data.narr.html)
 
-\paragraph{NCEP CPC:} This data set is CPC unified gauge-based analysis of daily precipitation provided by the National Oceanic and Atmospheric Administration (NOAA) Climate Prediction Center (CPC). It is a suite of unified precipitation products with consistent and improved quality by combining all information available at CPC and by taking advantage of the optimal interpolation (OI) objective analysis technique. The gauge analysis covers the Conterminous United States with a fine-resolution at 0.25$^\circ$ from 1948/01/01 to 2006/12/3.
+\paragraph{NCEP CPC:} This dataset provides gauge-based analysis of daily precipitation from the National Oceanic and Atmospheric Administration (NOAA) Climate Prediction Center (CPC). It is a suite of unified precipitation products obtained by combining all information available at CPC via the optimal interpolation objective analysis technique. The gauge analysis covers the Conterminous United States with a fine-resolution at 0.25$^\circ$ from 1948/01/01 to 2006/12/3.
 
 %CPC: National Oceanic and Atmospheric Administration (NOAA) uses more stations than University of Washington (UW); http://www.esrl.noaa.gov/psd/data/gridded/data.unified.daily.conus.html
 
-\paragraph{UW:} The UW daily gridded meteorological data is obtained from the Surface Water Modeling group at the University of Washington \citep{maurer2002long, hamlet2005production}. UW incorporates topographic corrections by forcing the long-term average precipitation to match that of the PRISM dataset. The temperature dataset is produced in a similar fashion as precipitation, but uses a simple 6.1 K/km lapse rate for topographic effect. The dataset is at 0.125$^\circ$ horizontal resolution and is provided from year 1949 to 2010.
+\paragraph{PRISM:} The Parameter-elevation Regressions on Independent Slopes Model (PRISM) \citep{daly2008physiographically} supports a 4km gridded dataset obtained by taking point measurements and applying a weighted regression scheme that accounts for many factors affecting the local climatology. The datasets include total precipitation and minimum/maximum, (derived) mean temperatures and dewpoints, based on sophisticated quality control measures. Monthly climatological variables are available for 1895 through 2014 provided by the PRISM Climate Group. Notably, PRISM is the U.S. Department of Agriculture's official climatological dataset.
 
-\paragraph{PRISM:} The Parameter-elevation Regressions on Independent Slopes Model (PRISM) \citep{daly2008physiographically} supports a 4km gridded dataset obtained by taking a wide range of point measurements and applying a weighted regression scheme that accounts for many factors affecting the local climatology. The datasets include total precipitation and minimum/maximum, (derived) mean temperatures and dewpoints, based on sophisticated quality control measures. Monthly climatological variables are available for 1895 through 2014 provided by the PRISM Climate Group. PRISM is U.S. Department of Agriculture (USDA)'s official climatological data. We will use this product as the main reference dataset for model assessment.
+\paragraph{UW:} The UW daily gridded meteorological data is obtained from the Surface Water Modeling group at the University of Washington \citep{maurer2002long, hamlet2005production}. UW incorporates topographic corrections by forcing the long-term average precipitation to match that of the PRISM dataset. The temperature dataset is produced in a similar fashion as precipitation, but uses a simple 6.1 K/km lapse rate for topographic effect. The dataset is provided at 0.125$^\circ$ horizontal resolution covering the period 1949 to 2010.
 
 %PRISM is a set of monthly, yearly, and single-event gridded data products of mean temperature and precipitation, max/min temperatures, and dewpoints, primarily for the United States.The PRISM products use a weighted regression scheme to account for complex climate regimes associated with orography, rain shadows, temperature inversions, slope aspect, coastal proximity, and other factors.  PRISM Ts, on the other hand, is based on a larger network of station data and accounts for elevation and topographic effects in a much more sophisticated manner. 
 
 %the datasets I got have some small negative values (like -0.02 mm/d) for Pr. not sure why. Email PRISM about this.
 
-\paragraph{Daymet:}  Daymet is an extremely high resolution (1 km) gridded dataset with daily outputs of total precipitation, humidity, and minimum/maximum temperature covering the years of 1980 through 2013 \citep{thornton1997generating, thornton1999improved, thornton2000simultaneous}. The dataset is produced using an algorithmic technique that ingests point station measurements in conjunction with a truncated Gaussian weighting filter.  Some adjustments are MSDe to account for topography. Daymet is available through the Oak Ridge National Laboratory Distributed Active Archive Center (ORNL DAAC). 
+\paragraph{Daymet:}  Daymet is an extremely high resolution (1 km) gridded dataset with daily outputs of total precipitation, humidity, and minimum/maximum temperature covering the years of 1980 through 2013 \citep{thornton1997generating, thornton1999improved, thornton2000simultaneous}. The dataset is produced using an algorithmic technique that ingests point station measurements in conjunction with a truncated Gaussian weighting filter.  Some adjustments are made to account for topography. Daymet is available through the Oak Ridge National Laboratory Distributed Active Archive Center (ORNL DAAC). 
 
-To assess differences in these data products, we have used the Student's t-test to see if the JJA Tmax and Tmin from PRISM, UW and Daymet are statistically different from one another comparing seasonally averaged values. For these quantities, all products exhibited similarity at the 0.05 significance level over scattered regions of the study area as displayed in Figure \ref{fig:obs_ttest}.  A similar assessment was performed for mean DJF precipitation climatology and, in this case, all products exhibited similarity at the 0.05 significance level over the almost entire simulation domain (Figure \ref{fig:obs_ttest}). These results further proved that uncertainty exists within these different products of gridded observation datasets.
+{\color{red} To assess differences in these data products, we have used the Student's t-test to see if the JJA Tmax and Tmin from PRISM, UW and Daymet are statistically different from one another comparing seasonally averaged values. For these quantities, all products exhibited similarity at the 0.05 significance level over scattered regions of the study area as displayed in Figure \ref{fig:obs_ttest}.  A similar assessment was performed for mean DJF precipitation climatology and, in this case, all products exhibited similarity at the 0.05 significance level over the almost entire simulation domain (Figure \ref{fig:obs_ttest}). These results further proved that uncertainty exists within these different products of gridded observation datasets. [I don't find this plot helpful, and it just makes me more uncertain to the differences between datasets.  You should make some statement here about which regions have the largest differences, or tabulate using MSD.]}
 
 % {\color{red}It may be necessary to verify approximate normality when this test is applied}
 
@@ -265,19 +266,21 @@ To assess differences in these data products, we have used the Student's t-test 
 
 \subsection{Temperature}
 
-The mean JJA Tmax, Tmin and Tavg climatology over the simulation period, together with NARR and PRISM data is shown in Figure \ref{fig:t2_JJA}.  Statistical measures over CA are tabulated in Table \ref{tab:stat_JJA_t2}. All simulations have captured the spatial climate patterns exhibited by the PRISM, with high spatial correlations ($>$0.95), especially for Tmax and Tavg.
+The mean JJA Tmax, Tmin and Tavg climatology over the simulation period, together with PRISM and NARR reference data is given in Figure \ref{fig:t2_JJA}.  Statistical measures over CA are tabulated in Table \ref{tab:stat_JJA_t2}. In general, all simulations have captured the spatial climate patterns exhibited by the PRISM, with high spatial correlations ($>$0.95), especially for Tmax and Tavg.  Nonetheless, several clear biases (relative to PRISM) are present in these simulations.
 
-For Tmax, when compared with the reference datasets, varres-CESM showed a warm bias of about 2 to 3$^\circ C$. However, WRF produced an overall colder climate, especially the WRF 9km simulation, which were about 2 to 3$^\circ C$ cooler than PRISM. Tmax over CV has been overestimated by all the simulations.  Possible reasons for this overestimation are discussed at the end of this section.
+\begin{itemize}
+\item{} \textbf{Tmax:}  When compared with the reference datasets, varres-CESM showed a warm bias of about 2 to 3$^\circ C$ in Tmax over much of the inland domain and a 2 to 3$^\circ C$ cool bias along the coast. This is in contrast with WRF, which produced an overall colder climate and slight cold bias everywhere except the CV.  This bias is especially pronounced for the WRF 9km simulation, which was approximately 3$^\circ C$ cooler than PRISM. Tmax over CV has been overestimated by all the simulations.  Possible reasons for this overestimation are discussed at the end of this section.
 
 %Uniform CESM showed a similar outcome to varres-CESM, but with a larger RMSD value ($\sim$4$^\circ C$). 
 
-For Tmin, varres-CESM still showed a strong warm bias ($\sim$3 to 4$^\circ C$), with a particularly egregious overestimation over Nevada ($> 5^\circ C$). WRF also exhibited a warm bias, but of a much smaller magnitude ($\sim$2 to 3$^\circ C$). However, the pattern of Tmin presented in Figure \ref{fig:t2_JJA} in both WRF simulations suggests a cooler interior to the Central Valley and warmer perimeter, which is not supported by observations.
+\item{} \textbf{Tmin:}  Varres-CESM shows a strong warm bias in Tmin ($\sim$3 to 4$^\circ C$), with a particularly egregious overestimation over Nevada ($> 5^\circ C$). WRF also exhibited a warm bias, but of a much smaller magnitude ($\sim$2 to 3$^\circ C$). However, the pattern of Tmin presented in Figure \ref{fig:t2_JJA} in both WRF simulations suggests a cooler interior to the Central Valley and warmer perimeter, which is not supported by observations.
 
-For Tavg, the warm bias of Tmin and Tmax by varres-CESM leads a similar overestimation for Tavg. For WRF, underestimation of Tmax and overestimation of Tmin lead to an overall closer match to Tavg over most of the domain, but is indicative of suppressed variability.
+\item{} \textbf{Tavg:}  The warm bias of Tmin and Tmax by varres-CESM leads a similar overestimation for Tavg. For WRF, underestimation of Tmax and overestimation of Tmin lead to an overall closer match to Tavg over most of the domain, but is indicative of suppressed variability.
+\end{itemize}
 
-Compared with the reference datasets over CA, varres-CESM 0.125 degree produced the lowest RMSD for Tmax, whereas WRF produced the lowest RMSD for Tmin. In both cases the RMSD was still around 2$^\circ C$.  Notably, Tmin from varres-CESM matched much more closely with NARR, although this may be indicative of a related warm bias in NARR.  In fact, closer examination of the differences between varres-CESM, WRF and NARR marine 2m temperature patterns indicates that CESM and NARR exhibit Tmin values that are approximately $2^\circ C$ larger than WRF.  Since marine 2m temperature is strongly correlated with ocean SSTs, this suggests a possible source of the warm bias in CESM. The sea breeze effect, associated with cooler temperatures near the San Francisco Bay, is apparent in all runs. It is especially encouraging that differences in the varres-CESM simulations, which only used prescribed SSTs, closely match those of WRF, which were also forced at the lateral domain boundaries with reanalysis data.
+Compared with the reference datasets over CA, varres-CESM 0.125 degree produced the lowest RMSD for Tmax, whereas WRF produced the lowest RMSD for Tmin, although in both cases the RMSD was still around 2$^\circ C$.  Notably, Tmin from varres-CESM matched much more closely with NARR, although this is likely indicative of a related warm bias in NARR.  In fact, closer examination of the differences between varres-CESM, WRF and NARR marine 2m temperature patterns indicates that CESM and NARR possess Tmin values that are approximately $2^\circ C$ larger than WRF.  Since marine 2m temperature is strongly correlated with ocean SSTs, this suggests a possible source of the warm bias in CESM. The Delta breeze effect, associated with cooler temperatures near the San Francisco Bay, is apparent in all runs. It is especially encouraging that the simulation results from varres-CESM, which only used prescribed SSTs, closely match those of WRF, which were also forced at the lateral domain boundaries with reanalysis data and are thus expected to match much more closely with observations.
 
-The spatial standard deviation of JJA Tmax, Tmin and Tavg by models and PRISM are depicted in Figure \ref{fig:t2_JJA_std}. It can be seen that the variability is largely consistent across different sub-zones, and the values are around 0.5 to 1.5 $^\circ C$ for all the datasets, except for the high Sierras in the WRF 9km simulation which show enhanced variability ($\sim$2$^\circ C$). From the RMSD values shown in Table \ref{tab:stat_std_JJA_t2}, varres-CESM and WRF 27km have smaller deviations ($\sim$0.1-0.2$^\circ C$) from observations comparing with WRF 9km ($\sim$0.2-0.3$^\circ C$).
+The spatial standard deviation of JJA Tmax, Tmin and Tavg from models and PRISM is presented in Figure \ref{fig:t2_JJA_std}. It can be seen that the variability is largely consistent across different sub-zones, and the values are around 0.5 to 1.5 $^\circ C$ for all the datasets, except for the high Sierras in the WRF 9km simulation which show enhanced variability ($\sim$2$^\circ C$). From the RMSD values shown in Table \ref{tab:stat_std_JJA_t2}, varres-CESM and WRF 27km have smaller deviations ($\sim$0.1-0.2$^\circ C$) from observations comparing with WRF 9km ($\sim$0.2-0.3$^\circ C$).
 
 %{\color{red}It would be interesting to calculate RMSE of the standard deviation. (done) A visual inspection suggests varres-0.125d has the best representation of variability.}
 
@@ -292,24 +295,30 @@ The spatial standard deviation of JJA Tmax, Tmin and Tavg by models and PRISM ar
 
 %The DJF climatology is discussed here primarily due to its impact on snowpack. For Tmax (Figure \ref{fig:t2max_DJF}), all simulations show a warm bias over the Central Valley (that is especially pronounced for WRF 27 km), but a cold bias over almost all other regions (particularly in the mountain region of the WRF 9km simulations). For Tmin (Figure \ref{fig:t2min_DJF}), the model simulations show a warm bias over most regions except the mountain region. These errors were evidently smaller when comparing to PRISM rather than UW. For Tavg (lower part of Figure \ref{fig:t2avg_JJA&DJF}), biases are quite smaller between models and PRISM dataset. Overall, the RMSDs are still roughly between 1 and 3 K, as noted in Table \ref{tab:stat_DJF_t2}, but were slightly reduced from summertime RMSDs. Simulations at coarser resolution seem to perform better overall, especially for varres-CESM 0.25$^\circ$ in Tmax, however, varres-CESM 0.25$^\circ$ shows largest error in modeling Tmin. For varres-CESM, biases were largely unaffected by moving to higher resolutions, with a slight underprediction of Tmax and pronounced overprediction of Tmin.  Moving to higher resolutions with WRF greatly increased biases in all cases.
 
-The seasonal cycle of Tavg is shown in Figure \ref{fig:trd_t2avg_allzones} for simulations and reference data from PRISM and NARR. The values are calculated by taking the average of mean monthly Tavg over specific regional zone. Modeled results match closely with reference data with no larger than a 2$^\circ C$ difference, with the largest errors occurring in the summer and winter seasons showing statistical significance of differences over most regions and falling off the 0.95 confidence intervals of reference data. Compared with PRISM, Varres-CESM overpredicted summer season temperatures in all sub-zones except coastal regions, and underpredicted winter season temperatures in all zones, corresponding to a larger annual temperature range. WRF has better performance in presenting the monthly trend than CESM, which is further proved by the t-test, with about 1$^\circ C$ underestimation over all seasons. There is no clear improvement in the seasonal cycle across resolutions. There is as largest as $\sim$ 3$^\circ C$ difference between NARR and PRISM over south coast during JJA, which may due to the assimilation of strong coastal cooling effect within NARR or the lack of enough in-field observations.
+The seasonal cycle of monthly mean Tavg in each region is shown in Figure \ref{fig:trd_t2avg_allzones} for simulations and reference data from PRISM and NARR, along with the 95\% confidence interval for monthly mean temperatures from both datasets. PRISM and NARR match closely almost everywhere except in the coastal summer season and CV summer season, indicative of an underlying uncertainty in the observations.  This difference is likely due to uncertainty in the assimilation of variability associated with the strong coastal cooling effect.  In general, modeled results match closely with reference data with no larger than a 2$^\circ C$ difference, with the largest errors occurring in the summer and winter seasons.  Compared with PRISM, varres-CESM overpredicted summer season temperatures in all sub-zones except coastal regions, and underpredicted winter season temperatures in all zones, corresponding to a larger annual temperature range. WRF has better performance in preserving the monthly trend when compared with CESM, with about 1$^\circ C$ underestimation over all seasons. There is no clear improvement in the seasonal cycle across resolutions.
+
+%There is as largest as $\sim$ 3$^\circ C$ difference between NARR and PRISM over south coast during JJA, which may due to the assimilation of strong coastal cooling effect within NARR or the lack of enough in-field observations.
 
 %Uniform CESM was similar to, but statistically different from varres-CESM, with a larger deviation of around 3$^\circ C$. 
 
 %{\color{red}Varres-CESM is different from WRF} based on the p value, Uniform-CESM is different from others.
 %monthly values over 26 year pass the normal test except varres-CESM over north coast, so 95% confidence interval is given for reference datasets.
 
-Variability in monthly average Tavg is expressed by the sample standard deviation showed in Figure \ref{fig:trd_t2avg_allzones_std}. The variability is the interannual standard deviation of monthly Tavg over 26 years. Generally, standard deviation is between 1 to 2$^\circ C$. Among the simulations, WRF 27km is most consistent to PRISM with smallest difference . WRF 9km is also close to PRISM, but has $\sim$1$^\circ C$ larger variability over January and February with statistical significance of difference. Varres-CESM basically showed about 0.5$^\circ C$ more scattered values (either above or lower) comparing to reference datasets. The F-test results showed that most of the variability values among these models do not have statistically significant differences.
+Variability in monthly average Tavg is expressed by the interannual standard deviation of monthly Tavg over the 26 year period and is plotted in Figure \ref{fig:trd_t2avg_allzones_std} for all regions. Generally, standard deviation is between 1 to 2$^\circ C$. Among all models, WRF 27km is closest to PRISM (when assessed using RMSD over the 12 month period).  WRF 9km is also relatively close to PRISM, but exhibits an unusual $\sim$1$^\circ C$ increase in variability in January and February (statistically significant at the 95\% level). Varres-CESM exhibits a weaker correlation with PRISM in all regions with enhanced variability in DJF and weakened variability in April and May at both resolutions, and in the Fall season in the 0.125 degree simulation.  {\color{red}[State which results are statistically significant]}
+
+%Nonetheless, a comparison of these results using F-test indicated only these few statistically significant differences at the 95\% confidence level.
+
+%showed that most of the variability values among these models do not have statistically significant differences.
 
 %, and uniform CESM has about 0.5$^\circ C$ lower variability than PRISM
 
 %Due to the disorganized change of monthly variability, it is not easy to interpret this figure.
 
-Due to the impact of summer heat waves, we now focus on Tmax over summer season. In Figure \ref{fig:PDF_t2max_allzones_JJA}, the frequency distribution of Tmax using all JJA daily values over 26 years is depicted. Properties of the frequency distribution, including average, variability, skewness and Kurtosis are tabulated in Table \ref{tab:PDF_t2max_JJA}.  As exemplified by the similarity in the moments of the distribution, varres-CESM clearly captures the general distribution of Tmax. Outside of the central valley, skewness and Kurtosis measures match closely between varres-CESM and the UW dataset.  In the north and south coastal regions, Daymet overestimates the frequency of cold days leading to deviation in the moments from UW.  Consistent with the observations in Figure \ref{fig:t2_JJA}, outside of the CV, WRF tends to be cooler in general and varres-CESM tends to be warmer.  In coastal regions all models show better performance in upper bound values than with lower bound ones. Enhanced frequency of cool Tmax values appears to be the primary driver in overestimation of sample variance in these regions. For both varres-CESM and WRF there is no apparent improvement in statistics at higher resolutions.
+Due to the impact of summer heat waves, we now focus on Tmax over summer season. In Figure \ref{fig:PDF_t2max_allzones_JJA}, the frequency distribution of Tmax using all JJA daily values over 26 years is depicted. Properties of the frequency distribution, including average, variability, skewness and Kurtosis are tabulated in Table \ref{tab:PDF_t2max_JJA}.  As exemplified by the similarity in the moments of the distribution, varres-CESM clearly captures the general distribution of Tmax. Outside of the central valley, skewness and Kurtosis measures match closely between varres-CESM and the UW dataset.  In the north and south coastal regions, Daymet overestimates the frequency of cold days leading to deviation in the moments from UW.  Consistent with the observations in Figure \ref{fig:t2_JJA}, outside of the CV, WRF tends to be cooler in general and varres-CESM tends to be warmer.  In coastal regions all models more accurately capture the frequency of high Tmax days than low Tmax days. Enhanced frequency of cool Tmax values appears to be the primary driver in overestimation of sample variance in these regions. For both varres-CESM and WRF there is no apparent improvement in statistics at higher resolutions.
 
 %the p value of t2max pdf is all 0, so they are all different distributions. and their distribution did not pass the normality test.
 
-In the Central Valley, models show a clear warm bias and underestimated skewness, associated with a long forward tail and temperatures reaching near 50$^\circ C$. As discussed earlier, all models do overestimate Tmax over CV. In order to further assess the accuracy of the gridded observations, we examine the Tmax data directly from recorded weather station observations over the CV. The results validate that Tmax values above 45$^\circ C$ are rare (although station observations suggest these days may be slightly more frequent than suggested by UW and Daymet). The warm bias associated with the aforementioned extreme hot days in both varres-CESM and WRF is likely correlated with overly dry summertime soil moisture, as discussed in \cite{caldwell2009evaluation}. This could be caused by the lack of accurate land surface treatment in climate models. areas. {\color{red}\cite{bonfils2007empirical}} found that irrigation in Central Valley has significantly decreased summertime maximum temperatures especially in heavily-irrigated areas. Other studies have also found the cooling effects of irrigation, such as \citep{kueppers2007irrigation}.
+In the Central Valley, models show a clear warm bias and underestimated skewness, associated with a long forward tail and temperatures reaching near 50$^\circ C$. As discussed earlier, all models do overestimate Tmax over CV. In order to further assess the accuracy of the gridded observations, we examine the Tmax data directly from recorded weather station observations over the CV. The results validate that Tmax values above 45$^\circ C$ are rare (although station observations suggest these days may be slightly more frequent than suggested by UW and Daymet). The warm bias associated with the aforementioned extreme hot days in both varres-CESM and WRF is likely correlated with overly dry summertime soil moisture, as discussed in \cite{caldwell2009evaluation}. This could be caused by the lack of accurate land surface treatment in climate models -- namely, \cite{bonfils2007empirical} found that irrigation in Central Valley has significantly decreased summertime maximum temperatures, especially in heavily-irrigated areas. Other studies have also found the cooling effects of irrigation, such as \citep{kueppers2007irrigation}.
 
 %(0.14¡C to 0.25¡C per decade)
 
@@ -413,8 +422,8 @@ The authors would like to thank Michael Wehner and Da\'ith\'i Stone for providin
 \begin{tabular}{lcccc}
 \hline \textbf{Data source} & \textbf{Variables used} & \textbf{Spatial resolution} & \textbf{Temporal resolution} \\
 \hline \textbf{NARR} & Pr, T$_{s}$ & 32km & daily, 3-hourly \\
-\textbf{NCEP CPC} & Pr & 0.25$^\circ$ & daily \\
-\textbf{UW} & Pr, T$_{min}$, T$_{max}$ & 0.125$^\circ$ & daily \\
+\textbf{NCEP CPC} & Pr & 28km (0.25$^\circ$) & daily \\
+\textbf{UW} & Pr, T$_{min}$, T$_{max}$ & 14km (0.125$^\circ$) & daily \\
 \textbf{PRISM} & Pr, T$_{min}$, T$_{max}$, T$_{avg}$ & 4km & monthly \\
 \textbf{Daymet} & Pr, T$_{min}$, T$_{max}$ & 1km & daily \\
 \hline
@@ -426,8 +435,8 @@ The authors would like to thank Michael Wehner and Da\'ith\'i Stone for providin
 %%%%%%%%%%%Table2%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}
 \begin{center}
-\caption{RMSD, MSD and Correlation (Corr) for seasonally-averaged JJA temperature metrics over California} \label{tab:stat_JJA_t2}
-\begin{tabular}{lcccc}
+\caption{RMSD, MSD and Spatial Correlation (Corr) for seasonally-averaged JJA temperature metrics over California. {\color{red}[For all ``over California'' tables, 1 degree uniform resolution should be included.]}} \label{tab:stat_JJA_t2}
+\begin{tabular*}{5in}{l @{\extracolsep{\fill}}cccc}
 \hline \textbf{RMSD} & \textbf{UW}  & \textbf{PRISM} & \textbf{Daymet} \\
 \hline $    $ & T$_{max}$ $\     $  T$_{min}$ & T$_{max}$ $\     $  T$_{min}$ $\     $ T$_{avg}$& T$_{max}$ $\     $  T$_{min}$\\
 \hline \textbf{varres-CESM 0.25d} & 2.322 $\ $ 3.745 & 2.924 $\ $ 3.121 $\ $ 2.604 & 2.810 $\ $ 3.934 \\
@@ -436,9 +445,9 @@ The authors would like to thank Michael Wehner and Da\'ith\'i Stone for providin
 \textbf{WRF 9km} & 3.319 $\ $ 2.937 & 3.492 $\ $ 1.837 $\ $ 1.769 & 3.203 $\ $ 2.942 \\
 %\textbf{uniform CESM 0.25d} & 3.885 $\ $ 4.088 & 4.265 $\ $ 3.614 $\ $ 3.536 & 4.315 $\ $ 4.274 \\
 \hline
-\end{tabular}
+\end{tabular*}
 
-\begin{tabular}{lcccc}
+\begin{tabular*}{5in}{l @{\extracolsep{\fill}}cccc}
 \hline \textbf{MSD} & \textbf{UW}  & \textbf{PRISM} & \textbf{Daymet} \\
 \hline $    $ & T$_{max}$ $\     $  T$_{min}$ & T$_{max}$ $\     $  T$_{min}$ $\     $ T$_{avg}$& T$_{max}$ $\     $  T$_{min}$\\
 \hline \textbf{varres-CESM 0.25d} & 0.981 $\ $ 2.907 & 0.606 $\ $ 1.731 $\ $ 0.823 & 1.177 $\ $ 2.877 \\
@@ -447,9 +456,9 @@ The authors would like to thank Michael Wehner and Da\'ith\'i Stone for providin
 \textbf{WRF 9km} & -2.277 $\ $ 1.862 & -2.720 $\ $ 0.674 $\ $ -1.142 & -2.103 $\ $ 1.757 \\
 %\textbf{uniform CESM 0.25d} & 1.812 $\ $ 2.993 & 1.449 $\ $ 1.815 $\ $ 1.280 & 2.013 $\ $ 2.961 \\
 \hline
-\end{tabular}
+\end{tabular*}
 
-\begin{tabular}{lcccc}
+\begin{tabular*}{5in}{l @{\extracolsep{\fill}}cccc}
 \hline \textbf{Corr} & \textbf{UW}  & \textbf{PRISM} & \textbf{Daymet} \\
 \hline $    $ & T$_{max}$ $\     $  T$_{min}$ & T$_{max}$ $\     $  T$_{min}$ $\     $ T$_{avg}$& T$_{max}$ $\     $  T$_{min}$\\
 \hline \textbf{varres-CESM 0.25d} & 0.998 $\ $ 0.982 & 0.996 $\ $ 0.986 $\ $ 0.994 & 0.997 $\ $ 0.979 \\
@@ -458,15 +467,15 @@ The authors would like to thank Michael Wehner and Da\'ith\'i Stone for providin
 \textbf{WRF 9km} & 0.996 $\ $ 0.985 & 0.997 $\ $ 0.993 $\ $ 0.998 & 0.996 $\ $ 0.984 \\
 %\textbf{uniform CESM 0.25d} & 0.994 $\ $ 0.980 & 0.992 $\ $ 0.981 $\ $ 0.991 & 0.993 $\ $ 0.977 \\
 \hline
-\end{tabular}
+\end{tabular*}
 \end{center}
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}
 \begin{center}
-\caption{RMSD and Correlation (Corr) for sample standard deviation of seasonally-averaged JJA temperature over California} \label{tab:stat_std_JJA_t2}
-\begin{tabular}{lcccc}
+\caption{RMSD and Spatial Correlation (Corr) for sample standard deviation of seasonally-averaged JJA temperature over California} \label{tab:stat_std_JJA_t2}
+\begin{tabular*}{5in}{l @{\extracolsep{\fill}}cccc}
 \hline \textbf{RMSD} & \textbf{UW}  & \textbf{PRISM} & \textbf{Daymet} \\
 \hline $    $ & T$_{max}$ $\     $  T$_{min}$ & T$_{max}$ $\     $  T$_{min}$ $\     $ T$_{avg}$& T$_{max}$ $\     $  T$_{min}$\\
 \hline \textbf{varres-CESM 0.25d} & 0.209 $\ $ 0.201 & 0.171 $\ $ 0.131 $\ $ 0.139 & 0.251 $\ $ 0.316 \\
@@ -475,7 +484,7 @@ The authors would like to thank Michael Wehner and Da\'ith\'i Stone for providin
 \textbf{WRF 9km} & 0.280 $\ $ 0.270 & 0.237 $\ $ 0.205 $\ $ 0.184 & 0.297 $\ $ 0.330 \\
 %\textbf{uniform CESM 0.25d} & 0.381 $\ $ 0.281 & 0.348 $\ $ 0.197 $\ $ 0.252 & 0.406 $\ $ 0.363 \\
 \hline
-\end{tabular}
+\end{tabular*}
 
 %, MSD and Correlation (Corr) 
 
@@ -491,7 +500,7 @@ The authors would like to thank Michael Wehner and Da\'ith\'i Stone for providin
 %\hline
 %\end{tabular}
 
-\begin{tabular}{lcccc}
+\begin{tabular*}{5in}{l @{\extracolsep{\fill}}cccc}
 \hline \textbf{Corr} & \textbf{UW}  & \textbf{PRISM} & \textbf{Daymet} \\
 \hline $    $ & T$_{max}$ $\     $  T$_{min}$ & T$_{max}$ $\     $  T$_{min}$ $\     $ T$_{avg}$& T$_{max}$ $\     $  T$_{min}$\\
 \hline \textbf{varres-CESM 0.25d} & 0.983 $\ $ 0.972 & 0.987 $\ $ 0.986 $\ $ 0.987 & 0.974 $\ $ 0.943 \\
@@ -500,7 +509,7 @@ The authors would like to thank Michael Wehner and Da\'ith\'i Stone for providin
 \textbf{WRF 9km} & 0.967 $\ $ 0.946 & 0.975 $\ $ 0.966 $\ $ 0.976 & 0.963 $\ $ 0.933 \\
 %\textbf{uniform CESM 0.25d} & 0.979 $\ $ 0.953 & 0.982 $\ $ 0.975 $\ $ 0.978 & 0.968 $\ $ 0.938 \\
 \hline
-\end{tabular}
+\end{tabular*}
 \end{center}
 \end{table}
 
@@ -531,7 +540,7 @@ The authors would like to thank Michael Wehner and Da\'ith\'i Stone for providin
 
 \begin{table}
 \begin{center}
-\caption{RMSD, MSD, MRD, Correlation (Corr) for precipitation over California} \label{tab:stat_Pr}
+\caption{RMSD, MSD, MRD, Spatial Correlation (Corr) for precipitation over California} \label{tab:stat_Pr}
 \begin{tabular}{lcccc}
 \hline \textbf{Annual} & \textbf{CPC}  & \textbf{UW} & \textbf{PRISM} & \textbf{DAYMET} \\
 \hline $    $ & RMSD $\ $ MSD $\ $ MRD $\ $ Corr & RMSD $\ $ MSD $\ $ MRD $\ $ Corr & RMSD $\ $ MSD $\ $ MRD $\ $ Corr & RMSD $\ $ MSD $\ $ MRD $\ $ Corr \\
@@ -559,7 +568,7 @@ The authors would like to thank Michael Wehner and Da\'ith\'i Stone for providin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}
 \begin{center}
-\caption{RMSD, Correlation (Corr) for precipitation over California} \label{tab:stat_Pr_std}
+\caption{RMSD, Spatial Correlation (Corr) {\color{red}for sample standard deviation?} for precipitation over California} \label{tab:stat_Pr_std}
 \begin{tabular}{lcccc}
 \hline \textbf{Annual} & \textbf{CPC}  & \textbf{UW} & \textbf{PRISM} & \textbf{DAYMET} \\
 \hline $    $ & RMSD $\ $ Corr & RMSD $\ $ Corr & RMSD $\ $ Corr & RMSD $\ $ Corr \\

@@ -68,6 +68,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{url}
 \usepackage{amsmath}
+\usepackage{lscape}
 
 \usepackage{lineno}
 
@@ -233,7 +234,7 @@ Land surface datasets, including plant functional types, were created using the 
 
 WRF has been widely used over the past decade for modeling regional climate \citep{lo2008assessment, leung2009atmospheric, soares2012wrf}, and so represents an adequate platform for assessing climatology. In our study, the fully compressible non-hydrostatic WRF model in version 3.5.1 with the Advanced Research WRF (ARW) dynamical solver is used.  WRF is a limited area model that supports nested domains with a typical refinement ratio of 3:1.  The simulation domains of WRF are depicted in Figure \ref{fig:wrf_domains}. Two WRF simulations, representing finest grid resolutions of 27km and 9km, are conducted.  For the WRF 27km simulation, one domain is used. For the WRF 9km simulation, two nested domains are used with the outer domain at 27km (same as the WRF 27km) and inner domain at 9km horizontal grid resolution. Two-way nesting is enabled by overwriting coarse grid data by averaged fine grid data \citep{skamarock2008time}. For both regional simulations,  grids are centered on CA and have 120$\times$110 and 151$\times$172 grid points, respectively. Around the boundaries, 10 grid points are used for lateral relaxation. In order to reduce the drift between forcing data and RCM, grid nudging \citep{stauffer1990use} was applied to the outer domain every 6 hours at all levels except the planetary boundary layer (PBL), as suggested by \cite{lo2008assessment}. This setup uses 41 vertical levels with model top pressure at 50 hPa.
 
-Additionally, the following physics parameterizations were employed: WSM (WRF Single-Moment) 6-class graupel microphysics scheme \citep{hong2006wrf}, Kain-Fritsch cumulus scheme \citep{kain2004kain}, CAM shortwave and longwave radiation schemes \citep{collins2004description}. {\color{red}Part of these settings are chosen loosely from the results of one-year test runs over 1979 with different options of cumulus scheme and radiation schemes.} For the boundary layer, the Yonsei University scheme (YSU) \citep{hong2006new} and the Noah Land Surface Model \citep{chen2001coupling} were used. Both were chosen as they are common for climate applications that balance long-term reliability and computational cost.  Although many other options and combinations of parameterizations are available for configuring WRF (and others have tackled a complete assessment of these options for particular problems), this choice was made simply to represent a typical RCM configuration.
+Additionally, the following physics parameterizations were employed: WSM (WRF Single-Moment) 6-class graupel microphysics scheme \citep{hong2006wrf}, Kain-Fritsch cumulus scheme \citep{kain2004kain}, CAM shortwave and longwave radiation schemes \citep{collins2004description}. Part of these settings are chosen loosely from the results of one-year test runs over 1979 with different options of cumulus scheme and radiation schemes. For the boundary layer, the Yonsei University scheme (YSU) \citep{hong2006new} and the Noah Land Surface Model \citep{chen2001coupling} were used. Both were chosen as they are common for climate applications that balance long-term reliability and computational cost.  Although many other options and combinations of parameterizations are available for configuring WRF (and others have tackled a complete assessment of these options for particular problems), this choice was made simply to represent a typical RCM configuration.
 
 %(e.g. Grell-Freitas scheme) Grell et al. (2013); RRTM scheme (long wave)  Dudhia scheme (short wave)
 
@@ -325,8 +326,9 @@ Reanalysis and gridded observational datasets of the highest available quality a
 
 \paragraph{Daymet}  Daymet is an extremely high resolution (1 km) gridded dataset with daily outputs of total precipitation, humidity, and minimum/maximum temperature covering the years of 1980 through 2013 \citep{thornton1997generating, thornton1999improved, thornton2000simultaneous}. The dataset is produced using an algorithmic technique that ingests point station measurements in conjunction with a truncated Gaussian weighting filter.  Some adjustments are made to account for topography. Daymet is available through the Oak Ridge National Laboratory Distributed Active Archive Center (ORNL DAAC). 
 
-{\color{red} To assess differences in these data products, we have used the Student's t-test to see if the JJA Tmax and Tmin from PRISM, UW and Daymet are statistically different from one another comparing seasonally averaged values. For these quantities, all products exhibited similarity at the 0.05 significance level over scattered regions of the study area.  A similar assessment was performed for mean DJF precipitation climatology and, in this case, all products exhibited similarity at the 0.05 significance level over the almost entire simulation domain. These results further proved that uncertainty exists within these different products of gridded observation datasets. [Unclear language.  What are scattered regions?  What is ``almost the entire simulation domain''?  Tabulated differences are much more useful.]}
+%{\color{red} To assess differences in these data products, we have used the Student's t-test to see if the JJA Tmax and Tmin from PRISM, UW and Daymet are statistically different from one another comparing seasonally averaged values. For these quantities, all products exhibited similarity at the 0.05 significance level over scattered regions of the study area.  A similar assessment was performed for mean DJF precipitation climatology and, in this case, all products exhibited similarity at the 0.05 significance level over the almost entire simulation domain. These results further proved that uncertainty exists within these different products of gridded observation datasets. [Unclear language.  What are scattered regions?  What is ``almost the entire simulation domain''?  Tabulated differences are much more useful.]}
 
+%pr DR SC ar not normal 
 %Figure \ref{fig:obs_ttest}    as displayed in Figure \ref{fig:obs_ttest}
 %
 
@@ -367,6 +369,8 @@ The spatial standard deviation of JJA Tmax, Tmin and Tavg from models and PRISM 
 
 The seasonal cycle of monthly mean Tavg in each region is shown in Figure \ref{fig:trd_t2avg_allzones} for simulations and reference data from PRISM and NARR, along with the 95\% confidence interval for monthly mean temperatures from both datasets. PRISM and NARR match closely almost everywhere except in the coastal summer season and CV summer season, indicative of an underlying uncertainty in the observations.  This difference is likely due to uncertainty in the assimilation of variability associated with the strong coastal cooling effect.  In general, modeled results match closely with reference data with no larger than a 2$^\circ C$ difference, with the largest errors occurring in the summer and winter seasons.  Compared with PRISM, varres-CESM overpredicted summer season temperatures in all sub-zones except coastal regions, and underpredicted winter season temperatures in all zones, corresponding to a larger annual temperature range. WRF has better performance in preserving the monthly trend when compared with CESM, with about 1$^\circ C$ underestimation over all seasons. There is no clear improvement in the seasonal cycle across resolutions.
 
+%T test: WRF 27km is same as PRISM over most seasons over MR, varres-CESM is same as over spring and fall in MR, for CV, all are same over fall and winter, for DR, WRF is same as especially WRF 27km. fall and spring for varres-CESM, for SC, WRF is same except summer, for NC, all are different except part of the winter season
+
 %There is as largest as $\sim$ 3$^\circ C$ difference between NARR and PRISM over south coast during JJA, which may due to the assimilation of strong coastal cooling effect within NARR or the lack of enough in-field observations.
 
 %Uniform CESM was similar to, but statistically different from varres-CESM, with a larger deviation of around 3$^\circ C$. 
@@ -374,7 +378,11 @@ The seasonal cycle of monthly mean Tavg in each region is shown in Figure \ref{f
 %{\color{red}Varres-CESM is different from WRF} based on the p value, Uniform-CESM is different from others.
 %monthly values over 26 year pass the normal test except varres-CESM over north coast, so 95% confidence interval is given for reference datasets.
 
-Variability in monthly average Tavg is expressed by the interannual standard deviation of monthly Tavg over the 26 year period and is plotted in Figure \ref{fig:trd_t2avg_allzones_std} for all regions. Generally, standard deviation is between 1 to 2$^\circ C$. Among all models, WRF 27km is closest to PRISM (when assessed using RMSD over the 12 month period).  WRF 9km is also relatively close to PRISM, but exhibits an unusual $\sim$1$^\circ C$ increase in variability in January and February (statistically significant at the 95\% level). Varres-CESM exhibits a weaker correlation with PRISM in all regions with enhanced variability in DJF and weakened variability in April and May at both resolutions, and in the Fall season in the 0.125 degree simulation.  {\color{red}[State which results are statistically significant]}
+Variability in monthly average Tavg is expressed by the interannual standard deviation of monthly Tavg over the 26-year period and is plotted in Figure \ref{fig:trd_t2avg_allzones_std} for all regions. Generally, standard deviation is between 1 to 2$^\circ C$. Among all models, WRF 27km is closest to PRISM (when assessed using RMSD over the 12 month period).  WRF 9km is also relatively close to PRISM, but exhibits an unusual $\sim$1$^\circ C$ increase in variability in January and February (statistically significant at the 0.05 level). Varres-CESM exhibits a weaker correlation with PRISM in all regions with enhanced variability in DJF and weakened variability in April and May at both resolutions, and in the Fall season in the 0.125 degree simulation. From the F-test results, models are generally equivalent to reference datasets, except WRF 9km in January and February as already mentioned.
+
+%{\color{red}[State which results are statistically significant]}
+
+%all is the same as reference except WRF 9 over January to February. 
 
 %Nonetheless, a comparison of these results using F-test indicated only these few statistically significant differences at the 95\% confidence level.
 
@@ -403,7 +411,9 @@ The long-term average climatologies of DJF and annual daily precipitation (Pr) o
 
 %DJF is for 25 seasons
 
-Along the western edge of the Sierra Nevada and into the CV, varres-CESM overestimates total precipitation relative to PRISM (see MRD in table \ref{tab:stat_Pr}), especially the coarser resolution (28 km) simulation ($\sim$ 40$\%$-50$\%$).  This difference is statistically significant compared to PRISM at the 95\% level. Varres-CESM 0.125$^\circ$ performs better, and does not show a statistically significant deviation over the aforementioned region. On the other hand, precipitation is slightly underestimated relative to PRISM along the North Coast, particularly near the Oregon border {\color{red}[Statistically significant?]}. There are also notable differences between WRF 27km and WRF 9km. WRF 27km underestimates precipitation along the North Coast (by about 30$\%$) but fairly accurately captures precipitation in the CV, whereas WRF 9km greatly overestimates precipitation (by about 60$\%$-80$\%$) along the North coast and the Sierra Nevada (see MRD in table \ref{tab:stat_Pr}). From Table \ref{tab:stat_Pr} as a guide, varres-CESM 0.125$^\circ$ performs slightly better than CESM 0.25$^\circ$ and WRF 27km with RMSD values around 1.2 mm$/$d over DJF. Varres-CESM, especially at higher resolution, has smaller MSD than WRF 27km. The MRD is about 0.25 to 0.35 for varres-CESM and WRF 27km, and is about 0.65 to 0.85 for WRF 9km in DJF. In fact, varres-CESM 0.125$^\circ$ is statistically equivalent to PRISM everywhere except over part of north coast, where uncertainty also tends to be largest. WRF 9km is significantly different from PRISM over the mountain region and part of north coast. {\color{red}Models at coarser resolution did not show organized patterns of similarity [What do you mean?]}. %In general, the relatively notable differences from Figure \ref{fig:pr_DJF_Anuual} also result statistically significant difference. 
+Along the western edge of the Sierra Nevada and into the CV, varres-CESM overestimates total precipitation relative to PRISM (see MRD in table \ref{tab:stat_Pr}), especially the coarser resolution (28 km) simulation ($\sim$ 40$\%$-50$\%$).  This difference is statistically significant compared to PRISM at the 0.05 level. Varres-CESM 0.125$^\circ$ performs better, and does not show a statistically significant deviation over the aforementioned region. On the other hand, precipitation is slightly underestimated relative to PRISM along the North Coast, particularly near the Oregon border with statistically significant difference. There are also notable differences between WRF 27km and WRF 9km. WRF 27km underestimates precipitation along the North Coast (by about 30$\%$) but fairly accurately captures precipitation in the CV, whereas WRF 9km greatly overestimates precipitation (by about 60$\%$-80$\%$) along the North coast and the Sierra Nevada (see MRD in table \ref{tab:stat_Pr}). From Table \ref{tab:stat_Pr} as a guide, varres-CESM 0.125$^\circ$ performs slightly better than CESM 0.25$^\circ$ and WRF 27km with RMSD values around 1.2 mm$/$d over DJF. Varres-CESM, especially at higher resolution, has smaller MSD than WRF 27km. The MRD is about 0.25 to 0.35 for varres-CESM and WRF 27km, and is about 0.65 to 0.85 for WRF 9km in DJF. In fact, varres-CESM 0.125$^\circ$ is statistically equivalent to PRISM everywhere except over part of north coast, where uncertainty also tends to be largest. WRF 9km is significantly different from PRISM over the mountain region and part of north coast. 
+
+%WRF 27km is significantly different from PRISM  over coastal region and eastern side of the mountain region. Varres-CESM 0.25d is significantly different from PRISM  over CV region and part of north coast region. {\color{red}Models at coarser resolution did not show organized patterns of similarity [What do you mean?]}. %In general, the relatively notable differences from Figure \ref{fig:pr_DJF_Anuual} also result statistically significant difference. 
 
 %Uniform CESM has slightly better results than varres-CESM 0.25deg, especially over the  western edge of the Sierra Nevada, with about 10$\%$ reduced MRD values. 
 %We can notice from the table that results are different when comparing \ref{tab:stat_Pr} that CPC with coarser resolution is not as consistent as other three observations.
@@ -412,7 +422,7 @@ Interannual variability of precipitation is calculated here as the standard devi
 
 %(as proved by Table \ref{tab:stat_Pr_std})
 
-The annual cycle of precipitation averaged over each sub-zone over the simulation period is presented in Figure \ref{fig:trd_pr_allzones}. The values are calculated by taking the average of mean monthly Pr over specific regional zone. The 95\% confidence intervals of UW and PRISM are also depicted indicating statistical significance of differences when simulations are out of these ranges. It can be seen that the simulations exhibit similar trends to the reference datasets with highest precipitation over winter and lowest values over summer. The main deviation occurred during the rainy seasons, especially in winter. WRF 27km is drier than PRISM and UW with relative differences ranging from $\sim$10$\%$-40$\%$, whereas WRF 9km is far wetter with relative differences reaching up to 40$\%$-80$\%$ over these five climate sub-zones. Varres-CESM tracks well with observed precipitation with $\sim$10$\%$-20$\%$ relative difference everywhere except in the CV, where precipitation is overestimated at rainy seasons with about 70$\%$-80$\%$. From the MWW test, the varres-CESM and WRF 27 is not different from reference datasets in major rainy regions especially over rainy seasons. Varres-CESM is more similar to reference datasets than WRF 27. WRF 9km is different from reference datasets over most seasons in rainy regions.
+The annual cycle of precipitation averaged over each sub-zone over the simulation period is presented in Figure \ref{fig:trd_pr_allzones}. The values are calculated by taking the average of mean monthly Pr over specific regional zone. The 95\% confidence intervals of UW and PRISM are also depicted indicating statistical significance of differences when simulations are out of these ranges. It can be seen that the simulations exhibit similar trends to the reference datasets with highest precipitation over winter and lowest values over summer. The main deviation occurred during the rainy seasons, especially in winter. WRF 27km is drier than PRISM and UW with relative differences ranging from $\sim$10$\%$-40$\%$, whereas WRF 9km is far wetter with relative differences reaching up to 40$\%$-80$\%$ over these five climate sub-zones. Varres-CESM tracks well with observed precipitation with $\sim$10$\%$-20$\%$ relative difference everywhere except in the CV, where precipitation is overestimated at rainy seasons with about 70$\%$-80$\%$. From the MWW test, the varres-CESM and WRF 27km are not significantly different from reference datasets in most regions, except over CV's late winter to spring for varres-CESM 0.25$^\circ$ and NC's winter to spring and DR's winter for WRF 27km. WRF 9km is different from reference datasets over most regions, except over DR and SC's winter and spring.
 
 %From the MWW test, the varres-CESM, uniform-CESM and WRF 27 is not different from reference datasets in major rainy regions especially over rainy seasons.
 
@@ -422,7 +432,9 @@ Nonetheless, the strong seasonal dependence on precipitation is apparent with ex
 %all p values results are mainly for rainy seasons
 %Overall, varres-CESM is {\color{red}more close to} observations with smaller difference than WRF.
 
-The monthly cycle sample standard deviation is depicted in Figure \ref{fig:trd_pr_allzones_std}. The variability in observations has a similar monthly trend compared to precipitation rate, with overall values from 0 to 4 mm$/$day.  Generally higher inter-annual variability occurs over locations of higher mean precipitation \ref{fig:trd_pr_allzones}. Compared with observations, varres-CESM exhibited basically no more than 1mm$/$day larger variability in the rainy season except over the CV. WRF 27km was also close to observations with generally no more than 1mm$/$day over all regions. WRF 9km again showed enhanced variability ($\sim$1.5 mm$/$day more) during the wintertime over most regions. Overestimated variability and precipitation intensity has also been found in previous studies; for example,\cite{duffy2006simulations} observe higher variability associated with higher spatial resolution in RCMs, attributed to a more accurate representation of topography. The main cause of the interannual variability of precipitation over CA is the El Ni\~{n}o–Southern Oscillation (ENSO), which varies the amount of moisture flux transported to this region. To assess deviations from observations, the Levene test was used in place of the t-test due to non-normality of precipitation.  Under this test WRF 9km was statistically different from both reference datasets over summer and winter periods in CV and MR region, whereas varres-CESM and WRF 27km are statistically equivalent to the reference datasets over all regions except the CV winter season {\color{red}[January in the Desert?]}.
+The monthly cycle sample standard deviation is depicted in Figure \ref{fig:trd_pr_allzones_std}. The variability in observations has a similar monthly trend compared to precipitation rate, with overall values from 0 to 4 mm$/$day.  Generally higher inter-annual variability occurs over locations of higher mean precipitation \ref{fig:trd_pr_allzones}. Compared with observations, varres-CESM exhibited basically no more than 1mm$/$day larger variability in the rainy season except over the CV. WRF 27km was also close to observations with generally no more than 1mm$/$day over all regions. WRF 9km again showed enhanced variability ($\sim$1.5 mm$/$day more) during the wintertime over most regions. Overestimated variability and precipitation intensity has also been found in previous studies; for example,\cite{duffy2006simulations} observe higher variability associated with higher spatial resolution in RCMs, attributed to a more accurate representation of topography. The main cause of the interannual variability of precipitation over CA is the El Ni\~{n}o–Southern Oscillation (ENSO), which varies the amount of moisture flux transported to this region. To assess deviations from observations, the Levene test was used in place of the F-test due to non-normality of precipitation. Under this test, particularly, WRF 9km was statistically different from both reference datasets over summer and winter periods in MR, and over July to September in DR and SC, whereas varres-CESM and WRF 27km are statistically equivalent to the reference datasets basically over all regions except the CV winter season for varres-CESM 0.25$^\circ$.
+
+%{\color{red}[January in the Desert?]}
 
 %(except uniform CESM over south coast)
 
@@ -500,7 +512,7 @@ The authors would like to thank Dr. Travis O'Brien for his many useful conversat
 \begin{table}
 \caption{Reanalysis and statistically downscaled observational datasets used in this study.} \label{tab:Datasets}
 \begin{center}
-\begin{tabular}{lcccc}
+\begin{tabular*}{5in}{l @{\extracolsep{\fill}}cccc}
 \hline \textbf{Data source} & \textbf{Variables used} & \textbf{Spatial resolution} & \textbf{Temporal resolution} \\
 \hline \textbf{NARR} & Pr, T$_{s}$ & 32km & daily, 3-hourly \\
 \textbf{NCEP CPC} & Pr & 28km (0.25$^\circ$) & daily \\
@@ -508,10 +520,63 @@ The authors would like to thank Dr. Travis O'Brien for his many useful conversat
 \textbf{PRISM} & Pr, T$_{min}$, T$_{max}$, T$_{avg}$ & 4km & monthly \\
 \textbf{Daymet} & Pr, T$_{min}$, T$_{max}$ & 1km & daily \\
 \hline
-\end{tabular}
+\end{tabular*}
 \end{center}
 \end{table}
 
+
+%\begin{landscape}
+%\begin{table}
+%\caption{}
+%\begin{center}
+
+%\end{landscape}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{table}
+%\caption{MSD of JJA temperature and DJF precipitation between all reference datasets}
+%\begin{center}
+%\begin{tabular*}{5in}{l @{\extracolsep{\fill}}cccc}
+%\hline \textbf{Tmin} & \textbf{PRISM} & \textbf{UW} & \textbf{Daymet} & \textbf{NARR} \\
+%\hline & MR  $\ $ CV $\ $  DR $\ $  SC $\ $  NC & MR $\ $  CV  $\ $ DR  $\ $ SC $\ $  NC & MR  $\ $ CV  $\ $ DR  $\ $ SC $\ $  NC & MR  $\ $ CV  $\ $ DR  $\ $ SC  $\ $ NC \\
+%\hline \textbf{PRISM}  \\
+%\textbf{UW} & {\color{red}-2.0 $\ $ -0.5} $\ $ -0.3 $\ $ {\color{red}-0.4 $\ $ -2.3} \\
+%\textbf{Daymet} & {\color{red}-1.8} $\ $ 0.2 $\ $ -0.2 $\ $ -0.3 $\ $ {\color{red}-4.6} & 0.2 $\ $ {\color{red}0.8} $\ $ 0.1 $\ $ 0.1 $\ $ {\color{red}-2.3} \\
+%\textbf{NARR} & {\color{red}2.5 $\ $ 2.5 $\ $ 3.1} $\ $ -0.2 $\ $ {\color{red}2.0} & {\color{red}4.5 $\ $ 3.1 $\ $ 3.4} $\ $ 0.2 $\ $ {\color{red}4.2} & {\color{red}4.3 $\ $ 2.3 $\ $ 3.2} $\ $ 0.1 $\ $ {\color{red}6.5} \\
+%\hline 
+%\hline
+%\end{tabular*}
+%
+%\begin{tabular*}{5in}{l @{\extracolsep{\fill}}cccc}
+%\hline \textbf{Tmax} & \textbf{PRISM} & \textbf{UW} & \textbf{Daymet} & \textbf{NARR} \\
+%\hline & MR  $\ $ CV $\ $  DR $\ $  SC $\ $  NC & MR $\ $  CV  $\ $ DR  $\ $ SC $\ $  NC & MR  $\ $ CV  $\ $ DR  $\ $ SC $\ $  NC & MR  $\ $ CV  $\ $ DR  $\ $ SC  $\ $ NC \\
+%\hline \textbf{PRISM}  \\
+%\textbf{UW} & 0.3 $\ $ -0.1 $\ $ -0.2 $\ $ {\color{red}-0.7 $\ $ -2.4} \\
+%\textbf{Daymet} & -0.3 $\ $ 0.4 $\ $ -0.2 $\ $ 0.2 $\ $ {\color{red}-3.7} & -0.6 $\ $ {\color{red}0.5} $\ $ 0.1 $\ $ {\color{red}0.9 $\ $ -1.3} \\
+%\textbf{NARR} & {\color{red}-1.3 $\ $ 1.2} $\ $ -0.1 $\ $ {\color{red}-0.6 $\ $ -3.7} & {\color{red}-1.7 $\ $ 1.2} $\ $ 0.1 $\ $ 0.1 $\ $ {\color{red}-1.3} & {\color{red}-1.1 $\ $ 0.7} $\ $ 0.1 $\ $ {\color{red}-0.7} $\ $ 0.0 \\
+%\hline 
+%\hline
+%\end{tabular*}
+%
+%\begin{tabular*}{5in}{l @{\extracolsep{\fill}}c}
+%\hline \textbf{Tavg} & \textbf{PRISM} \\
+%\hline & MR  $\ $ CV $\ $  DR $\ $  SC $\ $  NC \\
+%\hline \textbf{NARR} & 0.3 $\ $ {\color{red}1.6 $\ $ 1.6 $\ $ -1.0 $\ $ -1.4} \\
+%\hline 
+%\hline
+%\end{tabular*}
+%
+%\begin{tabular*}{5in}{l @{\extracolsep{\fill}}ccccc}
+%\hline \textbf{Pr} & \textbf{PRISM} & \textbf{UW} & \textbf{Daymet} & \textbf{CPC} & \textbf{NARR} \\
+%\hline & MR  $\ $ CV $\ $  DR $\ $  SC $\ $  NC & MR $\ $  CV  $\ $ DR  $\ $ SC $\ $  NC & MR  $\ $ CV  $\ $ DR  $\ $ SC $\ $  NC & MR  $\ $ CV  $\ $ DR  $\ $ SC  $\ $ NC & MR  $\ $ CV  $\ $ DR  $\ $ SC  $\ $ NC \\
+%\hline \textbf{PRISM} \\
+%\textbf{UW} & -0.2 $\ $ 0.1 $\ $ 0.0 $\ $ -0.2 $\ $ -0.2 \\
+%\textbf{Daymet} & -0.1 $\ $ -0.4 $\ $ -0.0 $\ $ 0.2 $\ $ 0.5 & 0.1 $\ $ -0.5 $\ $ -0.0 $\ $ 0.3 $\ $ 0.8 \\
+%\textbf{CPC} & -0.8 $\ $ 0.0 $\ $ 0.0 $\ $ -0.1 $\ $ -1.1 & -0.5 $\ $ -0.1 $\ $ 0.0 $\ $ 0.1 $\ $ -0.9 & -0.6 $\ $ 0.4 $\ $ 0.0 $\ $ -0.3 $\ $ {\color{red}-1.7} \\
+%\textbf{NARR} & -0.5 $\ $ -0.4 $\ $ -0.1 $\ $ -0.1 $\ $ {\color{red}-1.3} & -0.3 $\ $ -0.5 $\ $ -0.1 $\ $ 0.1 $\ $ -1.1 & -0.4 $\ $ -0.0 $\ $ -0.1 $\ $ -0.3 $\ $ {\color{red}-1.8} & 0.2 $\ $ -0.5 $\ $ -0.1 $\ $ 0.0 $\ $ -0.2 \\
+%\end{tabular*}
+%\end{center}
+%\end{table}
 
 %%%%%%%%%%%Table2%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}
@@ -675,6 +740,8 @@ The authors would like to thank Dr. Travis O'Brien for his many useful conversat
 %\end{center}
 %\end{table}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %\subsection{Figures}
 
 \begin{figure}
@@ -786,6 +853,9 @@ The authors would like to thank Dr. Travis O'Brien for his many useful conversat
 \caption{Taylor diagram of annual climatology for the entire California region, using the PRISM dataset as reference.} \label{fig:taylor_diagram}
 \end{figure}
 
-%add description of Uniform CESM and its results
+%add description of Uniform CESM 1deg and its results
+%divide methodology part into subsections?
+%divide result part into subsections?
+%add the supplement: appendix in the tex file?
 
 \end{document}

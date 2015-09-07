@@ -47,7 +47,7 @@
 % (If you are submitting to a journal other than jgrga,
 % substitute the initials of the journal for "jgrga" below.)
 
-\documentclass[draft,ms]{agutex}
+\documentclass[draft,ms]{agutex}   %draft, [ms]
 % To create numbered lines:
 
 % If you don't already have lineno.sty, you can download it from
@@ -69,10 +69,13 @@
 \usepackage{url}
 \usepackage{amsmath}
 \usepackage{lscape}
+\usepackage{rotating} 
 
 \usepackage{lineno}
 
-\usepackage[dvips]{graphicx}
+\usepackage{graphics}
+
+%\usepackage[dvips]{graphicx}
  
 \usepackage{color}
 
@@ -234,7 +237,7 @@ Land surface datasets, including plant functional types, were created using the 
 
 WRF has been widely used over the past decade for modeling regional climate \citep{lo2008assessment, leung2009atmospheric, soares2012wrf}, and so represents an adequate platform for assessing climatology. In our study, the fully compressible non-hydrostatic WRF model in version 3.5.1 with the Advanced Research WRF (ARW) dynamical solver is used.  WRF is a limited area model that supports nested domains with a typical refinement ratio of 3:1.  The simulation domains of WRF are depicted in Figure \ref{fig:wrf_domains}. Two WRF simulations, representing finest grid resolutions of 27km and 9km, are conducted.  For the WRF 27km simulation, one domain is used. For the WRF 9km simulation, two nested domains are used with the outer domain at 27km (same as the WRF 27km) and inner domain at 9km horizontal grid resolution. Two-way nesting is enabled by overwriting coarse grid data by averaged fine grid data \citep{skamarock2008time}. For both regional simulations,  grids are centered on CA and have 120$\times$110 and 151$\times$172 grid points, respectively. Around the boundaries, 10 grid points are used for lateral relaxation. In order to reduce the drift between forcing data and RCM, grid nudging \citep{stauffer1990use} was applied to the outer domain every 6 hours at all levels except the planetary boundary layer (PBL), as suggested by \cite{lo2008assessment}. This setup uses 41 vertical levels with model top pressure at 50 hPa.
 
-Additionally, the following physics parameterizations were employed: WSM (WRF Single-Moment) 6-class graupel microphysics scheme \citep{hong2006wrf}, Kain-Fritsch cumulus scheme \citep{kain2004kain}, CAM shortwave and longwave radiation schemes \citep{collins2004description}. Part of these settings are chosen loosely from the results of one-year test runs over 1979 with different options of cumulus scheme and radiation schemes. For the boundary layer, the Yonsei University scheme (YSU) \citep{hong2006new} and the Noah Land Surface Model \citep{chen2001coupling} were used. Both were chosen as they are common for climate applications that balance long-term reliability and computational cost.  Although many other options and combinations of parameterizations are available for configuring WRF (and others have tackled a complete assessment of these options for particular problems), this choice was made simply to represent a typical RCM configuration.
+Additionally, the following physics parameterizations were employed: WSM (WRF Single-Moment) 6-class graupel microphysics scheme \citep{hong2006wrf}, Kain-Fritsch cumulus scheme \citep{kain2004kain}, CAM shortwave and longwave radiation schemes \citep{collins2004description}. Part of these settings are chosen loosely from the results of one-year test runs over 1979 with combinations of different options including using Grell-Freitas scheme as cumulus scheme, and RRTM scheme or Dudhia scheme for the radiation schemes. We applied the options that gave the best results after comparing with gridded observations in our study. For the boundary layer, the Yonsei University scheme (YSU) \citep{hong2006new} and the Noah Land Surface Model \citep{chen2001coupling} were used. Both were chosen as they are common for climate applications that balance long-term reliability and computational cost.  Although many other options and combinations of parameterizations are available for configuring WRF (and others have tackled a complete assessment of these options for particular problems), this choice was made simply to represent a typical RCM configuration.
 
 %(e.g. Grell-Freitas scheme) Grell et al. (2013); RRTM scheme (long wave)  Dudhia scheme (short wave)
 
@@ -299,8 +302,6 @@ Complementary results to this study are provided in the online supplement, inclu
 
 %, in order to see if variable-resolution CESM, which is at much lower computation cost than uniform one, can show comparable performance in modeling mean climatology \citep{bacmeister2014exploratory}
 
-{\color{red}[Add the supplement]}
-
 \subsection{Gridded and Reanalysis Datasets}
 
 Reanalysis and gridded observational datasets of the highest available quality are employed (see Table \ref{tab:Datasets}). Differences between gridded observations can be due to choice of meteorological stations, interpolation techniques, elevation models and processing algorithms.  Consequently, the use of multiple reference datasets is necessary to understand the uncertainty underlying the observational data.  Although these products are employed to serve as realistic proxies for assessing the model results, we acknowledge that they may be sensitive to the choice of model and the set of assimilated observations and so cannot be treated as truth. Detailed descriptions of these datasets are as follows.
@@ -326,7 +327,7 @@ Reanalysis and gridded observational datasets of the highest available quality a
 
 \paragraph{Daymet}  Daymet is an extremely high resolution (1 km) gridded dataset with daily outputs of total precipitation, humidity, and minimum/maximum temperature covering the years of 1980 through 2013 \citep{thornton1997generating, thornton1999improved, thornton2000simultaneous}. The dataset is produced using an algorithmic technique that ingests point station measurements in conjunction with a truncated Gaussian weighting filter.  Some adjustments are made to account for topography. Daymet is available through the Oak Ridge National Laboratory Distributed Active Archive Center (ORNL DAAC). 
 
-%{\color{red} To assess differences in these data products, we have used the Student's t-test to see if the JJA Tmax and Tmin from PRISM, UW and Daymet are statistically different from one another comparing seasonally averaged values. For these quantities, all products exhibited similarity at the 0.05 significance level over scattered regions of the study area.  A similar assessment was performed for mean DJF precipitation climatology and, in this case, all products exhibited similarity at the 0.05 significance level over the almost entire simulation domain. These results further proved that uncertainty exists within these different products of gridded observation datasets. [Unclear language.  What are scattered regions?  What is ``almost the entire simulation domain''?  Tabulated differences are much more useful.]}
+To assess differences in these data products, we have calculated the MSD values between the above reference datasets for seasonally averaged JJA Tmax, Tmin and DJF Pr over five sub-zones. We have also used the Student's t-test to see if the those differences are statistically significant. The MSD values are showed in Table \ref{tab:stat_Datasets}, and the ones with statistically significant difference are marked in red. For mean temperature, gridded observational datasets are different from each other over some regions, especially for Tmin, with MSD values reaching up to $\sim$ 4$^\circ C$. UW and Daymet have colder climatology than PRISM. NARR as a reanalysis dataset is different from others over most regions with overall larger Tmin and smaller Tmax. For precipitation, basically no significant difference showed between these datasets, especially among PRISM, UW and Daymet. NARR and CPC seem to have lower precipitation values than others. Those results further proved that uncertainty exists within these different products.
 
 %pr DR SC ar not normal 
 %Figure \ref{fig:obs_ttest}    as displayed in Figure \ref{fig:obs_ttest}
@@ -512,7 +513,7 @@ The authors would like to thank Dr. Travis O'Brien for his many useful conversat
 \begin{table}
 \caption{Reanalysis and statistically downscaled observational datasets used in this study.} \label{tab:Datasets}
 \begin{center}
-\begin{tabular*}{5in}{l @{\extracolsep{\fill}}cccc}
+\begin{tabular}{lccccc} %{5in}{l @{\extracolsep{\fill}}cccc}
 \hline \textbf{Data source} & \textbf{Variables used} & \textbf{Spatial resolution} & \textbf{Temporal resolution} \\
 \hline \textbf{NARR} & Pr, T$_{s}$ & 32km & daily, 3-hourly \\
 \textbf{NCEP CPC} & Pr & 28km (0.25$^\circ$) & daily \\
@@ -520,10 +521,47 @@ The authors would like to thank Dr. Travis O'Brien for his many useful conversat
 \textbf{PRISM} & Pr, T$_{min}$, T$_{max}$, T$_{avg}$ & 4km & monthly \\
 \textbf{Daymet} & Pr, T$_{min}$, T$_{max}$ & 1km & daily \\
 \hline
-\end{tabular*}
+\end{tabular}
 \end{center}
 \end{table}
 
+\begin{landscape}
+\begin{table}
+\caption{MSD of JJA temperature and DJF precipitation between all reference datasets} \label{tab:stat_Datasets}
+\begin{tabular}{l cccc}
+\hline \textbf{Tmin} & \textbf{PRISM} & \textbf{UW} & \textbf{Daymet} \\
+\hline & MR  $\ $ CV $\ $  DR $\ $  SC $\ $  NC & MR $\ $  CV  $\ $ DR  $\ $ SC $\ $  NC & MR  $\ $ CV  $\ $ DR  $\ $ SC $\ $  NC \\
+\hline \textbf{UW} & {\color{red}-2.0 $\ $ -0.5} $\ $ -0.3 $\ $ {\color{red}-0.4 $\ $ -2.3} \\
+\textbf{Daymet} & {\color{red}-1.8} $\ $ 0.2 $\ $ -0.2 $\ $ -0.3 $\ $ {\color{red}-4.6} & 0.2 $\ $ {\color{red}0.8} $\ $ 0.1 $\ $ 0.1 $\ $ {\color{red}-2.3} \\
+\textbf{NARR} & {\color{red}2.5 $\ $ 2.5 $\ $ 3.1} $\ $ -0.2 $\ $ {\color{red}2.0} & {\color{red}4.5 $\ $ 3.1 $\ $ 3.4} $\ $ 0.2 $\ $ {\color{red}4.2} & {\color{red}4.3 $\ $ 2.3 $\ $ 3.2} $\ $ 0.1 $\ $ {\color{red}6.5} \\
+\hline 
+\end{tabular}
+
+
+\begin{tabular}{lcccc}
+\hline \textbf{Tmax} & \textbf{PRISM} & \textbf{UW} & \textbf{Daymet} \\
+\hline & MR  $\ $ CV $\ $  DR $\ $  SC $\ $  NC & MR $\ $  CV  $\ $ DR  $\ $ SC $\ $  NC & MR  $\ $ CV  $\ $ DR  $\ $ SC $\ $  NC \\
+\hline \textbf{UW} & 0.3 $\ $ -0.1 $\ $ -0.2 $\ $ {\color{red}-0.7 $\ $ -2.4} \\
+\textbf{Daymet} & -0.3 $\ $ 0.4 $\ $ -0.2 $\ $ 0.2 $\ $ {\color{red}-3.7} & -0.6 $\ $ {\color{red}0.5} $\ $ 0.1 $\ $ {\color{red}0.9 $\ $ -1.3} \\
+\textbf{NARR} & {\color{red}-1.3 $\ $ 1.2} $\ $ -0.1 $\ $ {\color{red}-0.6 $\ $ -3.7} & {\color{red}-1.7 $\ $ 1.2} $\ $ 0.1 $\ $ 0.1 $\ $ {\color{red}-1.3} & {\color{red}-1.1 $\ $ 0.7} $\ $ 0.1 $\ $ {\color{red}-0.7} $\ $ 0.0 \\
+\hline 
+\end{tabular}
+
+\begin{tabular*}{9in}{l @{\extracolsep{\fill}}cccc}
+\hline \textbf{Pr} & \textbf{PRISM} & \textbf{UW} & \textbf{Daymet} & \textbf{CPC} \\
+\hline & MR  $\ $ CV $\ $  DR $\ $  SC $\ $  NC & MR $\ $  CV  $\ $ DR  $\ $ SC $\ $  NC & MR  $\ $ CV  $\ $ DR  $\ $ SC $\ $  NC & MR  $\ $ CV  $\ $ DR  $\ $ SC  $\ $ NC \\
+\hline \textbf{UW} & -0.2 $\ $ 0.1 $\ $ 0.0 $\ $ -0.2 $\ $ -0.2 \\
+\textbf{Daymet} & -0.1 $\ $ -0.4 $\ $ -0.0 $\ $ 0.2 $\ $ 0.5 & 0.1 $\ $ -0.5 $\ $ -0.0 $\ $ 0.3 $\ $ 0.8 \\
+\textbf{CPC} & -0.8 $\ $ 0.0 $\ $ 0.0 $\ $ -0.1 $\ $ -1.1 & -0.5 $\ $ -0.1 $\ $ 0.0 $\ $ 0.1 $\ $ -0.9 & -0.6 $\ $ 0.4 $\ $ 0.0 $\ $ -0.3 $\ $ {\color{red}-1.7} \\
+\textbf{NARR} & -0.5 $\ $ -0.4 $\ $ -0.1 $\ $ -0.1 $\ $ {\color{red}-1.3} & -0.3 $\ $ -0.5 $\ $ -0.1 $\ $ 0.1 $\ $ -1.1 & -0.4 $\ $ -0.0 $\ $ -0.1 $\ $ -0.3 $\ $ {\color{red}-1.8} & 0.2 $\ $ -0.5 $\ $ -0.1 $\ $ 0.0 $\ $ -0.2 \\
+\hline
+\end{tabular*}
+%\end{center}
+\begin{tabular}{p{6in}}
+\textbf{Notes:} The negative values means that dataset specified in the left column is smaller than the one stated in the top row. Values with statistically significant difference are marked in the red color.
+\end{tabular}
+\end{table}
+\end{landscape}
 
 %\begin{landscape}
 %\begin{table}
@@ -532,51 +570,29 @@ The authors would like to thank Dr. Travis O'Brien for his many useful conversat
 
 %\end{landscape}
 
+% \begin{sidewaystable}
+% \caption{}
+% \begin{tabular}
+% Table layout here.
+% \end{tabular}
+% \end{sidewaystable}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{table}
 %\caption{MSD of JJA temperature and DJF precipitation between all reference datasets}
 %\begin{center}
-%\begin{tabular*}{5in}{l @{\extracolsep{\fill}}cccc}
-%\hline \textbf{Tmin} & \textbf{PRISM} & \textbf{UW} & \textbf{Daymet} & \textbf{NARR} \\
-%\hline & MR  $\ $ CV $\ $  DR $\ $  SC $\ $  NC & MR $\ $  CV  $\ $ DR  $\ $ SC $\ $  NC & MR  $\ $ CV  $\ $ DR  $\ $ SC $\ $  NC & MR  $\ $ CV  $\ $ DR  $\ $ SC  $\ $ NC \\
-%\hline \textbf{PRISM}  \\
-%\textbf{UW} & {\color{red}-2.0 $\ $ -0.5} $\ $ -0.3 $\ $ {\color{red}-0.4 $\ $ -2.3} \\
-%\textbf{Daymet} & {\color{red}-1.8} $\ $ 0.2 $\ $ -0.2 $\ $ -0.3 $\ $ {\color{red}-4.6} & 0.2 $\ $ {\color{red}0.8} $\ $ 0.1 $\ $ 0.1 $\ $ {\color{red}-2.3} \\
-%\textbf{NARR} & {\color{red}2.5 $\ $ 2.5 $\ $ 3.1} $\ $ -0.2 $\ $ {\color{red}2.0} & {\color{red}4.5 $\ $ 3.1 $\ $ 3.4} $\ $ 0.2 $\ $ {\color{red}4.2} & {\color{red}4.3 $\ $ 2.3 $\ $ 3.2} $\ $ 0.1 $\ $ {\color{red}6.5} \\
-%\hline 
-%\hline
-%\end{tabular*}
+
 %
-%\begin{tabular*}{5in}{l @{\extracolsep{\fill}}cccc}
-%\hline \textbf{Tmax} & \textbf{PRISM} & \textbf{UW} & \textbf{Daymet} & \textbf{NARR} \\
-%\hline & MR  $\ $ CV $\ $  DR $\ $  SC $\ $  NC & MR $\ $  CV  $\ $ DR  $\ $ SC $\ $  NC & MR  $\ $ CV  $\ $ DR  $\ $ SC $\ $  NC & MR  $\ $ CV  $\ $ DR  $\ $ SC  $\ $ NC \\
-%\hline \textbf{PRISM}  \\
-%\textbf{UW} & 0.3 $\ $ -0.1 $\ $ -0.2 $\ $ {\color{red}-0.7 $\ $ -2.4} \\
-%\textbf{Daymet} & -0.3 $\ $ 0.4 $\ $ -0.2 $\ $ 0.2 $\ $ {\color{red}-3.7} & -0.6 $\ $ {\color{red}0.5} $\ $ 0.1 $\ $ {\color{red}0.9 $\ $ -1.3} \\
-%\textbf{NARR} & {\color{red}-1.3 $\ $ 1.2} $\ $ -0.1 $\ $ {\color{red}-0.6 $\ $ -3.7} & {\color{red}-1.7 $\ $ 1.2} $\ $ 0.1 $\ $ 0.1 $\ $ {\color{red}-1.3} & {\color{red}-1.1 $\ $ 0.7} $\ $ 0.1 $\ $ {\color{red}-0.7} $\ $ 0.0 \\
-%\hline 
-%\hline
-%\end{tabular*}
+%%\begin{tabular}{lcccc}
+%%\hline \textbf{Tavg} & \textbf{PRISM} \\
+%%\hline & MR  $\ $ CV $\ $  DR $\ $  SC $\ $  NC \\
+%%\hline \textbf{NARR} & 0.3 $\ $ {\color{red}1.6 $\ $ 1.6 $\ $ -1.0 $\ $ -1.4} \\
+%%\hline 
+%%\hline
+%%\end{tabular}
 %
-%\begin{tabular*}{5in}{l @{\extracolsep{\fill}}c}
-%\hline \textbf{Tavg} & \textbf{PRISM} \\
-%\hline & MR  $\ $ CV $\ $  DR $\ $  SC $\ $  NC \\
-%\hline \textbf{NARR} & 0.3 $\ $ {\color{red}1.6 $\ $ 1.6 $\ $ -1.0 $\ $ -1.4} \\
-%\hline 
-%\hline
-%\end{tabular*}
-%
-%\begin{tabular*}{5in}{l @{\extracolsep{\fill}}ccccc}
-%\hline \textbf{Pr} & \textbf{PRISM} & \textbf{UW} & \textbf{Daymet} & \textbf{CPC} & \textbf{NARR} \\
-%\hline & MR  $\ $ CV $\ $  DR $\ $  SC $\ $  NC & MR $\ $  CV  $\ $ DR  $\ $ SC $\ $  NC & MR  $\ $ CV  $\ $ DR  $\ $ SC $\ $  NC & MR  $\ $ CV  $\ $ DR  $\ $ SC  $\ $ NC & MR  $\ $ CV  $\ $ DR  $\ $ SC  $\ $ NC \\
-%\hline \textbf{PRISM} \\
-%\textbf{UW} & -0.2 $\ $ 0.1 $\ $ 0.0 $\ $ -0.2 $\ $ -0.2 \\
-%\textbf{Daymet} & -0.1 $\ $ -0.4 $\ $ -0.0 $\ $ 0.2 $\ $ 0.5 & 0.1 $\ $ -0.5 $\ $ -0.0 $\ $ 0.3 $\ $ 0.8 \\
-%\textbf{CPC} & -0.8 $\ $ 0.0 $\ $ 0.0 $\ $ -0.1 $\ $ -1.1 & -0.5 $\ $ -0.1 $\ $ 0.0 $\ $ 0.1 $\ $ -0.9 & -0.6 $\ $ 0.4 $\ $ 0.0 $\ $ -0.3 $\ $ {\color{red}-1.7} \\
-%\textbf{NARR} & -0.5 $\ $ -0.4 $\ $ -0.1 $\ $ -0.1 $\ $ {\color{red}-1.3} & -0.3 $\ $ -0.5 $\ $ -0.1 $\ $ 0.1 $\ $ -1.1 & -0.4 $\ $ -0.0 $\ $ -0.1 $\ $ -0.3 $\ $ {\color{red}-1.8} & 0.2 $\ $ -0.5 $\ $ -0.1 $\ $ 0.0 $\ $ -0.2 \\
-%\end{tabular*}
-%\end{center}
-%\end{table}
+
+%\tablenotetext{a}{
 
 %%%%%%%%%%%Table2%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}
@@ -620,51 +636,14 @@ The authors would like to thank Dr. Travis O'Brien for his many useful conversat
 \end{center}
 \end{table}
 
-%\begin{table}
-%\begin{center}
-%\caption{RMSD and Correlation (Corr) for sample standard deviation of seasonally-averaged JJA temperature over California} \label{tab:stat_std_JJA_t2}
-%\begin{tabular}{lcccc}
-%\hline \textbf{RMSD} & \textbf{UW}  & \textbf{PRISM} & \textbf{Daymet} \\
-%\hline $    $ & T$_{max}$ $\     $  T$_{min}$ & T$_{max}$ $\     $  T$_{min}$ $\     $ T$_{avg}$& T$_{max}$ $\     $  T$_{min}$\\
-%\hline \textbf{varres-CESM 0.25d} & 0.209 $\ $ 0.201 & 0.171 $\ $ 0.131 $\ $ 0.139 & 0.251 $\ $ 0.316 \\
-%\textbf{varres-CESM 0.125d} & 0.212 $\ $ 0.213 & 0.154 $\ $ 0.136 $\ $ 0.107 & 0.246 $\ $ 0.301 \\
-%\textbf{WRF 27km} & 0.214 $\ $ 0.195 & 0.166 $\ $ 0.142 $\ $ 0.137 & 0.252 $\ $ 0.315 \\
-%\textbf{WRF 9km} & 0.280 $\ $ 0.270 & 0.237 $\ $ 0.205 $\ $ 0.184 & 0.297 $\ $ 0.330 \\
-%\textbf{uniform CESM 0.25d} & 0.381 $\ $ 0.281 & 0.348 $\ $ 0.197 $\ $ 0.252 & 0.406 $\ $ 0.363 \\
-%\hline
-%\end{tabular}
-
-%\begin{tabular}{lcccc}
-%\hline \textbf{MSD} & \textbf{UW}  & \textbf{PRISM} & \textbf{Daymet} \\
-%\hline $    $ & T$_{max}$ $\     $  T$_{min}$ & T$_{max}$ $\     $  T$_{min}$ $\     $ T$_{avg}$& T$_{max}$ $\     $  T$_{min}$\\
-%\hline \textbf{varres-CESM 0.25d} & -0.072 $\ $ -0.055 & -0.041 $\ $ -0.017 $\ $ 0.032 & -0.063 $\ $ -0.106 \\
-%\textbf{varres-CESM 0.125d} & -0.141 $\ $ -0.035 & -0.109 $\ $ 0.008 $\ $ -0.019 & -0.127 $\ $ -0.080 \\
-%\textbf{WRF 27km} & 0.033 $\ $ -0.015 & 0.064 $\ $ 0.024 $\ $ 0.078 & 0.042 $\ $ -0.065 \\
-%\textbf{WRF 9km} & -0.102 $\ $ -0.044 & -0.070 $\ $ -0.001 $\ $ -0.046 & -0.089 $\ $ -0.089 \\
-%\textbf{uniform CESM 0.25d} & -0.330 $\ $ -0.148 & -0.302 $\ $ -0.110 $\ $ -0.197 & -0.323 $\ $ -0.199 \\
-%\hline
-%\end{tabular}
-
-%\begin{tabular}{lcccc}
-%\hline \textbf{Corr} & \textbf{UW}  & \textbf{PRISM} & \textbf{Daymet} \\
-%\hline $    $ & T$_{max}$ $\     $  T$_{min}$ & T$_{max}$ $\     $  T$_{min}$ $\     $ T$_{avg}$& T$_{max}$ $\     $  T$_{min}$\\
-%\hline \textbf{varres-CESM 0.25d} & 0.983 $\ $ 0.972 & 0.987 $\ $ 0.986 $\ $ 0.987 & 0.974 $\ $ 0.943 \\
-%\textbf{varres-CESM 0.125d} & 0.988 $\ $ 0.967 & 0.994 $\ $ 0.985 $\ $ 0.992 & 0.980 $\ $ 0.947 \\
-%\textbf{WRF 27km} & 0.981 $\ $ 0.972 & 0.990 $\ $ 0.984 $\ $ 0.991 & 0.974 $\ $ 0.939 \\
-%\textbf{WRF 9km} & 0.967 $\ $ 0.946 & 0.975 $\ $ 0.966 $\ $ 0.976 & 0.963 $\ $ 0.933 \\
-%\textbf{uniform CESM 0.25d} & 0.979 $\ $ 0.953 & 0.982 $\ $ 0.975 $\ $ 0.978 & 0.968 $\ $ 0.938 \\
-%\hline
-%\end{tabular}
-%\end{center}
-%\end{table}
-
 
 %%%%%%%Table3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%\begin{landscape}
 \begin{table}
 \begin{center}
-\caption{The first four moments of the JJA Tmax frequency in each sub-zone.  Column titles refer to Average (Avg), Variance (Var), Skewness (Skew) and Kurtosis (Kurt).} \label{tab:PDF_t2max_JJA}
-\begin{tabular}{lccccc}
+\caption{The first four moments of the JJA Tmax frequency in each sub-zone. Column titles refer to Average (Avg), Variance (Var), Skewness (Skew) and Kurtosis (Kurt).} \label{tab:PDF_t2max_JJA}
+\begin{tabular*}{9in}{l @{\extracolsep{\fill}}ccccc}
 \hline \textbf{} & \textbf{Central valley}  & \textbf{Mountain} & \textbf{North coast} & \textbf{South coast} &\textbf{Desert}\\
 \hline & Avg $\ $\ $ Var$\ $\ $Skew$\ $\ $ Kurt$ & Avg $\ $\ $ Var$\ $\ $Skew$\ $\ $ Kurt$  & Avg $\ $\ $ Var$\ $\ $Skew$\ $\ $ Kurt$  & Avg $\ $\ $ Var$\ $\ $Skew$\ $\ $ Kurt$  & Avg $\ $\ $ Var$\ $\ $Skew$\ $\ $ Kurt$  \\
 \hline \textbf{UW} &32.6$\ $	24.8	$\ $-0.8$\ $	0.9	&	26.7	$\ $33.2$\ $	-0.4	$\ $0.3	&	25.9	$\ $30.4	$\ $0.1$\ $	-0.5		&25.9$\ $	30.4	$\ $0.1$\ $	-0.5&		37.0	$\ $22.9$\ $	-0.6	$\ $0.7\\
@@ -674,19 +653,21 @@ The authors would like to thank Dr. Travis O'Brien for his many useful conversat
 \hline\textbf{WRF 27km} & 33.9	$\ $34.8	$\ $-0.5$\ $	0.2	&	24.9	$\ $34.8$\ $	-0.3	$\ $0.0	&	26.0	$\ $36.7	$\ $-0.1$\ $	-0.5		& 26.0$\ $	36.7	$\ $-0.1	$\ $-0.5		& 36.5$\ $	22.6$\ $	-0.6$\ $	0.5\\
 \textbf{WRF 9km}&32.4		$\ $33.1	$\ $	-0.7	$\ $	0.6	&	22.4		$\ $38.5		$\ $-0.5		$\ $0.6	&	24.9	$\ $	32.6		$\ $0.0		$\ $-0.6	&	24.9	$\ $	32.6	$\ $	0.0		$\ $-0.6	&	34.4		$\ $24.4		$\ $-0.5		$\ $0.4\\
 \hline
-\end{tabular}
+\end{tabular*}
 \end{center}
 \begin{tabular}{p{6in}}
 \textbf{Notes:} If skew $>0$ [skew $<0$], the distribution trails off to the right [left]. If kurtosis $> 0$ [$<0$], it is usually more sharply peaked [flatter] than the normal distribution (leptokurtic and platykurtic, respectively).
 \end{tabular}
 \end{table}
-
+%\end{landscape}
 %%%%%%Table4%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%\begin{landscape}
 \begin{table}
 \begin{center}
 \caption{RMSD, MSD, MRD, Spatial Correlation (Corr) for precipitation over California} \label{tab:stat_Pr}
-\begin{tabular}{lcccc}
+\begin{tabular*}{9in}{l @{\extracolsep{\fill}}ccccc}
+%\resizebox{\textwidth}{!}
 \hline \textbf{Annual} & \textbf{CPC}  & \textbf{UW} & \textbf{PRISM} & \textbf{DAYMET} \\
 \hline $    $ & RMSD $\ $ MSD $\ $ MRD $\ $ Corr & RMSD $\ $ MSD $\ $ MRD $\ $ Corr & RMSD $\ $ MSD $\ $ MRD $\ $ Corr & RMSD $\ $ MSD $\ $ MRD $\ $ Corr \\
 \hline \textbf{varres-CESM 0.25d} & 0.607 $\ $ 0.394 $\ $ 0.302 $\ $ 0.981 & 0.616 $\ $ 0.292 $\ $ 0.287 $\ $ 0.968 & 0.727 $\ $ 0.203 $\ $ 0.309 $\ $ 0.952 & 0.567 $\ $ 0.191 $\ $ 0.248 $\ $ 0.972 \\
@@ -696,9 +677,9 @@ The authors would like to thank Dr. Travis O'Brien for his many useful conversat
 %\textbf{uniform CESM 0.25d} & 0.555 $\ $ 0.134 $\ $ 0.238 $\ $ 0.969 & 0.600 $\ $ 0.031 $\ $ 0.253 $\ $ 0.961 & 0.700 $\ $ -0.057 $\ $ 0.265 $\ $ 0.953 & 0.600 $\ $ -0.069 $\ $ 0.245 $\ $ 0.962 \\
 \textbf{uniform CESM 1deg} & 1.972 $\ $ -1.567 $\ $ 0.999 $\ $ 0.941 & 2.313 $\ $ -1.701 $\ $ 0.999 $\ $ 0.905 & 2.525 $\ $ -1.829 $\ $ 0.999 $\ $ 0.901 & 2.305 $\ $ -1.797 $\ $ 0.999 $\ $ 0.935 \\
 \hline
-\end{tabular}
+\end{tabular*}
 
-\begin{tabular}{lcccc}
+\begin{tabular*}{9in}{l @{\extracolsep{\fill}}ccccc}
 \hline \textbf{DJF} & \textbf{CPC}  & \textbf{UW} & \textbf{PRISM} & \textbf{DAYMET} \\
 \hline $    $ & RMSD $\ $ MSD $\ $ MRD $\ $ Corr & RMSD $\ $ MSD $\ $ MRD $\ $ Corr & RMSD $\ $ MSD $\ $ MRD $\ $ Corr & RMSD $\ $ MSD $\ $ MRD $\ $ Corr \\
 \hline \textbf{varres-CESM 0.25d} & 1.486 $\ $ 0.986 $\ $ 0.361 $\ $ 0.972 & 1.445 $\ $ 0.673 $\ $ 0.325 $\ $ 0.959 & 1.654 $\ $ 0.577 $\ $ 0.354 $\ $ 0.943 & 1.346 $\ $ 0.514 $\ $ 0.284 $\ $ 0.964 \\
@@ -708,10 +689,10 @@ The authors would like to thank Dr. Travis O'Brien for his many useful conversat
 %\textbf{uniform CESM 0.25d} & 1.392 $\ $ 0.377 $\ $ 0.286 $\ $ 0.960 & 1.431 $\ $ 0.064 $\ $ 0.283 $\ $ 0.951 & 1.544 $\ $ -0.033 $\ $ 0.293 $\ $ 0.946 & 1.406 $\ $ -0.095 $\ $ 0.275 $\ $ 0.953 \\
 \textbf{uniform CESM 1deg} & 3.971 $\ $ -3.123 $\ $ 0.999 $\ $ 0.936 & 4.799 $\ $ -3.499 $\ $ 0.999 $\ $ 0.904 & 5.074 $\ $ -3.648 $\ $ 0.999 $\ $ 0.902 & 4.685 $\ $ -3.651 $\ $ 0.999 $\ $ 0.935 \\
 \hline
-\end{tabular}
+\end{tabular*}
 \end{center}
 \end{table}
-
+%\end{landscape}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{table}
 %\begin{center}
@@ -745,9 +726,11 @@ The authors would like to thank Dr. Travis O'Brien for his many useful conversat
 %\subsection{Figures}
 
 \begin{figure}
+\begin{center}
 \includegraphics[width=6in]{varres-cesm_gridmesh.pdf}
 \caption{Grid meshes for the two varres-CESM simulations.}
 \label{fig:varres-CESM_map}
+\end{center}
 \end{figure}
 
 %Approximate regional resolution for the computational grids used in varres-CESM simulations.  The dashed lines and solid lines correspond to the outer boundary and inner boundary of the transition region.

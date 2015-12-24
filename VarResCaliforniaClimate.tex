@@ -78,6 +78,7 @@
  
 \usepackage{color}
 \definecolor{pinkred}{rgb}{1.0, 0.4, 0.4}
+\usepackage[table]{xcolor}
 
 % Author names in capital letters:
 \authorrunninghead{HUANG ET AL.}
@@ -232,7 +233,7 @@ The mean JJA T$_{max}$, T$_{min}$ and T$_{avg}$ climatology over the simulation 
 \item{} \textbf{T$_{max}$:}  When compared with the reference datasets, VR-CESM showed a warm bias of about 2 to 3 $^\circ$C in T$_{max}$ over much of the inland domain (CV and MR) and a 2 to 3 $^\circ$C cool bias along the coast, although the coastal bias is reduced by $\sim$0.5 $^\circ$C at 0.125$^\circ$ resolution. This is in contrast with WRF, which produced an overall colder climate everywhere except the CV.  This bias is especially pronounced for the WRF 9km simulation, which was approximately 3 $^\circ$C cooler than PRISM. T$_{max}$ within the CV has been overestimated by all the simulations. This likely represents a systematic issue with high-resolution models with respect to California.  Possible reasons for this overestimation are discussed at the end of this section.
 
 
-\item{} \textbf{T$_{min}$:}  VR-CESM showed a strong warm bias in T$_{min}$ ($\sim$3 to 4 $^\circ$C), with a particularly large overestimation over Nevada ($> 5 ^\circ$C). WRF also exhibited a warm bias, but of a much smaller magnitude ($\sim$2 to 3 $^\circ$C). However, the pattern of T$_{min}$ presented in Figure \ref{fig:Figure 4} in both WRF simulations suggests a cooler interior to the CV and warmer perimeter, which is not supported by observations.
+\item{} \textbf{T$_{min}$:}  VR-CESM showed a strong warm bias in T$_{min}$ ($\sim$2 to 4 $^\circ$C), with a particularly large overestimation over Nevada ($> 5 ^\circ$C). WRF also exhibited a warm bias, but of a much smaller magnitude ($\sim$2 to 3 $^\circ$C). However, the pattern of T$_{min}$ presented in Figure \ref{fig:Figure 4} in both WRF simulations suggests a cooler interior to the CV and warmer perimeter, which is not supported by observations.
 
 \item{} \textbf{T$_{avg}$:}  The warm bias of T$_{min}$ and T$_{max}$ by VR-CESM resulted in a similar overestimation of T$_{avg}$. For WRF, underestimation of T$_{max}$ and overestimation of T$_{min}$ led to an overall closer match to T$_{avg}$ over most of the domain, but is indicative of a suppressed diurnal cycle.
 \end{itemize}
@@ -241,9 +242,9 @@ Compared with the reference datasets over California, VR-CESM 0.125$^\circ$ prod
 
 The spatial standard deviation of JJA T$_{max}$, T$_{min}$ and T$_{avg}$ from models and PRISM is presented in Figure \ref{fig:Figure 5}. In PRISM, the CV had smaller variability than surrounding regions, although the difference is small ($\sim$0.2 $^\circ$C). Further, areas with rougher topography did exhibit somewhat higher variability than smoother locations. Interestingly, the higher resolution (0.125$^\circ$) VR-CESM simulation also matched the spatial pattern and magnitude of standard deviation observed in PRISM, especially for T$_{min}$ and T$_{avg}$. However, in WRF and VR-CESM 0.25$^\circ$, the variability is largely consistent across different divisions, and the values are around 0.5 to 1.5 $^\circ$C for all of the datasets, except for the high Sierras in the WRF 9km simulation which showed enhanced variability ($\sim$2 $^\circ$C). Compared with reference datasets, the RMSD values of VR-CESM and WRF 27km are $\sim$0.1-0.2 $^\circ$C, and $\sim$0.2-0.3 $^\circ$C for WRF 9km.
 
-The seasonal cycle of monthly mean T$_{avg}$ in each division is shown in Figure \ref{fig:Figure 6} for simulations and for reference data from PRISM and NARR along with the associated 95\% confidence interval. PRISM and NARR match closely almost everywhere except in the summer season of NC, SC and CV, indicative of underlying observational uncertainty. This difference is likely due to the discrepancy in assimilating the coastal cooling effect.  In general, model results match closely with reference data with no larger than a 2 $^\circ$C absolute difference, with the largest errors occurring in the summer and winter seasons.  Compared with PRISM, VR-CESM overpredicts summer T$_{avg}$ in all divisions except NC and SC, and underpredicts winter T$_{avg}$ in all divisions.  This corresponds to a larger annual temperature range. WRF has better performance in preserving the monthly cycle when compared with CESM, with about 1 $^\circ$C underestimation over all seasons. There is no clear improvement in the seasonal cycle across resolutions.
+The seasonal cycle of monthly mean T$_{avg}$ in each division is shown in Figure \ref{fig:Figure 6} for simulations and for reference data from PRISM and NARR along with the associated 95\% confidence interval. PRISM and NARR match closely almost everywhere except in the summer season of NC, SC and CV, indicative of underlying observational uncertainty. This difference is likely due to the discrepancy in assimilating the coastal cooling effect.  In general, model results match closely with reference data with no larger than a 2 $^\circ$C absolute difference, with the largest errors occurring in the summer and winter seasons.  Compared with PRISM, VR-CESM overpredicts summer T$_{avg}$ in all divisions except NC and SC, and underpredicts winter T$_{avg}$ in all divisions.  This corresponds to a larger annual temperature range. WRF has better performance in preserving the monthly cycle when compared with VR-CESM, with about 1 $^\circ$C underestimation over all seasons. There is no clear improvement in the seasonal cycle across resolutions.
 
-Variability in monthly average T$_{avg}$ is expressed by the interannual standard deviation of monthly T$_{avg}$ over the 26-year period and is plotted in Figure \ref{fig:Figure 7} for whole California region (not shown for the five divisions due to the strong similarity). And the RMSD values for monthly standard deviations between models and PRISM are computed over each climate division (see Table \ref{tab:stat_std}). Generally, standard deviation is between 1 to 2 $^\circ$C. Among all models, WRF 27km is closest to PRISM with RMSD values around 0.1 $^\circ$C except SC. WRF 9km is also relatively close to PRISM, but exhibits an unusual $\sim$1 $^\circ$C increase in variability in January and February (statistically significant at the 0.05 level), resulting relatively high RMSD ($\sim$0.5-0.6 $^\circ$C). VR-CESM exhibits a weaker correlation with PRISM in all divisions with enhanced variability in DJF and weakened variability in April and May at both resolutions, and in the fall season in the 0.125$^\circ$ simulation, with RMSD around 0.3-0.5$^\circ$C. Nonetheless, the standard deviation from all datasets is statistically equivalent to the reference (with $p > 0.05$), except for the WRF 9km results in January and February.
+Variability in monthly average T$_{avg}$ is expressed by the interannual standard deviation of monthly T$_{avg}$ over the 26-year period and is plotted in Figure \ref{fig:Figure 7} for whole California region (not shown for the five divisions due to the strong similarity). And the RMSD values for monthly standard deviations between models and PRISM are computed over each climate division (see Table \ref{tab:stat_std}). Generally, standard deviation is between 1 to 2 $^\circ$C. Among all models, WRF 27km is closest to PRISM with RMSD values around 0.1-0.2 $^\circ$C except SC. WRF 9km is also relatively close to PRISM, but exhibits an unusual $\sim$1 $^\circ$C increase in variability in January and February (statistically significant at the 0.05 level), resulting relatively high RMSD ($\sim$0.5 $^\circ$C). VR-CESM exhibits a weaker correlation with PRISM in all divisions with enhanced variability in DJF and weakened variability in April and May at both resolutions, and in the fall season in the 0.125$^\circ$ simulation, with RMSD around 0.2-0.4 $^\circ$C. Nonetheless, the standard deviation from all datasets is statistically equivalent to the reference (with $p > 0.05$), except for the WRF 9km results in January and February.
 
 Due to the impact of summer heat waves, we now focus on T$_{max}$ over JJA. In Figure \ref{fig:Figure 8}, the frequency distribution of T$_{max}$ using all JJA daily values at each gridpoint over 26 years is depicted for models and reference data from UW and Daymet. PRISM is not included since it only deviates from UW and Daymet in the coastal divisions (NC and SC).  In these divisions PRISM is similar in character to UW but shifted several degrees towards warmer temperatures. Properties of the frequency distribution, including average, variability, skewness and Kurtosis are tabulated in Table \ref{tab:PDF_t2max_JJA}.  As exemplified by the similarity in the moments of the distribution, VR-CESM clearly captures the general distribution of T$_{max}$. Outside of the CV, skewness and kurtosis measures match closely between VR-CESM and the UW dataset. In the NC and SC, Daymet overestimates the frequency of very cold days leading to deviation in the moments from UW.  Consistent with the observations in Figure \ref{fig:Figure 4}, outside of the CV, WRF tends to be cooler in general and VR-CESM tends to be warmer.  In NC and SC, all models more accurately capture the frequency of high T$_{max}$ days than low T$_{max}$ days. Enhanced frequency of cool T$_{max}$ values appears to be the primary driver in overestimation of sample variance in these divisions. For both VR-CESM and WRF there is no apparent improvement in statistics at higher resolutions.
 
@@ -264,13 +265,13 @@ Interannual variability of precipitation was calculated for the models and PRISM
 
 The annual cycle of precipitation averaged over each month and region for the models and reference datasets (taking PRISM and NARR as representative of all datasets) is presented in Figure \ref{fig:Figure 11}. The 95\% confidence intervals of UW and PRISM are also depicted; differences between models and reference datasets are statistically significant when simulation results appear outside of the highlighted region. In general, the overall monthly climatology is consistent between models and reference datasets, with highest precipitation values occurring over winter and lowest values over summer. Nonetheless, the largest deviations occur during the winter season. WRF 27km is drier than PRISM and UW with relative differences ranging from $\sim$10$\%$-40$\%$, whereas WRF 9km is far wetter with relative differences reaching up to 40$\%$-80$\%$ over these five divisions. VR-CESM tracks well with observed precipitation with $\sim$10$\%$-20$\%$ relative difference everywhere except in the CV, where precipitation is overestimated in the rainy seasons by about 70$\%$-80$\%$. From the MWW test, VR-CESM and WRF 27km are not significantly different from reference datasets in most divisions, except over the CV in late winter to spring for VR-CESM 0.25$^\circ$, and the NC winter and spring, and DR's winter for WRF 27km. The magnitude of precipitation in WRF 9km is significantly different from the reference datasets over most divisions, except DR and SC's winter and spring. Nonetheless, the strong seasonal dependence on precipitation is apparent with extremely dry conditions during summer months. A slight increase in summertime precipitation is apparent in the DR, indicating the North American monsoon. We also observe that the peak month for precipitation tends to occur earlier in VR-CESM, particularly at 0.125$^\circ$, compared with the reference. VR-CESM also exhibits some unexpected jaggedness (particularly December for VR-CESM 0.25$^\circ$ and February for VR-CESM 0.125$^\circ$), likely due to an issue with capturing the seasonality of moisture transport over the Pacific. This issue being driven by variability outside of the high resolution domain seems corroborated by the observation that WRF correlates strongly with the reference datasets (even though the reported magnitude is incorrect).
 
-The monthly cycle of sample standard deviation is depicted in Figure \ref{fig:Figure 7} for whole California region (not shown for the five divisions due to the strong similarity). The variability in observations has a similar monthly trend as precipitation rate, with overall values from 0 to 4 mm$/$day.  Generally, higher interannual variability occurs over locations with higher mean precipitation (see Figure \ref{fig:Figure 11}), also observed by previous studies (for example, \cite{duffy2006simulations}). Compared with observations, VR-CESM exhibited $\sim$1 mm$/$day larger variability in the rainy season with RMSDs ranging from $\sim$0.2 to 0.9 mm/day over different regions (see Table \ref{tab:stat_std}). WRF 9km also showed enhanced variability, especially during the wintertime ($\sim$1.5 mm$/$day more). WRF 27km captured the interannual variability quite well with only minor underestimation, with RMSDs around 0.1-0.2mm/day. The main cause of the interannual variability of precipitation over California is the El Ni\~{n}o-Southern Oscillation (ENSO), which varies the amount of moisture flux transported to this region \citep{cayan1998decadal, cayan1999enso, leung2003hydroclimate2}. To assess deviations from observations, the Levene test was used in place of the F-test due to non-normality of precipitation. Under this test WRF 9km was significantly different from both reference datasets over summer and winter periods in MR, and over July to September in DR and SC. VR-CESM 0.25$^\circ$ was significantly different within the CV over the  winter season.
+The monthly cycle of sample standard deviation is depicted in Figure \ref{fig:Figure 7} for whole California region (not shown for the five divisions due to the strong similarity). The variability in observations has a similar monthly trend as precipitation rate, with overall values from 0 to 4 mm$/$day.  Generally, higher interannual variability occurs over locations with higher mean precipitation (see Figure \ref{fig:Figure 11}), also observed by previous studies (for example, \cite{duffy2006simulations}). Compared with observations, VR-CESM exhibited $\sim$1 mm$/$day larger variability in the rainy season with RMSDs ranging from $\sim$0.2 to 0.9 mm/day over different regions (see Table \ref{tab:stat_std}). WRF 9km also showed enhanced variability, especially during the wintertime ($\sim$1.5 mm$/$day more). WRF 27km captured the interannual variability quite well with only minor underestimation except the coastal regions, with RMSDs around 0.1-0.7 mm/day. The main cause of the interannual variability of precipitation over California is the El Ni\~{n}o-Southern Oscillation (ENSO), which varies the amount of moisture flux transported to this region \citep{cayan1998decadal, cayan1999enso, leung2003hydroclimate2}. To assess deviations from observations, the Levene test was used in place of the F-test due to non-normality of precipitation. Under this test WRF 9km was significantly different from both reference datasets over summer and winter periods in MR, and over July to September in DR and SC. VR-CESM 0.25$^\circ$ was significantly different within the CV over the  winter season.
 
 The frequency distribution of DJF Pr has been constructed from rainy days (Pr$>$=0.1mm/day) for the simulations and reference datasets and depicted in Figure \ref{fig:Figure 13}.  Since the frequency of precipitation is very similar across all reference datasets, only UW and CPC are included. Generally, VR-CESM matches closely with observations everywhere except in the CV. In the CV, WRF 27km appears to better capture high-intensity precipitation events, but performs poorly on low-intensity events (Pr$<$20 mm/day). The underestimation of rainfall frequency in WRF 27km appears consistent across divisions. WRF 9km produces a significantly better treatment of low-intensity events, but greatly overestimates the frequency of high-intensity events (Pr$>$20 mm/day). For strong precipitation events, VR-CESM matches closely to observations everywhere except the CV.
 
 The overestimation of precipitation for WRF at high resolution has also been found in previous studies. Although not as pronounced as WRF 9km here, \citet{caldwell2009evaluation} demonstrated that WRF at 12km largely overestimated the precipitation over California's mountainous regions (however, this paper did employ a different set of parameterizations and had a different spatial extent of mountain region). Further discussion can be found in former studies that employ different microphysics schemes (and so produce a wide range of precipitation magnitudes) \citep{jankov2005impact, chin2010preliminary, caldwell2010california}. However, \citet{caldwell2009evaluation} also argued that the bias comes from a variety of sources, rather than simply different choices of sub-grid scale parameterizations. The exact cause of this overprediction has yet to be identified in the literature and a comprehensive analysis of the cause of these errors is beyond the scope of this paper. 
 
-{\color{red}A simple schematic map will be add here showing the overall evaluation of VR-CESM by region.} In general, both VR-CESM and WRF correlate well with observations. WRF is better at modeling T$_{min}$ than VR-CESM; however, VR-CESM has smaller deviation for T$_{max}$. WRF 9km performs badly for precipitation with nearly a two times larger normalized standard deviation than other simulations. Overall, VR-CESM provides a competitive representation of the regional climatology over California and has errors which are comparable to WRF. Comparing resolutions, there is only minor improvement in VR-CESM 0.125$^\circ$ relative to 0.25$^\circ$ in simulating T$_{max}$ and Pr.
+A simple schematic summary is displayed in Table \ref{tab:summary} showing the overall evaluation of VR-CESM and WRF by region. Here, we use PRISM as the reference dataset. However, over the coastal regions (especially in NC), observational datasets show significant uncertainty, since UW and Daymet have a colder climatology than PRISM, similar for Tmin over MR as we stated above (see Table \ref{tab:stat_Datasets}). In general, both VR-CESM and WRF correlate well with observations. WRF is better at modeling T$_{min}$ than VR-CESM; however, VR-CESM has smaller deviation for T$_{max}$. WRF 9km performs badly for precipitation with nearly a two times larger normalized standard deviation than other simulations. Overall, VR-CESM provides a competitive representation of the regional climatology over California and has errors which are comparable to WRF. Comparing resolutions, there is only minor improvement in VR-CESM 0.125$^\circ$ relative to 0.25$^\circ$ in simulating T$_{max}$ and Pr.
 
 \section{Discussions and summary}
 
@@ -288,7 +289,7 @@ Temperatures were also further investigated in terms of the climatology of JJA T
 Precipitation was assessed in terms of mean climatology, interannual monthly-averaged variability and frequency of precipitation intensity.  In general, VR-CESM matched closely with PRISM everywhere except for an  overestimation of DJF Pr (about 25$\%$-35$\%$) along the western flank of the Sierra Nevada and into the CV. Increasing the spatial resolution to 0.125$^\circ$ produced some reduction in this overestimation (about 10$\%$) likely due to improved treatment of orographic effects. WRF 27km underestimated DJF precipitation (by about 20$\%$-30$\%$) along the NC and MR (where almost all the precipitation appears), whereas WRF 9km showed a large overestimation (about 65$\%$-85$\%$). The standard deviation of precipitation ranged from 0 to 6 mm$/$day, with generally higher interannual variability over locations of higher mean precipitation. When assessing the frequency of strong precipitation events, VR-CESM matched closely to the UW dataset everywhere except the CV.
 
 
-Higher resolution (0.125$^\circ$) VR-CESM did produce better results when assessing JJA T$_{max}$ and precipitation (along with their variability), compared with the coarser resolution run. However, the improvements are not statistically significant over most of the study area.  The largest improvement at higher resolution was in the spatial character of precipitation, driven primarily with a better representation of the underlying topography. Notably, this result highlights the relative insensitivity to resolution in VR-CESM's physical parameterizations. This may be an advantageous result for multi-scale modelers interested in climate applications. Correctly simulating precipitation is vital to properly representing snowpack, which is of critical importance to water availability in the western United States \citep{bales2006mountain, wise2012hydroclimatology, Rhoades2015Characterizing}. Decreased scale sensitivity implies the result will be more independent of the choice of grid resolution. However, since the range of scales is small (~28km to ~14km), the sensitivity of resolution could increase over a wider range of scales \citep{wehner2010effect, rauscher2010resolution }. Notably, for both regional and global models, the results to changes in resolution don't always get better/worse linearly (e.g. \cite{hughes2014landfall, wehner2014effect}).
+Higher resolution (0.125$^\circ$) VR-CESM did produce better results when assessing JJA T$_{max}$ and precipitation (along with their variability), compared with the coarser resolution run. However, the improvements are not statistically significant over most of the study area.  The largest improvement at higher resolution was in the spatial character of precipitation, driven primarily with a better representation of the underlying topography. Notably, this result highlights the relative insensitivity to resolution in VR-CESM's physical parameterizations. This may be an advantageous result for multi-scale modelers interested in climate applications. Correctly simulating precipitation is vital to properly representing snowpack, which is of critical importance to water availability in the western United States \citep{bales2006mountain, wise2012hydroclimatology, Rhoades2015Characterizing}. Decreased scale sensitivity implies the result will be more independent of the choice of grid resolution. However, since the range of scales is small ($\sim$28km to $\sim$14km), the sensitivity of resolution could increase over a wider range of scales \citep{wehner2010effect, rauscher2010resolution}. Notably, for both regional and global models, the results to changes in resolution don't always get better/worse linearly (e.g. \cite{hughes2014landfall, wehner2014effect}).
 
 For WRF, when resolution is increased to 9km, the model produces vastly overestimated precipitation, as previous studies have also found when using RCMs for fine-scale regional simulations. Although the convective parameterization was not disabled (as is suggested for some models below 10km resolution), the effect of this change would likely not modify the results since almost all of the precipitation comes from resolved (large-scale) condensation (not shown). In this sense, precipitation modeling bias of WRF is more strongly related with resolved-scale processes and the choice of microphysics scheme plays a major role, motivating the need for more work on scale-aware parameterizations \citep{o2013observed}. 
 
@@ -309,485 +310,505 @@ The authors would like to thank Dr. Travis O'Brien for the many useful conversat
 
 % REFERENCE LIST AND TEXT CITATIONS
 
-
-\begin{thebibliography}{72}
-\providecommand{\natexlab}[1]{#1}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
-  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
-  \urlstyle{rm}\Url}\fi
-
-\bibitem[{\textit{Abatzoglou et~al.}(2009)\textit{Abatzoglou, Redmond, and
-  Edwards}}]{abatzoglou2009classification}
-Abatzoglou, J.~T., K.~T. Redmond, and L.~M. Edwards (2009), {Classification of
-  regional climate variability in the state of California}, \textit{Journal of
-  Applied Meteorology and Climatology}, \textit{48}(8), 1527--1541.
-
-\bibitem[{\textit{Bales et~al.}(2006)\textit{Bales, Molotch, Painter,
-  Dettinger, Rice, and Dozier}}]{bales2006mountain}
-Bales, R.~C., N.~P. Molotch, T.~H. Painter, M.~D. Dettinger, R.~Rice, and
-  J.~Dozier (2006), Mountain hydrology of the western united states,
-  \textit{Water Resources Research}, \textit{42}(8).
-
-\bibitem[{\textit{Bonfils and Lobell}(2007)}]{bonfils2007empirical}
-Bonfils, C., and D.~Lobell (2007), Empirical evidence for a recent slowdown in
-  irrigation-induced cooling, \textit{Proceedings of the National Academy of
-  Sciences}, \textit{104}(34), 13,582--13,587.
-
-\bibitem[{\textit{Bukovsky and Karoly}(2007)}]{bukovsky2007brief}
-Bukovsky, M.~S., and D.~J. Karoly (2007), {A brief evaluation of precipitation
-  from the North American Regional Reanalysis}, \textit{Journal of
-  Hydrometeorology}, \textit{8}(4), 837--846.
-
-\bibitem[{\textit{Bukovsky and Karoly}(2009)}]{bukovsky2009precipitation}
-Bukovsky, M.~S., and D.~J. Karoly (2009), {Precipitation simulations using WRF
-  as a nested regional climate model}, \textit{Journal of Applied Meteorology
-  and Climatology}, \textit{48}(10), 2152--2159.
-
-\bibitem[{\textit{Caldwell}(2010)}]{caldwell2010california}
-Caldwell, P. (2010), California wintertime precipitation bias in regional and
-  global climate models, \textit{Journal of Applied Meteorology and
-  Climatology}, \textit{49}(10), 2147--2158.
-
-\bibitem[{\textit{Caldwell et~al.}(2009)\textit{Caldwell, Chin, Bader, and
-  Bala}}]{caldwell2009evaluation}
-Caldwell, P., H.-N.~S. Chin, D.~C. Bader, and G.~Bala (2009), {Evaluation of a
-  WRF dynamical downscaling simulation over California}, \textit{Climatic
-  Change}, \textit{95}(3-4), 499--521.
-
-\bibitem[{\textit{Cayan et~al.}(2008)\textit{Cayan, Luers, Franco, Hanemann,
-  Croes, and Vine}}]{cayan2008overview}
-Cayan, D.~R., A.~L. Luers, G.~Franco, M.~Hanemann, B.~Croes, and E.~Vine
-  (2008), {Overview of the California climate change scenarios project},
-  \textit{Climatic Change}, \textit{87}(1), 1--6.
-
-\bibitem[{\textit{Chen and Dudhia}(2001)}]{chen2001coupling}
-Chen, F., and J.~Dudhia (2001), {Coupling an advanced land surface-hydrology
-  model with the Penn State-NCAR MM5 modeling system. Part I: Model
-  implementation and sensitivity}, \textit{Monthly Weather Review},
-  \textit{129}(4), 569--585.
-
-\bibitem[{\textit{Chin et~al.}(2010)\textit{Chin, Caldwell, and
-  Bader}}]{chin2010preliminary}
-Chin, H.-N.~S., P.~M. Caldwell, and D.~C. Bader (2010), {Preliminary study of
-  California wintertime model wet bias}, \textit{Monthly Weather Review},
-  \textit{138}(9), 3556--3571.
-
-\bibitem[{\textit{Christensen et~al.}(2007)\textit{Christensen, Hewitson,
-  Busuioc, Chen, Gao, Held, Jones, Kolli, Kwon, Laprise
-  et~al.}}]{christensen2007regional}
-Christensen, J.~H., B.~Hewitson, A.~Busuioc, A.~Chen, X.~Gao, R.~Held,
-  R.~Jones, R.~K. Kolli, W.~Kwon, R.~Laprise, et~al. (2007), Regional climate
-  projections, \textit{Climate Change, 2007: The Physical Science Basis.
-  Contribution of Working Group I to the Fourth Assessment Report of the
-  Intergovernmental Panel on Climate Change, University Press, Cambridge,
-  Chapter 11}, pp. 847--940.
-
-\bibitem[{\textit{Collins et~al.}(2004)\textit{Collins, Rasch, Boville, Hack,
-  McCaa, Williamson, Kiehl, Briegleb, Bitz, Lin
-  et~al.}}]{collins2004description}
-Collins, W.~D., P.~J. Rasch, B.~A. Boville, J.~J. Hack, J.~R. McCaa, D.~L.
-  Williamson, J.~T. Kiehl, B.~Briegleb, C.~Bitz, S.~Lin, et~al. (2004),
-  {Description of the NCAR community atmosphere model (CAM 3.0)}, \textit{Tech.
-  rep.}, Tech. Rep. NCAR/TN-464+ STR.
-
-\bibitem[{\textit{Daly et~al.}(2008)\textit{Daly, Halbleib, Smith, Gibson,
-  Doggett, Taylor, Curtis, and Pasteris}}]{daly2008physiographically}
-Daly, C., M.~Halbleib, J.~I. Smith, W.~P. Gibson, M.~K. Doggett, G.~H. Taylor,
-  J.~Curtis, and P.~P. Pasteris (2008), {Physiographically sensitive mapping of
-  climatological temperature and precipitation across the conterminous United
-  States}, \textit{International Journal of Climatology}, \textit{28}(15),
-  2031--2064.
-
-\bibitem[{\textit{Dee et~al.}(2011)\textit{Dee, Uppala, Simmons, Berrisford,
-  Poli, Kobayashi, Andrae, Balmaseda, Balsamo, Bauer et~al.}}]{dee2011era}
-Dee, D., S.~Uppala, A.~Simmons, P.~Berrisford, P.~Poli, S.~Kobayashi,
-  U.~Andrae, M.~Balmaseda, G.~Balsamo, P.~Bauer, et~al. (2011), {The
-  ERA-Interim reanalysis: Configuration and performance of the data
-  assimilation system}, \textit{Quarterly Journal of the Royal Meteorological
-  Society}, \textit{137}(656), 553--597.
-
-\bibitem[{\textit{Dennis et~al.}(2011)\textit{Dennis, Edwards, Evans, Guba,
-  Lauritzen, Mirin, St-Cyr, Taylor, and Worley}}]{dennis2011cam}
-Dennis, J., J.~Edwards, K.~J. Evans, O.~Guba, P.~H. Lauritzen, A.~A. Mirin,
-  A.~St-Cyr, M.~A. Taylor, and P.~H. Worley (2011), {CAM-SE: A scalable
-  spectral element dynamical core for the Community Atmosphere Model},
-  \textit{International Journal of High Performance Computing Applications}, p.
-  1094342011428142.
-
-\bibitem[{\textit{Dinse}(2009)}]{dinse2009climate}
-Dinse, K. (2009), Climate variability and climate change: what is the
-  difference, \textit{Book Climate Variability and Climate Change: What is the
-  Difference}.
-
-\bibitem[{\textit{Duffy et~al.}(2006)\textit{Duffy, Arritt, Coquard, Gutowski,
-  Han, Iorio, Kim, Leung, Roads, and Zeledon}}]{duffy2006simulations}
-Duffy, P., R.~Arritt, J.~Coquard, W.~Gutowski, J.~Han, J.~Iorio, J.~Kim, L.-R.
-  Leung, J.~Roads, and E.~Zeledon (2006), {Simulations of present and future
-  climates in the western United States with four nested regional climate
-  models}, \textit{Journal of Climate}, \textit{19}(6), 873--895.
-
-\bibitem[{\textit{Fox-Rabinovitz et~al.}(2006)\textit{Fox-Rabinovitz,
-  C{\^o}t{\'e}, Dugas, D{\'e}qu{\'e}, and McGregor}}]{fox2006variable}
-Fox-Rabinovitz, M., J.~C{\^o}t{\'e}, B.~Dugas, M.~D{\'e}qu{\'e}, and J.~L.
-  McGregor (2006), {Variable resolution general circulation models:
-  Stretched-grid model intercomparison project (SGMIP)}, \textit{Journal of
-  Geophysical Research: Atmospheres (1984--2012)}, \textit{111}(D16).
-
-\bibitem[{\textit{Fox-Rabinovitz et~al.}(1997)\textit{Fox-Rabinovitz,
-  Stenchikov, Suarez, and Takacs}}]{fox1997finite}
-Fox-Rabinovitz, M.~S., G.~L. Stenchikov, M.~J. Suarez, and L.~L. Takacs (1997),
-  {A finite-difference GCM dynamical core with a variable-resolution stretched
-  grid}, \textit{Monthly Weather Review}, \textit{125}(11), 2943--2968.
-
-\bibitem[{\textit{{Gates}}(1992)}]{Gates1992}
-{Gates}, W.~L. (1992), {AMIP: The Atmospheric Model Intercomparison Project},
-  \textit{Bulletin of the American Meteorological Society}, \textit{73},
-  1962--1970.
-
-\bibitem[{\textit{Guba et~al.}(2014)\textit{Guba, A.Taylor, Ullrich, Overvelt,
-  and Levy}}]{guba2014spectral}
-Guba, O., M.~A.Taylor, P.~A. Ullrich, J.~R. Overvelt, and M.~N. Levy (2014),
-  The spectral element method on variable resolution grids: evaluating grid
-  sensitivity and resolution-aware numerical viscosity, \textit{Geoscientific
-  Model Development}, \textit{7}, 2803 -- 2816, \doi{10.5194/gmd-7-2803-2014}.
-
-\bibitem[{\textit{Hamlet and Lettenmaier}(2005)}]{hamlet2005production}
-Hamlet, A.~F., and D.~P. Lettenmaier (2005), {Production of Temporally
-  Consistent Gridded Precipitation and Temperature Fields for the Continental
-  United States*}, \textit{Journal of Hydrometeorology}, \textit{6}(3),
-  330--336.
-
-\bibitem[{\textit{Hayhoe et~al.}(2004)\textit{Hayhoe, Cayan, Field, Frumhoff,
-  Maurer, Miller, Moser, Schneider, Cahill, Cleland
-  et~al.}}]{hayhoe2004emissions}
-Hayhoe, K., D.~Cayan, C.~B. Field, P.~C. Frumhoff, E.~P. Maurer, N.~L. Miller,
-  S.~C. Moser, S.~H. Schneider, K.~N. Cahill, E.~E. Cleland, et~al. (2004),
-  {Emissions pathways, climate change, and impacts on California},
-  \textit{Proceedings of the National Academy of Sciences of the United States
-  of America}, \textit{101}(34), 12,422--12,427.
-
-\bibitem[{\textit{Hong and Lim}(2006)}]{hong2006wrf}
-Hong, S.-Y., and J.-O.~J. Lim (2006), {The WRF single-moment 6-class
-  microphysics scheme (WSM6)}, \textit{Asia-Pacific Journal of Atmospheric
-  Sciences}, \textit{42}(2), 129--151.
-
-\bibitem[{\textit{Hong et~al.}(2006)\textit{Hong, Noh, and
-  Dudhia}}]{hong2006new}
-Hong, S.-Y., Y.~Noh, and J.~Dudhia (2006), A new vertical diffusion package
-  with an explicit treatment of entrainment processes, \textit{Monthly Weather
-  Review}, \textit{134}(9), 2318--2341.
-
-\bibitem[{\textit{Hurrell et~al.}(2008)\textit{Hurrell, Hack, Shea, Caron, and
-  Rosinski}}]{hurrell2008new}
-Hurrell, J.~W., J.~J. Hack, D.~Shea, J.~M. Caron, and J.~Rosinski (2008), {A
-  new sea surface temperature and sea ice boundary dataset for the Community
-  Atmosphere Model}, \textit{Journal of Climate}, \textit{21}(19), 5145--5153.
-
-\bibitem[{\textit{Hurrell et~al.}(2013)\textit{Hurrell, Holland, Gent, Ghan,
-  Kay, Kushner, Lamarque, Large, Lawrence, Lindsay
-  et~al.}}]{hurrell2013community}
-Hurrell, J.~W., M.~M. Holland, P.~R. Gent, S.~Ghan, J.~E. Kay, P.~Kushner,
-  J.-F. Lamarque, W.~G. Large, D.~Lawrence, K.~Lindsay, et~al. (2013), {The
-  Community Earth System Model: A framework for collaborative research},
-  \textit{Bulletin of the American Meteorological Society}, \textit{94}(9),
-  1339--1360.
-
-\bibitem[{\textit{Jankov et~al.}(2005)\textit{Jankov, Gallus~Jr, Segal, Shaw,
-  and Koch}}]{jankov2005impact}
-Jankov, I., W.~A. Gallus~Jr, M.~Segal, B.~Shaw, and S.~E. Koch (2005), {The
-  impact of different WRF model physical parameterizations and their
-  interactions on warm season MCS rainfall}, \textit{Weather and Forecasting},
-  \textit{20}(6), 1048--1060.
-
-\bibitem[{\textit{Kain}(2004)}]{kain2004kain}
-Kain, J.~S. (2004), {The Kain-Fritsch convective parameterization: An update},
-  \textit{Journal of Applied Meteorology}, \textit{43}(1), 170--181.
-
-\bibitem[{\textit{Kanamitsu and Kanamaru}(2007)}]{kanamitsu2007fifty}
-Kanamitsu, M., and H.~Kanamaru (2007), {Fifty-seven-year California Reanalysis
-  Downscaling at 10 km (CaRD10). Part I: System detail and validation with
-  observations}, \textit{Journal of Climate}, \textit{20}(22), 5553--5571.
-
-\bibitem[{\textit{Kueppers et~al.}(2007)\textit{Kueppers, Snyder, and
-  Sloan}}]{kueppers2007irrigation}
-Kueppers, L.~M., M.~A. Snyder, and L.~C. Sloan (2007), Irrigation cooling
-  effect: Regional climate forcing by land-use change, \textit{Geophysical
-  Research Letters}, \textit{34}(3).
-
-\bibitem[{\textit{Laprise}(2008)}]{laprise2008regional}
-Laprise, R. (2008), Regional climate modelling, \textit{Journal of
-  Computational Physics}, \textit{227}(7), 3641--3666.
-
-\bibitem[{\textit{Laprise et~al.}(2008)\textit{Laprise, De~Elia, Caya, Biner,
-  Lucas-Picher, Diaconescu, Leduc, Alexandru, and
-  Separovic}}]{laprise2008challenging}
-Laprise, R., R.~De~Elia, D.~Caya, S.~Biner, P.~Lucas-Picher, E.~Diaconescu,
-  M.~Leduc, A.~Alexandru, and L.~Separovic (2008), Challenging some tenets of
-  regional climate modelling, \textit{Meteorology and Atmospheric Physics},
-  \textit{100}(1-4), 3--22.
-
-\bibitem[{\textit{Leung and Qian}(2009)}]{leung2009atmospheric}
-Leung, L.~R., and Y.~Qian (2009), {Atmospheric rivers induced heavy
-  precipitation and flooding in the western US simulated by the WRF regional
-  climate model}, \textit{Geophysical Research Letters}, \textit{36}(3).
-
-\bibitem[{\textit{Leung et~al.}(2003)\textit{Leung, Mearns, Giorgi, and
-  Wilby}}]{leung2003regional}
-Leung, L.~R., L.~O. Mearns, F.~Giorgi, and R.~L. Wilby (2003), Regional climate
-  research: needs and opportunities, \textit{Bulletin of the American
-  Meteorological Society}, \textit{84}(1), 89--95.
-
-\bibitem[{\textit{Leung et~al.}(2004)\textit{Leung, Qian, Bian, Washington,
-  Han, and Roads}}]{leung2004mid}
-Leung, L.~R., Y.~Qian, X.~Bian, W.~M. Washington, J.~Han, and J.~O. Roads
-  (2004), {Mid-century ensemble regional climate change scenarios for the
-  western United States}, \textit{Climatic Change}, \textit{62}(1-3), 75--113.
-
-\bibitem[{\textit{Lo et~al.}(2008)\textit{Lo, Yang, and
-  Pielke}}]{lo2008assessment}
-Lo, J. C.-F., Z.-L. Yang, and R.~A. Pielke (2008), {Assessment of three
-  dynamical climate downscaling methods using the Weather Research and
-  Forecasting (WRF) model}, \textit{Journal of Geophysical Research:
-  Atmospheres (1984--2012)}, \textit{113}(D9).
-
-\bibitem[{\textit{Maurer et~al.}(2002)\textit{Maurer, Wood, Adam, Lettenmaier,
-  and Nijssen}}]{maurer2002long}
-Maurer, E., A.~Wood, J.~Adam, D.~Lettenmaier, and B.~Nijssen (2002), {A
-  long-term hydrologically based dataset of land surface fluxes and states for
-  the conterminous United States*}, \textit{Journal of Climate},
-  \textit{15}(22), 3237--3251.
-
-\bibitem[{\textit{McDonald}(2003)}]{mcdonald2003transparent}
-McDonald, A. (2003), Transparent boundary conditions for the shallow-water
-  equations: testing in a nested environment, \textit{Monthly Weather Review},
-  \textit{131}(4), 698--705.
-
-\bibitem[{\textit{McGregor and Dix}(2008)}]{mcgregor2008updated}
-McGregor, J.~L., and M.~R. Dix (2008), An updated description of the
-  conformal-cubic atmospheric model, in \textit{High resolution numerical
-  modelling of the atmosphere and ocean}, pp. 51--75, Springer.
-
-\bibitem[{\textit{Mearns et~al.}(2012)\textit{Mearns, Arritt, Biner, Bukovsky,
-  McGinnis, Sain, Caya, Correia~Jr, Flory, Gutowski et~al.}}]{mearns2012north}
-Mearns, L.~O., R.~Arritt, S.~Biner, M.~S. Bukovsky, S.~McGinnis, S.~Sain,
-  D.~Caya, J.~Correia~Jr, D.~Flory, W.~Gutowski, et~al. (2012), {The North
-  American regional climate change assessment program: overview of phase I
-  results}, \textit{Bulletin of the American Meteorological Society},
-  \textit{93}(9), 1337--1362.
-
-\bibitem[{\textit{Mesinger and Veljovic}(2013)}]{mesinger2013limited}
-Mesinger, F., and K.~Veljovic (2013), {Limited area NWP and regional climate
-  modeling: a test of the relaxation vs Eta lateral boundary conditions},
-  \textit{Meteorology and Atmospheric Physics}, \textit{119}(1-2), 1--16.
-
-\bibitem[{\textit{Mesinger et~al.}(2006)\textit{Mesinger, DiMego, Kalnay,
-  Mitchell, Shafran, Ebisuzaki, Jovic, Woollen, Rogers, Berbery
-  et~al.}}]{mesinger2006north}
-Mesinger, F., G.~DiMego, E.~Kalnay, K.~Mitchell, P.~C. Shafran, W.~Ebisuzaki,
-  D.~Jovic, J.~Woollen, E.~Rogers, E.~H. Berbery, et~al. (2006), {North
-  American regional reanalysis}, \textit{Bulletin of the American
-  Meteorological Society}, \textit{87}, 343--360.
-
-\bibitem[{\textit{Neale et~al.}(2010{\natexlab{a}})\textit{Neale, Chen,
-  Gettelman, Lauritzen, Park, Williamson, Conley, Garcia, Kinnison, Lamarque
-  et~al.}}]{neale2010description}
-Neale, R.~B., C.-C. Chen, A.~Gettelman, P.~H. Lauritzen, S.~Park, D.~L.
-  Williamson, A.~J. Conley, R.~Garcia, D.~Kinnison, J.-F. Lamarque, et~al.
-  (2010{\natexlab{a}}), {Description of the NCAR community atmosphere model
-  (CAM 5.0)}, \textit{NCAR Tech. Note NCAR/TN-486+ STR}.
-
-\bibitem[{\textit{Neale et~al.}(2010{\natexlab{b}})\textit{Neale, Chen,
-  Gettelman, Lauritzen, Park, Williamson, Conley, Garcia, Kinnison, Lamarque,
-  Marsh, Mills, Smith, Tilmes, Vitt, Cameron-Smith, Collins, Iacono, , Easter,
-  Liu, Ghan, Rasch, and Taylor}}]{CAM5Tech}
-Neale, R.~B., C.-C. Chen, A.~Gettelman, P.~H. Lauritzen, S.~Park, D.~L.
-  Williamson, A.~J. Conley, R.~Garcia, D.~Kinnison, J.-F. Lamarque, D.~Marsh,
-  M.~Mills, A.~K. Smith, S.~Tilmes, F.~Vitt, P.~Cameron-Smith, W.~D. Collins,
-  M.~J. Iacono, , R.~C. Easter, X.~Liu, S.~J. Ghan, P.~J. Rasch, and M.~A.
-  Taylor (2010{\natexlab{b}}), Description of the {NCAR} {C}ommunity
-  {A}tmosphere {M}odel ({CAM} 5.0), \textit{NCAR Technical Note
-  NCAR/TN-486+STR}, National Center for Atmospheric Research, Boulder,
-  Colorado.
-
-\bibitem[{\textit{O'Brien et~al.}(2013)\textit{O'Brien, Li, Collins, Rauscher,
-  Ringler, Taylor, Hagos, and Leung}}]{o2013observed}
-O'Brien, T.~A., F.~Li, W.~D. Collins, S.~A. Rauscher, T.~D. Ringler, M.~Taylor,
-  S.~M. Hagos, and L.~R. Leung (2013), Observed scaling in clouds and
-  precipitation and scale incognizance in regional to global atmospheric
-  models, \textit{Journal of Climate}, \textit{26}(23), 9313--9333.
-
-\bibitem[{\textit{Oleson et~al.}(2010)\textit{Oleson, Lawrence, Bonan, Flanner,
-  Kluzek, Lawrence, Levis, Swenson, Thornton, Dai, Decker, Dickinson, Feddema,
-  Heald, Hoffman, Lamarque, Mahowald, Niu, Qian, Randerson, Running, Sakaguchi,
-  Slater, Stockli, Wang, Yang, Zeng, and Zeng}}]{CLM40Tech}
-Oleson, K., D.~Lawrence, G.~Bonan, M.~Flanner, E.~Kluzek, P.~Lawrence,
-  S.~Levis, S.~Swenson, P.~Thornton, A.~Dai, M.~Decker, R.~Dickinson,
-  J.~Feddema, C.~Heald, F.~Hoffman, J.~Lamarque, N.~Mahowald, G.~Niu, T.~Qian,
-  J.~Randerson, S.~Running, K.~Sakaguchi, A.~Slater, R.~Stockli, A.~Wang,
-  Z.~Yang, X.~Zeng, and X.~Zeng (2010), Technical description of version 4.0 of
-  the {C}ommunity {L}and {M}odel ({CLM}), \textit{NCAR Technical Note
-  NCAR/TN-478+STR}, National Center for Atmospheric Research, Boulder,
-  Colorado, \doi{10.5065/D6FB50WZ}.
-
-\bibitem[{\textit{Pan et~al.}(2011)\textit{Pan, Chen, Cayan, Lin, Hart, Zhang,
-  Liu, and Wang}}]{pan2011influences}
-Pan, L.-L., S.-H. Chen, D.~Cayan, M.-Y. Lin, Q.~Hart, M.-H. Zhang, Y.~Liu, and
-  J.~Wang (2011), {Influences of climate change on California and Nevada
-  regions revealed by a high-resolution dynamical downscaling study},
-  \textit{Climate Dynamics}, \textit{37}(9-10), 2005--2020.
-
-\bibitem[{\textit{Pierce et~al.}(2013)\textit{Pierce, Das, Cayan, Maurer,
-  Miller, Bao, Kanamitsu, Yoshimura, Snyder, Sloan
-  et~al.}}]{pierce2013probabilistic}
-Pierce, D.~W., T.~Das, D.~R. Cayan, E.~P. Maurer, N.~L. Miller, Y.~Bao,
-  M.~Kanamitsu, K.~Yoshimura, M.~A. Snyder, L.~C. Sloan, et~al. (2013),
-  {Probabilistic estimates of future changes in California temperature and
-  precipitation using statistical and dynamical downscaling}, \textit{Climate
-  Dynamics}, \textit{40}(3-4), 839--856.
-
-\bibitem[{\textit{Rauscher et~al.}(2010)\textit{Rauscher, Coppola, Piani, and
-  Giorgi}}]{rauscher2010resolution}
-Rauscher, S.~A., E.~Coppola, C.~Piani, and F.~Giorgi (2010), {Resolution
-  effects on regional climate model simulations of seasonal precipitation over
-  Europe}, \textit{Climate Dynamics}, \textit{35}(4), 685--711.
-
-\bibitem[{\textit{Rauscher et~al.}(2013)\textit{Rauscher, Ringler, Skamarock,
-  and Mirin}}]{rauscher2013exploring}
-Rauscher, S.~A., T.~D. Ringler, W.~C. Skamarock, and A.~A. Mirin (2013),
-  {Exploring a global multiresolution modeling approach using aquaplanet
-  simulations}, \textit{Journal of Climate}, \textit{26}(8), 2432--2452.
-
-\bibitem[{\textit{Rhoades et~al.}(2015)\textit{Rhoades, Huang, Ullrich, and
-  Zarzycki}}]{Rhoades2015Characterizing}
-Rhoades, A.~M., X.~Huang, P.~A. Ullrich, and C.~M. Zarzycki (2015),
-  {Characterizing Sierra Nevada Snowpack Using Variable-Resolution CESM},
-  \textit{J. Appl. Meteor. Clim.}, p. Under minor revision.
-
-\bibitem[{\textit{Ringler et~al.}(2008)\textit{Ringler, Ju, and
-  Gunzburger}}]{ringler2008multiresolution}
-Ringler, T., L.~Ju, and M.~Gunzburger (2008), {A multiresolution method for
-  climate system modeling: application of spherical centroidal Voronoi
-  tessellations}, \textit{Ocean Dynamics}, \textit{58}(5-6), 475--498.
-
-\bibitem[{\textit{Skamarock et~al.}(2005)\textit{Skamarock, Klemp, Dudhia,
-  Gill, and Barker}}]{skamarock2005coauthors}
-Skamarock, W., J.~Klemp, J.~Dudhia, D.~Gill, and D.~Barker (2005), {Coauthors,
-  2008: A Description of the Advanced Research WRF Version 3. NCAR Technical
-  Note}, \textit{Tech. rep.}, NCAR/TN--475+ STR.
-
-\bibitem[{\textit{Skamarock et~al.}(2012)\textit{Skamarock, Klemp, Duda,
-  Fowler, Park, and Ringler}}]{skamarock2012multiscale}
-Skamarock, W.~C., J.~B. Klemp, M.~G. Duda, L.~D. Fowler, S.-H. Park, and T.~D.
-  Ringler (2012), {A multiscale nonhydrostatic atmospheric model using
-  centroidal Voronoi tesselations and C-grid staggering}, \textit{Monthly
-  Weather Review}, \textit{140}(9), 3090--3105.
-
-\bibitem[{\textit{Soares et~al.}(2012)\textit{Soares, Cardoso, Miranda,
-  de~Medeiros, Belo-Pereira, and Espirito-Santo}}]{soares2012wrf}
-Soares, P.~M., R.~M. Cardoso, P.~M. Miranda, J.~de~Medeiros, M.~Belo-Pereira,
-  and F.~Espirito-Santo (2012), {WRF high resolution dynamical downscaling of
-  ERA-Interim for Portugal}, \textit{Climate dynamics}, \textit{39}(9-10),
-  2497--2522.
-
-\bibitem[{\textit{Solomon}(2007)}]{solomon2007climate}
-Solomon, S. (2007), \textit{Climate change 2007-the physical science basis:
-  Working group I contribution to the fourth assessment report of the IPCC},
-  vol.~4, Cambridge University Press.
-
-\bibitem[{\textit{Staniforth and Mitchell}(1978)}]{staniforth1978variable}
-Staniforth, A.~N., and H.~L. Mitchell (1978), A variable-resolution
-  finite-element technique for regional forecasting with the primitive
-  equations, \textit{Monthly Weather Review}, \textit{106}(4), 439--447.
-
-\bibitem[{\textit{Stauffer and Seaman}(1990)}]{stauffer1990use}
-Stauffer, D.~R., and N.~L. Seaman (1990), {Use of four-dimensional data
-  assimilation in a limited-area mesoscale model. Part I: Experiments with
-  synoptic-scale data}, \textit{Monthly Weather Review}, \textit{118}(6),
-  1250--1277.
-
-\bibitem[{\textit{Sun et~al.}(2015)\textit{Sun, Walton, and
-  Hall}}]{sun2015hybrid}
-Sun, F., D.~Walton, and A.~Hall (2015), {A Hybrid Dynamical-Statistical
-  Downscaling Technique, Part II: End-of-Century Warming Projections Predict a
-  New Climate State in the Los Angeles Region}, \textit{Journal of Climate},
-  (2015).
-
-\bibitem[{\textit{Taylor}(2001)}]{taylor2001summarizing}
-Taylor, K.~E. (2001), Summarizing multiple aspects of model performance in a
-  single diagram, \textit{Journal of Geophysical Research: Atmospheres},
-  \textit{106}(D7), 7183--7192, \doi{10.1029/2000JD900719}.
-
-\bibitem[{\textit{Taylor}(2011)}]{taylor2011conservation}
-Taylor, M.~A. (2011), Conservation of mass and energy for the moist atmospheric
-  primitive equations on unstructured grids, in \textit{Numerical Techniques
-  for Global Atmospheric Models}, pp. 357--380, Springer.
-
-\bibitem[{\textit{Taylor and Fournier}(2010)}]{taylor2010compatible}
-Taylor, M.~A., and A.~Fournier (2010), A compatible and conservative spectral
-  element method on unstructured grids, \textit{Journal of Computational
-  Physics}, \textit{229}(17), 5879--5895.
-
-\bibitem[{\textit{Thornton et~al.}(1997)\textit{Thornton, Running, and
-  White}}]{thornton1997generating}
-Thornton, P.~E., S.~W. Running, and M.~A. White (1997), Generating surfaces of
-  daily meteorological variables over large regions of complex terrain,
-  \textit{Journal of Hydrology}, \textit{190}(3), 214--251.
-
-\bibitem[{\textit{Thornton et~al.}(2014)\textit{Thornton, Thornton, Mayer,
-  Wilhelmi, Wei, Devarakonda, and Cook}}]{thornton2014daymet}
-Thornton, P.~E., M.~M. Thornton, B.~W. Mayer, N.~Wilhelmi, Y.~Wei,
-  R.~Devarakonda, and R.~B. Cook (2014), {Daymet: Daily Surface Weather Data on
-  a 1-km Grid for North America, Version 2}, \textit{Tech. rep.}, Oak Ridge
-  National Laboratory (ORNL).
-
-\bibitem[{\textit{Ullrich}(2014)}]{ullrich2014squadgen}
-Ullrich, P.~A. (2014), {SQuadGen: Spherical Quadrilateral Grid Generator},
-  \url{http://climate.ucdavis.edu/squadgen.php}, accessed: 2015-02-11.
-
-\bibitem[{\textit{Warner et~al.}(1997)\textit{Warner, Peterson, and
-  Treadon}}]{warner1997tutorial}
-Warner, T.~T., R.~A. Peterson, and R.~E. Treadon (1997), A tutorial on lateral
-  boundary conditions as a basic and potentially serious limitation to regional
-  numerical weather prediction, \textit{Bulletin of the American Meteorological
-  Society}, \textit{78}(11), 2599--2617.
-
-\bibitem[{\textit{Wehner et~al.}(2014)\textit{Wehner, Reed, Li, Prabhat,
-  Bacmeister, Chen, Paciorek, Gleckler, Sperber, Collins, Gettelman, and
-  Jablonowski}}]{wehner2014effect}
-Wehner, M.~F., K.~Reed, F.~Li, Prabhat, J.~Bacmeister, C.-T. Chen, C.~Paciorek,
-  P.~Gleckler, K.~Sperber, W.~D. Collins, A.~Gettelman, and C.~Jablonowski
-  (2014), {The effect of horizontal resolution on simulation quality in the
-  Community Atmospheric Model, CAM5.1}, \textit{J. Model. Earth. Sys.},
-  \doi{10.1002/2013MS000276}.
-
-\bibitem[{\textit{Wise}(2012)}]{wise2012hydroclimatology}
-Wise, E.~K. (2012), Hydroclimatology of the us intermountain west,
-  \textit{Progress in Physical Geography}, \textit{36}(4), 458--479.
-
-\bibitem[{\textit{Zarzycki et~al.}(2014{\natexlab{a}})\textit{Zarzycki, Levy,
-  Jablonowski, Overfelt, Taylor, and Ullrich}}]{zarzycki2014aquaplanet}
-Zarzycki, C.~M., M.~N. Levy, C.~Jablonowski, J.~R. Overfelt, M.~A. Taylor, and
-  P.~A. Ullrich (2014{\natexlab{a}}), {Aquaplanet experiments using CAM's
-  variable-resolution dynamical core}, \textit{Journal of Climate},
-  \textit{27}(14), 5481--5503.
-
-\bibitem[{\textit{Zarzycki et~al.}(2014{\natexlab{b}})\textit{Zarzycki,
-  Jablonowski, and Taylor}}]{zarzycki2014using}
-Zarzycki, C.~M., C.~Jablonowski, and M.~A. Taylor (2014{\natexlab{b}}), {Using
-  Variable-Resolution Meshes to Model Tropical Cyclones in the Community
-  Atmosphere Model}, \textit{Monthly Weather Review}, \textit{142}(3),
-  1221--1239.
-
-\bibitem[{\textit{Zarzycki et~al.}(2015)\textit{Zarzycki, Jablonowski,
-  Thatcher, and Taylor}}]{zarzycki2015effects}
-Zarzycki, C.~M., C.~Jablonowski, D.~R. Thatcher, and M.~A. Taylor (2015),
-  {Effects of localized grid refinement on the general circulation and
-  climatology in the Community Atmosphere Model}, \textit{Journal of Climate},
-  \textit{28}(7), 2777--2803.
-
-\end{thebibliography}
-
+\bibliographystyle{agufull08}
+ \bibliography{database2015}
+ 
+ % If you use BiBTeX for your references, please use the agufull08.bst file (available at % ftp://ftp.agu.org/journals/latex/journals/Manuscript-Preparation/) to produce your .bbl
+% file and copy the contents into your paper here.
+
+% Follow these steps:
+% 1. Run LaTeX on your LaTeX file.
+
+% 2. Make sure the bibliography style appears as \bibliographystyle{agufull08}. Run BiBTeX on your LaTeX
+% file.
+
+% 3. Open the new .bbl file containing the reference list and
+%   copy all the contents into your LaTeX file here.
+
+% 4. Comment out the old \bibliographystyle and \bibliography commands.
+
+% 5. Run LaTeX on your new file before submitting.
+
+% AGU does not want a .bib or a .bbl file. Please copy in the contents of your .bbl file here.
+
+%\begin{thebibliography}{72}
+%\providecommand{\natexlab}[1]{#1}
+%\expandafter\ifx\csname urlstyle\endcsname\relax
+%  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+%  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+%  \urlstyle{rm}\Url}\fi
+%
+%\bibitem[{\textit{Abatzoglou et~al.}(2009)\textit{Abatzoglou, Redmond, and
+%  Edwards}}]{abatzoglou2009classification}
+%Abatzoglou, J.~T., K.~T. Redmond, and L.~M. Edwards (2009), {Classification of
+%  regional climate variability in the state of California}, \textit{Journal of
+%  Applied Meteorology and Climatology}, \textit{48}(8), 1527--1541.
+%
+%\bibitem[{\textit{Bales et~al.}(2006)\textit{Bales, Molotch, Painter,
+%  Dettinger, Rice, and Dozier}}]{bales2006mountain}
+%Bales, R.~C., N.~P. Molotch, T.~H. Painter, M.~D. Dettinger, R.~Rice, and
+%  J.~Dozier (2006), Mountain hydrology of the western united states,
+%  \textit{Water Resources Research}, \textit{42}(8).
+%
+%\bibitem[{\textit{Bonfils and Lobell}(2007)}]{bonfils2007empirical}
+%Bonfils, C., and D.~Lobell (2007), Empirical evidence for a recent slowdown in
+%  irrigation-induced cooling, \textit{Proceedings of the National Academy of
+%  Sciences}, \textit{104}(34), 13,582--13,587.
+%
+%\bibitem[{\textit{Bukovsky and Karoly}(2007)}]{bukovsky2007brief}
+%Bukovsky, M.~S., and D.~J. Karoly (2007), {A brief evaluation of precipitation
+%  from the North American Regional Reanalysis}, \textit{Journal of
+%  Hydrometeorology}, \textit{8}(4), 837--846.
+%
+%\bibitem[{\textit{Bukovsky and Karoly}(2009)}]{bukovsky2009precipitation}
+%Bukovsky, M.~S., and D.~J. Karoly (2009), {Precipitation simulations using WRF
+%  as a nested regional climate model}, \textit{Journal of Applied Meteorology
+%  and Climatology}, \textit{48}(10), 2152--2159.
+%
+%\bibitem[{\textit{Caldwell}(2010)}]{caldwell2010california}
+%Caldwell, P. (2010), California wintertime precipitation bias in regional and
+%  global climate models, \textit{Journal of Applied Meteorology and
+%  Climatology}, \textit{49}(10), 2147--2158.
+%
+%\bibitem[{\textit{Caldwell et~al.}(2009)\textit{Caldwell, Chin, Bader, and
+%  Bala}}]{caldwell2009evaluation}
+%Caldwell, P., H.-N.~S. Chin, D.~C. Bader, and G.~Bala (2009), {Evaluation of a
+%  WRF dynamical downscaling simulation over California}, \textit{Climatic
+%  Change}, \textit{95}(3-4), 499--521.
+%
+%\bibitem[{\textit{Cayan et~al.}(2008)\textit{Cayan, Luers, Franco, Hanemann,
+%  Croes, and Vine}}]{cayan2008overview}
+%Cayan, D.~R., A.~L. Luers, G.~Franco, M.~Hanemann, B.~Croes, and E.~Vine
+%  (2008), {Overview of the California climate change scenarios project},
+%  \textit{Climatic Change}, \textit{87}(1), 1--6.
+%
+%\bibitem[{\textit{Chen and Dudhia}(2001)}]{chen2001coupling}
+%Chen, F., and J.~Dudhia (2001), {Coupling an advanced land surface-hydrology
+%  model with the Penn State-NCAR MM5 modeling system. Part I: Model
+%  implementation and sensitivity}, \textit{Monthly Weather Review},
+%  \textit{129}(4), 569--585.
+%
+%\bibitem[{\textit{Chin et~al.}(2010)\textit{Chin, Caldwell, and
+%  Bader}}]{chin2010preliminary}
+%Chin, H.-N.~S., P.~M. Caldwell, and D.~C. Bader (2010), {Preliminary study of
+%  California wintertime model wet bias}, \textit{Monthly Weather Review},
+%  \textit{138}(9), 3556--3571.
+%
+%\bibitem[{\textit{Christensen et~al.}(2007)\textit{Christensen, Hewitson,
+%  Busuioc, Chen, Gao, Held, Jones, Kolli, Kwon, Laprise
+%  et~al.}}]{christensen2007regional}
+%Christensen, J.~H., B.~Hewitson, A.~Busuioc, A.~Chen, X.~Gao, R.~Held,
+%  R.~Jones, R.~K. Kolli, W.~Kwon, R.~Laprise, et~al. (2007), Regional climate
+%  projections, \textit{Climate Change, 2007: The Physical Science Basis.
+%  Contribution of Working Group I to the Fourth Assessment Report of the
+%  Intergovernmental Panel on Climate Change, University Press, Cambridge,
+%  Chapter 11}, pp. 847--940.
+%
+%\bibitem[{\textit{Collins et~al.}(2004)\textit{Collins, Rasch, Boville, Hack,
+%  McCaa, Williamson, Kiehl, Briegleb, Bitz, Lin
+%  et~al.}}]{collins2004description}
+%Collins, W.~D., P.~J. Rasch, B.~A. Boville, J.~J. Hack, J.~R. McCaa, D.~L.
+%  Williamson, J.~T. Kiehl, B.~Briegleb, C.~Bitz, S.~Lin, et~al. (2004),
+%  {Description of the NCAR community atmosphere model (CAM 3.0)}, \textit{Tech.
+%  rep.}, Tech. Rep. NCAR/TN-464+ STR.
+%
+%\bibitem[{\textit{Daly et~al.}(2008)\textit{Daly, Halbleib, Smith, Gibson,
+%  Doggett, Taylor, Curtis, and Pasteris}}]{daly2008physiographically}
+%Daly, C., M.~Halbleib, J.~I. Smith, W.~P. Gibson, M.~K. Doggett, G.~H. Taylor,
+%  J.~Curtis, and P.~P. Pasteris (2008), {Physiographically sensitive mapping of
+%  climatological temperature and precipitation across the conterminous United
+%  States}, \textit{International Journal of Climatology}, \textit{28}(15),
+%  2031--2064.
+%
+%\bibitem[{\textit{Dee et~al.}(2011)\textit{Dee, Uppala, Simmons, Berrisford,
+%  Poli, Kobayashi, Andrae, Balmaseda, Balsamo, Bauer et~al.}}]{dee2011era}
+%Dee, D., S.~Uppala, A.~Simmons, P.~Berrisford, P.~Poli, S.~Kobayashi,
+%  U.~Andrae, M.~Balmaseda, G.~Balsamo, P.~Bauer, et~al. (2011), {The
+%  ERA-Interim reanalysis: Configuration and performance of the data
+%  assimilation system}, \textit{Quarterly Journal of the Royal Meteorological
+%  Society}, \textit{137}(656), 553--597.
+%
+%\bibitem[{\textit{Dennis et~al.}(2011)\textit{Dennis, Edwards, Evans, Guba,
+%  Lauritzen, Mirin, St-Cyr, Taylor, and Worley}}]{dennis2011cam}
+%Dennis, J., J.~Edwards, K.~J. Evans, O.~Guba, P.~H. Lauritzen, A.~A. Mirin,
+%  A.~St-Cyr, M.~A. Taylor, and P.~H. Worley (2011), {CAM-SE: A scalable
+%  spectral element dynamical core for the Community Atmosphere Model},
+%  \textit{International Journal of High Performance Computing Applications}, p.
+%  1094342011428142.
+%
+%\bibitem[{\textit{Dinse}(2009)}]{dinse2009climate}
+%Dinse, K. (2009), Climate variability and climate change: what is the
+%  difference, \textit{Book Climate Variability and Climate Change: What is the
+%  Difference}.
+%
+%\bibitem[{\textit{Duffy et~al.}(2006)\textit{Duffy, Arritt, Coquard, Gutowski,
+%  Han, Iorio, Kim, Leung, Roads, and Zeledon}}]{duffy2006simulations}
+%Duffy, P., R.~Arritt, J.~Coquard, W.~Gutowski, J.~Han, J.~Iorio, J.~Kim, L.-R.
+%  Leung, J.~Roads, and E.~Zeledon (2006), {Simulations of present and future
+%  climates in the western United States with four nested regional climate
+%  models}, \textit{Journal of Climate}, \textit{19}(6), 873--895.
+%
+%\bibitem[{\textit{Fox-Rabinovitz et~al.}(2006)\textit{Fox-Rabinovitz,
+%  C{\^o}t{\'e}, Dugas, D{\'e}qu{\'e}, and McGregor}}]{fox2006variable}
+%Fox-Rabinovitz, M., J.~C{\^o}t{\'e}, B.~Dugas, M.~D{\'e}qu{\'e}, and J.~L.
+%  McGregor (2006), {Variable resolution general circulation models:
+%  Stretched-grid model intercomparison project (SGMIP)}, \textit{Journal of
+%  Geophysical Research: Atmospheres (1984--2012)}, \textit{111}(D16).
+%
+%\bibitem[{\textit{Fox-Rabinovitz et~al.}(1997)\textit{Fox-Rabinovitz,
+%  Stenchikov, Suarez, and Takacs}}]{fox1997finite}
+%Fox-Rabinovitz, M.~S., G.~L. Stenchikov, M.~J. Suarez, and L.~L. Takacs (1997),
+%  {A finite-difference GCM dynamical core with a variable-resolution stretched
+%  grid}, \textit{Monthly Weather Review}, \textit{125}(11), 2943--2968.
+%
+%\bibitem[{\textit{{Gates}}(1992)}]{Gates1992}
+%{Gates}, W.~L. (1992), {AMIP: The Atmospheric Model Intercomparison Project},
+%  \textit{Bulletin of the American Meteorological Society}, \textit{73},
+%  1962--1970.
+%
+%\bibitem[{\textit{Guba et~al.}(2014)\textit{Guba, A.Taylor, Ullrich, Overvelt,
+%  and Levy}}]{guba2014spectral}
+%Guba, O., M.~A.Taylor, P.~A. Ullrich, J.~R. Overvelt, and M.~N. Levy (2014),
+%  The spectral element method on variable resolution grids: evaluating grid
+%  sensitivity and resolution-aware numerical viscosity, \textit{Geoscientific
+%  Model Development}, \textit{7}, 2803 -- 2816, \doi{10.5194/gmd-7-2803-2014}.
+%
+%\bibitem[{\textit{Hamlet and Lettenmaier}(2005)}]{hamlet2005production}
+%Hamlet, A.~F., and D.~P. Lettenmaier (2005), {Production of Temporally
+%  Consistent Gridded Precipitation and Temperature Fields for the Continental
+%  United States*}, \textit{Journal of Hydrometeorology}, \textit{6}(3),
+%  330--336.
+%
+%\bibitem[{\textit{Hayhoe et~al.}(2004)\textit{Hayhoe, Cayan, Field, Frumhoff,
+%  Maurer, Miller, Moser, Schneider, Cahill, Cleland
+%  et~al.}}]{hayhoe2004emissions}
+%Hayhoe, K., D.~Cayan, C.~B. Field, P.~C. Frumhoff, E.~P. Maurer, N.~L. Miller,
+%  S.~C. Moser, S.~H. Schneider, K.~N. Cahill, E.~E. Cleland, et~al. (2004),
+%  {Emissions pathways, climate change, and impacts on California},
+%  \textit{Proceedings of the National Academy of Sciences of the United States
+%  of America}, \textit{101}(34), 12,422--12,427.
+%
+%\bibitem[{\textit{Hong and Lim}(2006)}]{hong2006wrf}
+%Hong, S.-Y., and J.-O.~J. Lim (2006), {The WRF single-moment 6-class
+%  microphysics scheme (WSM6)}, \textit{Asia-Pacific Journal of Atmospheric
+%  Sciences}, \textit{42}(2), 129--151.
+%
+%\bibitem[{\textit{Hong et~al.}(2006)\textit{Hong, Noh, and
+%  Dudhia}}]{hong2006new}
+%Hong, S.-Y., Y.~Noh, and J.~Dudhia (2006), A new vertical diffusion package
+%  with an explicit treatment of entrainment processes, \textit{Monthly Weather
+%  Review}, \textit{134}(9), 2318--2341.
+%
+%\bibitem[{\textit{Hurrell et~al.}(2008)\textit{Hurrell, Hack, Shea, Caron, and
+%  Rosinski}}]{hurrell2008new}
+%Hurrell, J.~W., J.~J. Hack, D.~Shea, J.~M. Caron, and J.~Rosinski (2008), {A
+%  new sea surface temperature and sea ice boundary dataset for the Community
+%  Atmosphere Model}, \textit{Journal of Climate}, \textit{21}(19), 5145--5153.
+%
+%\bibitem[{\textit{Hurrell et~al.}(2013)\textit{Hurrell, Holland, Gent, Ghan,
+%  Kay, Kushner, Lamarque, Large, Lawrence, Lindsay
+%  et~al.}}]{hurrell2013community}
+%Hurrell, J.~W., M.~M. Holland, P.~R. Gent, S.~Ghan, J.~E. Kay, P.~Kushner,
+%  J.-F. Lamarque, W.~G. Large, D.~Lawrence, K.~Lindsay, et~al. (2013), {The
+%  Community Earth System Model: A framework for collaborative research},
+%  \textit{Bulletin of the American Meteorological Society}, \textit{94}(9),
+%  1339--1360.
+%
+%\bibitem[{\textit{Jankov et~al.}(2005)\textit{Jankov, Gallus~Jr, Segal, Shaw,
+%  and Koch}}]{jankov2005impact}
+%Jankov, I., W.~A. Gallus~Jr, M.~Segal, B.~Shaw, and S.~E. Koch (2005), {The
+%  impact of different WRF model physical parameterizations and their
+%  interactions on warm season MCS rainfall}, \textit{Weather and Forecasting},
+%  \textit{20}(6), 1048--1060.
+%
+%\bibitem[{\textit{Kain}(2004)}]{kain2004kain}
+%Kain, J.~S. (2004), {The Kain-Fritsch convective parameterization: An update},
+%  \textit{Journal of Applied Meteorology}, \textit{43}(1), 170--181.
+%
+%\bibitem[{\textit{Kanamitsu and Kanamaru}(2007)}]{kanamitsu2007fifty}
+%Kanamitsu, M., and H.~Kanamaru (2007), {Fifty-seven-year California Reanalysis
+%  Downscaling at 10 km (CaRD10). Part I: System detail and validation with
+%  observations}, \textit{Journal of Climate}, \textit{20}(22), 5553--5571.
+%
+%\bibitem[{\textit{Kueppers et~al.}(2007)\textit{Kueppers, Snyder, and
+%  Sloan}}]{kueppers2007irrigation}
+%Kueppers, L.~M., M.~A. Snyder, and L.~C. Sloan (2007), Irrigation cooling
+%  effect: Regional climate forcing by land-use change, \textit{Geophysical
+%  Research Letters}, \textit{34}(3).
+%
+%\bibitem[{\textit{Laprise}(2008)}]{laprise2008regional}
+%Laprise, R. (2008), Regional climate modelling, \textit{Journal of
+%  Computational Physics}, \textit{227}(7), 3641--3666.
+%
+%\bibitem[{\textit{Laprise et~al.}(2008)\textit{Laprise, De~Elia, Caya, Biner,
+%  Lucas-Picher, Diaconescu, Leduc, Alexandru, and
+%  Separovic}}]{laprise2008challenging}
+%Laprise, R., R.~De~Elia, D.~Caya, S.~Biner, P.~Lucas-Picher, E.~Diaconescu,
+%  M.~Leduc, A.~Alexandru, and L.~Separovic (2008), Challenging some tenets of
+%  regional climate modelling, \textit{Meteorology and Atmospheric Physics},
+%  \textit{100}(1-4), 3--22.
+%
+%\bibitem[{\textit{Leung and Qian}(2009)}]{leung2009atmospheric}
+%Leung, L.~R., and Y.~Qian (2009), {Atmospheric rivers induced heavy
+%  precipitation and flooding in the western US simulated by the WRF regional
+%  climate model}, \textit{Geophysical Research Letters}, \textit{36}(3).
+%
+%\bibitem[{\textit{Leung et~al.}(2003)\textit{Leung, Mearns, Giorgi, and
+%  Wilby}}]{leung2003regional}
+%Leung, L.~R., L.~O. Mearns, F.~Giorgi, and R.~L. Wilby (2003), Regional climate
+%  research: needs and opportunities, \textit{Bulletin of the American
+%  Meteorological Society}, \textit{84}(1), 89--95.
+%
+%\bibitem[{\textit{Leung et~al.}(2004)\textit{Leung, Qian, Bian, Washington,
+%  Han, and Roads}}]{leung2004mid}
+%Leung, L.~R., Y.~Qian, X.~Bian, W.~M. Washington, J.~Han, and J.~O. Roads
+%  (2004), {Mid-century ensemble regional climate change scenarios for the
+%  western United States}, \textit{Climatic Change}, \textit{62}(1-3), 75--113.
+%
+%\bibitem[{\textit{Lo et~al.}(2008)\textit{Lo, Yang, and
+%  Pielke}}]{lo2008assessment}
+%Lo, J. C.-F., Z.-L. Yang, and R.~A. Pielke (2008), {Assessment of three
+%  dynamical climate downscaling methods using the Weather Research and
+%  Forecasting (WRF) model}, \textit{Journal of Geophysical Research:
+%  Atmospheres (1984--2012)}, \textit{113}(D9).
+%
+%\bibitem[{\textit{Maurer et~al.}(2002)\textit{Maurer, Wood, Adam, Lettenmaier,
+%  and Nijssen}}]{maurer2002long}
+%Maurer, E., A.~Wood, J.~Adam, D.~Lettenmaier, and B.~Nijssen (2002), {A
+%  long-term hydrologically based dataset of land surface fluxes and states for
+%  the conterminous United States*}, \textit{Journal of Climate},
+%  \textit{15}(22), 3237--3251.
+%
+%\bibitem[{\textit{McDonald}(2003)}]{mcdonald2003transparent}
+%McDonald, A. (2003), Transparent boundary conditions for the shallow-water
+%  equations: testing in a nested environment, \textit{Monthly Weather Review},
+%  \textit{131}(4), 698--705.
+%
+%\bibitem[{\textit{McGregor and Dix}(2008)}]{mcgregor2008updated}
+%McGregor, J.~L., and M.~R. Dix (2008), An updated description of the
+%  conformal-cubic atmospheric model, in \textit{High resolution numerical
+%  modelling of the atmosphere and ocean}, pp. 51--75, Springer.
+%
+%\bibitem[{\textit{Mearns et~al.}(2012)\textit{Mearns, Arritt, Biner, Bukovsky,
+%  McGinnis, Sain, Caya, Correia~Jr, Flory, Gutowski et~al.}}]{mearns2012north}
+%Mearns, L.~O., R.~Arritt, S.~Biner, M.~S. Bukovsky, S.~McGinnis, S.~Sain,
+%  D.~Caya, J.~Correia~Jr, D.~Flory, W.~Gutowski, et~al. (2012), {The North
+%  American regional climate change assessment program: overview of phase I
+%  results}, \textit{Bulletin of the American Meteorological Society},
+%  \textit{93}(9), 1337--1362.
+%
+%\bibitem[{\textit{Mesinger and Veljovic}(2013)}]{mesinger2013limited}
+%Mesinger, F., and K.~Veljovic (2013), {Limited area NWP and regional climate
+%  modeling: a test of the relaxation vs Eta lateral boundary conditions},
+%  \textit{Meteorology and Atmospheric Physics}, \textit{119}(1-2), 1--16.
+%
+%\bibitem[{\textit{Mesinger et~al.}(2006)\textit{Mesinger, DiMego, Kalnay,
+%  Mitchell, Shafran, Ebisuzaki, Jovic, Woollen, Rogers, Berbery
+%  et~al.}}]{mesinger2006north}
+%Mesinger, F., G.~DiMego, E.~Kalnay, K.~Mitchell, P.~C. Shafran, W.~Ebisuzaki,
+%  D.~Jovic, J.~Woollen, E.~Rogers, E.~H. Berbery, et~al. (2006), {North
+%  American regional reanalysis}, \textit{Bulletin of the American
+%  Meteorological Society}, \textit{87}, 343--360.
+%
+%\bibitem[{\textit{Neale et~al.}(2010{\natexlab{a}})\textit{Neale, Chen,
+%  Gettelman, Lauritzen, Park, Williamson, Conley, Garcia, Kinnison, Lamarque
+%  et~al.}}]{neale2010description}
+%Neale, R.~B., C.-C. Chen, A.~Gettelman, P.~H. Lauritzen, S.~Park, D.~L.
+%  Williamson, A.~J. Conley, R.~Garcia, D.~Kinnison, J.-F. Lamarque, et~al.
+%  (2010{\natexlab{a}}), {Description of the NCAR community atmosphere model
+%  (CAM 5.0)}, \textit{NCAR Tech. Note NCAR/TN-486+ STR}.
+%
+%\bibitem[{\textit{Neale et~al.}(2010{\natexlab{b}})\textit{Neale, Chen,
+%  Gettelman, Lauritzen, Park, Williamson, Conley, Garcia, Kinnison, Lamarque,
+%  Marsh, Mills, Smith, Tilmes, Vitt, Cameron-Smith, Collins, Iacono, , Easter,
+%  Liu, Ghan, Rasch, and Taylor}}]{CAM5Tech}
+%Neale, R.~B., C.-C. Chen, A.~Gettelman, P.~H. Lauritzen, S.~Park, D.~L.
+%  Williamson, A.~J. Conley, R.~Garcia, D.~Kinnison, J.-F. Lamarque, D.~Marsh,
+%  M.~Mills, A.~K. Smith, S.~Tilmes, F.~Vitt, P.~Cameron-Smith, W.~D. Collins,
+%  M.~J. Iacono, , R.~C. Easter, X.~Liu, S.~J. Ghan, P.~J. Rasch, and M.~A.
+%  Taylor (2010{\natexlab{b}}), Description of the {NCAR} {C}ommunity
+%  {A}tmosphere {M}odel ({CAM} 5.0), \textit{NCAR Technical Note
+%  NCAR/TN-486+STR}, National Center for Atmospheric Research, Boulder,
+%  Colorado.
+%
+%\bibitem[{\textit{O'Brien et~al.}(2013)\textit{O'Brien, Li, Collins, Rauscher,
+%  Ringler, Taylor, Hagos, and Leung}}]{o2013observed}
+%O'Brien, T.~A., F.~Li, W.~D. Collins, S.~A. Rauscher, T.~D. Ringler, M.~Taylor,
+%  S.~M. Hagos, and L.~R. Leung (2013), Observed scaling in clouds and
+%  precipitation and scale incognizance in regional to global atmospheric
+%  models, \textit{Journal of Climate}, \textit{26}(23), 9313--9333.
+%
+%\bibitem[{\textit{Oleson et~al.}(2010)\textit{Oleson, Lawrence, Bonan, Flanner,
+%  Kluzek, Lawrence, Levis, Swenson, Thornton, Dai, Decker, Dickinson, Feddema,
+%  Heald, Hoffman, Lamarque, Mahowald, Niu, Qian, Randerson, Running, Sakaguchi,
+%  Slater, Stockli, Wang, Yang, Zeng, and Zeng}}]{CLM40Tech}
+%Oleson, K., D.~Lawrence, G.~Bonan, M.~Flanner, E.~Kluzek, P.~Lawrence,
+%  S.~Levis, S.~Swenson, P.~Thornton, A.~Dai, M.~Decker, R.~Dickinson,
+%  J.~Feddema, C.~Heald, F.~Hoffman, J.~Lamarque, N.~Mahowald, G.~Niu, T.~Qian,
+%  J.~Randerson, S.~Running, K.~Sakaguchi, A.~Slater, R.~Stockli, A.~Wang,
+%  Z.~Yang, X.~Zeng, and X.~Zeng (2010), Technical description of version 4.0 of
+%  the {C}ommunity {L}and {M}odel ({CLM}), \textit{NCAR Technical Note
+%  NCAR/TN-478+STR}, National Center for Atmospheric Research, Boulder,
+%  Colorado, \doi{10.5065/D6FB50WZ}.
+%
+%\bibitem[{\textit{Pan et~al.}(2011)\textit{Pan, Chen, Cayan, Lin, Hart, Zhang,
+%  Liu, and Wang}}]{pan2011influences}
+%Pan, L.-L., S.-H. Chen, D.~Cayan, M.-Y. Lin, Q.~Hart, M.-H. Zhang, Y.~Liu, and
+%  J.~Wang (2011), {Influences of climate change on California and Nevada
+%  regions revealed by a high-resolution dynamical downscaling study},
+%  \textit{Climate Dynamics}, \textit{37}(9-10), 2005--2020.
+%
+%\bibitem[{\textit{Pierce et~al.}(2013)\textit{Pierce, Das, Cayan, Maurer,
+%  Miller, Bao, Kanamitsu, Yoshimura, Snyder, Sloan
+%  et~al.}}]{pierce2013probabilistic}
+%Pierce, D.~W., T.~Das, D.~R. Cayan, E.~P. Maurer, N.~L. Miller, Y.~Bao,
+%  M.~Kanamitsu, K.~Yoshimura, M.~A. Snyder, L.~C. Sloan, et~al. (2013),
+%  {Probabilistic estimates of future changes in California temperature and
+%  precipitation using statistical and dynamical downscaling}, \textit{Climate
+%  Dynamics}, \textit{40}(3-4), 839--856.
+%
+%\bibitem[{\textit{Rauscher et~al.}(2010)\textit{Rauscher, Coppola, Piani, and
+%  Giorgi}}]{rauscher2010resolution}
+%Rauscher, S.~A., E.~Coppola, C.~Piani, and F.~Giorgi (2010), {Resolution
+%  effects on regional climate model simulations of seasonal precipitation over
+%  Europe}, \textit{Climate Dynamics}, \textit{35}(4), 685--711.
+%
+%\bibitem[{\textit{Rauscher et~al.}(2013)\textit{Rauscher, Ringler, Skamarock,
+%  and Mirin}}]{rauscher2013exploring}
+%Rauscher, S.~A., T.~D. Ringler, W.~C. Skamarock, and A.~A. Mirin (2013),
+%  {Exploring a global multiresolution modeling approach using aquaplanet
+%  simulations}, \textit{Journal of Climate}, \textit{26}(8), 2432--2452.
+%
+%\bibitem[{\textit{Rhoades et~al.}(2015)\textit{Rhoades, Huang, Ullrich, and
+%  Zarzycki}}]{Rhoades2015Characterizing}
+%Rhoades, A.~M., X.~Huang, P.~A. Ullrich, and C.~M. Zarzycki (2015),
+%  {Characterizing Sierra Nevada Snowpack Using Variable-Resolution CESM},
+%  \textit{J. Appl. Meteor. Clim.}, p. Under minor revision.
+%
+%\bibitem[{\textit{Ringler et~al.}(2008)\textit{Ringler, Ju, and
+%  Gunzburger}}]{ringler2008multiresolution}
+%Ringler, T., L.~Ju, and M.~Gunzburger (2008), {A multiresolution method for
+%  climate system modeling: application of spherical centroidal Voronoi
+%  tessellations}, \textit{Ocean Dynamics}, \textit{58}(5-6), 475--498.
+%
+%\bibitem[{\textit{Skamarock et~al.}(2005)\textit{Skamarock, Klemp, Dudhia,
+%  Gill, and Barker}}]{skamarock2005coauthors}
+%Skamarock, W., J.~Klemp, J.~Dudhia, D.~Gill, and D.~Barker (2005), {Coauthors,
+%  2008: A Description of the Advanced Research WRF Version 3. NCAR Technical
+%  Note}, \textit{Tech. rep.}, NCAR/TN--475+ STR.
+%
+%\bibitem[{\textit{Skamarock et~al.}(2012)\textit{Skamarock, Klemp, Duda,
+%  Fowler, Park, and Ringler}}]{skamarock2012multiscale}
+%Skamarock, W.~C., J.~B. Klemp, M.~G. Duda, L.~D. Fowler, S.-H. Park, and T.~D.
+%  Ringler (2012), {A multiscale nonhydrostatic atmospheric model using
+%  centroidal Voronoi tesselations and C-grid staggering}, \textit{Monthly
+%  Weather Review}, \textit{140}(9), 3090--3105.
+%
+%\bibitem[{\textit{Soares et~al.}(2012)\textit{Soares, Cardoso, Miranda,
+%  de~Medeiros, Belo-Pereira, and Espirito-Santo}}]{soares2012wrf}
+%Soares, P.~M., R.~M. Cardoso, P.~M. Miranda, J.~de~Medeiros, M.~Belo-Pereira,
+%  and F.~Espirito-Santo (2012), {WRF high resolution dynamical downscaling of
+%  ERA-Interim for Portugal}, \textit{Climate dynamics}, \textit{39}(9-10),
+%  2497--2522.
+%
+%\bibitem[{\textit{Solomon}(2007)}]{solomon2007climate}
+%Solomon, S. (2007), \textit{Climate change 2007-the physical science basis:
+%  Working group I contribution to the fourth assessment report of the IPCC},
+%  vol.~4, Cambridge University Press.
+%
+%\bibitem[{\textit{Staniforth and Mitchell}(1978)}]{staniforth1978variable}
+%Staniforth, A.~N., and H.~L. Mitchell (1978), A variable-resolution
+%  finite-element technique for regional forecasting with the primitive
+%  equations, \textit{Monthly Weather Review}, \textit{106}(4), 439--447.
+%
+%\bibitem[{\textit{Stauffer and Seaman}(1990)}]{stauffer1990use}
+%Stauffer, D.~R., and N.~L. Seaman (1990), {Use of four-dimensional data
+%  assimilation in a limited-area mesoscale model. Part I: Experiments with
+%  synoptic-scale data}, \textit{Monthly Weather Review}, \textit{118}(6),
+%  1250--1277.
+%
+%\bibitem[{\textit{Sun et~al.}(2015)\textit{Sun, Walton, and
+%  Hall}}]{sun2015hybrid}
+%Sun, F., D.~Walton, and A.~Hall (2015), {A Hybrid Dynamical-Statistical
+%  Downscaling Technique, Part II: End-of-Century Warming Projections Predict a
+%  New Climate State in the Los Angeles Region}, \textit{Journal of Climate},
+%  (2015).
+%
+%\bibitem[{\textit{Taylor}(2001)}]{taylor2001summarizing}
+%Taylor, K.~E. (2001), Summarizing multiple aspects of model performance in a
+%  single diagram, \textit{Journal of Geophysical Research: Atmospheres},
+%  \textit{106}(D7), 7183--7192, \doi{10.1029/2000JD900719}.
+%
+%\bibitem[{\textit{Taylor}(2011)}]{taylor2011conservation}
+%Taylor, M.~A. (2011), Conservation of mass and energy for the moist atmospheric
+%  primitive equations on unstructured grids, in \textit{Numerical Techniques
+%  for Global Atmospheric Models}, pp. 357--380, Springer.
+%
+%\bibitem[{\textit{Taylor and Fournier}(2010)}]{taylor2010compatible}
+%Taylor, M.~A., and A.~Fournier (2010), A compatible and conservative spectral
+%  element method on unstructured grids, \textit{Journal of Computational
+%  Physics}, \textit{229}(17), 5879--5895.
+%
+%\bibitem[{\textit{Thornton et~al.}(1997)\textit{Thornton, Running, and
+%  White}}]{thornton1997generating}
+%Thornton, P.~E., S.~W. Running, and M.~A. White (1997), Generating surfaces of
+%  daily meteorological variables over large regions of complex terrain,
+%  \textit{Journal of Hydrology}, \textit{190}(3), 214--251.
+%
+%\bibitem[{\textit{Thornton et~al.}(2014)\textit{Thornton, Thornton, Mayer,
+%  Wilhelmi, Wei, Devarakonda, and Cook}}]{thornton2014daymet}
+%Thornton, P.~E., M.~M. Thornton, B.~W. Mayer, N.~Wilhelmi, Y.~Wei,
+%  R.~Devarakonda, and R.~B. Cook (2014), {Daymet: Daily Surface Weather Data on
+%  a 1-km Grid for North America, Version 2}, \textit{Tech. rep.}, Oak Ridge
+%  National Laboratory (ORNL).
+%
+%\bibitem[{\textit{Ullrich}(2014)}]{ullrich2014squadgen}
+%Ullrich, P.~A. (2014), {SQuadGen: Spherical Quadrilateral Grid Generator},
+%  \url{http://climate.ucdavis.edu/squadgen.php}, accessed: 2015-02-11.
+%
+%\bibitem[{\textit{Warner et~al.}(1997)\textit{Warner, Peterson, and
+%  Treadon}}]{warner1997tutorial}
+%Warner, T.~T., R.~A. Peterson, and R.~E. Treadon (1997), A tutorial on lateral
+%  boundary conditions as a basic and potentially serious limitation to regional
+%  numerical weather prediction, \textit{Bulletin of the American Meteorological
+%  Society}, \textit{78}(11), 2599--2617.
+%
+%\bibitem[{\textit{Wehner et~al.}(2014)\textit{Wehner, Reed, Li, Prabhat,
+%  Bacmeister, Chen, Paciorek, Gleckler, Sperber, Collins, Gettelman, and
+%  Jablonowski}}]{wehner2014effect}
+%Wehner, M.~F., K.~Reed, F.~Li, Prabhat, J.~Bacmeister, C.-T. Chen, C.~Paciorek,
+%  P.~Gleckler, K.~Sperber, W.~D. Collins, A.~Gettelman, and C.~Jablonowski
+%  (2014), {The effect of horizontal resolution on simulation quality in the
+%  Community Atmospheric Model, CAM5.1}, \textit{J. Model. Earth. Sys.},
+%  \doi{10.1002/2013MS000276}.
+%
+%\bibitem[{\textit{Wise}(2012)}]{wise2012hydroclimatology}
+%Wise, E.~K. (2012), Hydroclimatology of the us intermountain west,
+%  \textit{Progress in Physical Geography}, \textit{36}(4), 458--479.
+%
+%\bibitem[{\textit{Zarzycki et~al.}(2014{\natexlab{a}})\textit{Zarzycki, Levy,
+%  Jablonowski, Overfelt, Taylor, and Ullrich}}]{zarzycki2014aquaplanet}
+%Zarzycki, C.~M., M.~N. Levy, C.~Jablonowski, J.~R. Overfelt, M.~A. Taylor, and
+%  P.~A. Ullrich (2014{\natexlab{a}}), {Aquaplanet experiments using CAM's
+%  variable-resolution dynamical core}, \textit{Journal of Climate},
+%  \textit{27}(14), 5481--5503.
+%
+%\bibitem[{\textit{Zarzycki et~al.}(2014{\natexlab{b}})\textit{Zarzycki,
+%  Jablonowski, and Taylor}}]{zarzycki2014using}
+%Zarzycki, C.~M., C.~Jablonowski, and M.~A. Taylor (2014{\natexlab{b}}), {Using
+%  Variable-Resolution Meshes to Model Tropical Cyclones in the Community
+%  Atmosphere Model}, \textit{Monthly Weather Review}, \textit{142}(3),
+%  1221--1239.
+%
+%\bibitem[{\textit{Zarzycki et~al.}(2015)\textit{Zarzycki, Jablonowski,
+%  Thatcher, and Taylor}}]{zarzycki2015effects}
+%Zarzycki, C.~M., C.~Jablonowski, D.~R. Thatcher, and M.~A. Taylor (2015),
+%  {Effects of localized grid refinement on the general circulation and
+%  climatology in the Community Atmosphere Model}, \textit{Journal of Climate},
+%  \textit{28}(7), 2777--2803.
+%
+%\end{thebibliography}
+%
 
 \end{article}
 
@@ -874,19 +895,19 @@ Zarzycki, C.~M., C.~Jablonowski, D.~R. Thatcher, and M.~A. Taylor (2015),
 \label{tab:stat_std}
 \begin{tabular*}{5.5in}{l @{\extracolsep{\fill}}ccccc}
 \hline \textbf{Tavg} & \textbf{MR}  & \textbf{CV}  & \textbf{DR} & \textbf{SC} & \textbf{NC} \\
-\hline \textbf{VR-CESM 0.25$^\circ$}  & 0.418	& 0.335 &	0.288 &	0.341	& 0.294 \\
-\textbf{VR-CESM 0.125$^\circ$} &  0.498	&  0.414	&  0.378 & 	0.322 &  	0.351 \\
-\textbf{WRF 27km} &  0.108 & 	0.094 & 	0.135	&  0.409	&  0.118 \\
-\textbf{WRF 9km}  &  0.481 & 	0.557 & 	0.486	&  0.596	&  0.554 \\
+\hline \textbf{VR-CESM 0.25$^\circ$}  & 0.393 & 	0.304 & 	0.231 & 	0.253 & 	0.286  \\
+\textbf{VR-CESM 0.125$^\circ$} &  0.468 & 	0.355	&  0.359 & 	0.275 & 	0.334 \\
+\textbf{WRF 27km} &  0.101 & 	0.199 & 	0.129 & 	0.231 & 	0.141 \\
+\textbf{WRF 9km}  &  0.438 & 	0.561 & 	0.454 & 	0.476 & 	0.536 \\
 \hline
 \end{tabular*}
 
 \begin{tabular*}{5.5in}{l @{\extracolsep{\fill}}ccccc}
 \hline \textbf{Pr} & \textbf{MR}  &  \textbf{CV} & \textbf{DR} & \textbf{SC} & \textbf{NC} \\
-\hline \textbf{VR-CESM 0.25$^\circ$} & 0.963	& 0.198 & 	0.378 &	0.547 &	0.464 \\
-\textbf{VR-CESM 0.125$^\circ$}  & 0.804	& 0.212	& 0.594	& 0.549	& 0.435 \\
-\textbf{WRF 27km}  & 0.114 &	0.221 &	0.142 &	0.228 &	0.090 \\
-\textbf{WRF 9km}  & 1.038 &	0.450	& 1.195	& 1.460	& 1.077 \\
+\hline \textbf{VR-CESM 0.25$^\circ$} & 0.449 &	 0.976 &	0.228 &	0.517 &	0.670 \\
+\textbf{VR-CESM 0.125$^\circ$}  & 0.315 &	0.848	 &  0.237	& 0.532 &	0.499 \\
+\textbf{WRF 27km}  & 0.193 &	0.126  &	0.246  &	0.494  &	0.724  \\
+\textbf{WRF 9km}  & 1.700  &	1.057  &	0.425  &	 0.817  &	0.958 \\
 \hline
 \end{tabular*}
 
@@ -926,6 +947,8 @@ Zarzycki, C.~M., C.~Jablonowski, D.~R. Thatcher, and M.~A. Taylor (2015),
 \end{tabular}
 \end{table}
 
+
+%%%%%%%%%%Table 6%%%%%%%%%%%%%%%%%%%%
 \begin{table}
 \begin{center}
 \caption{RMSD (mm/day), MSD (mm/d), MRD, Spatial Correlation (Corr) for averaged precipitation over California} \label{tab:stat_Pr}
@@ -970,7 +993,58 @@ Zarzycki, C.~M., C.~Jablonowski, D.~R. Thatcher, and M.~A. Taylor (2015),
 \end{center}
 \end{table}
 
+%%%%%%Table 7%%%%%%%%%%%%
+\begin{table}
+\begin{center}
+\caption{A summary table showing the biases of VR-CESMs and WRFs from PRISM for JJA Tmax, JJA Tmin and DJF Pr in each region. (Red color stands for positive bias, and blue color states negative bias. The darker color means larger significant deviation. Grey means no significant difference.)} \label{tab:summary}
+
+\begin{tabular*}{5.5in}{l @{\extracolsep{\fill}}cccccc}
+\hline \textbf{} & \multicolumn{3}{c}{\textbf{VR-CESM 0.25$^\circ$}} & \multicolumn{3}{c}{\textbf{VR-CESM 0.125$^\circ$}} \\
+\hline & Tmax & Tmin & Pr & Tmax & Tmin & Pr  \\
+\hline \textbf{CV} & \cellcolor{red!60}{2$-$3$^\circ$C} & \cellcolor{red!60}{2$-$3$^\circ$C} & \cellcolor{red!60}{70$-$100$\%$} & \cellcolor{red!60}{2$-$3$^\circ$C}  & \cellcolor{red!60}{2$-$3$^\circ$C} & \cellcolor{red!30}{30$-$60$\%$} \\
+
+\hline \textbf{MR} &  \cellcolor{red!60}{2$-$3$^\circ$C} & \cellcolor{red!60}{2$-$4$^\circ$C} & \cellcolor{black!20} & \cellcolor{red!60}{2$^\circ$C}  & \cellcolor{red!60}{2$-$3$^\circ$C} & \cellcolor{black!20}  \\
+
+\hline \textbf{SC} &   \cellcolor{blue!60}{2$^\circ$C} & \cellcolor{red!60}{2$-$3$^\circ$C}  & \cellcolor{black!20}  &  \cellcolor{blue!60}{2$^\circ$C} & \cellcolor{red!60}{2$-$3$^\circ$C}  & \cellcolor{black!20} \\
+
+\hline \textbf{NC} & \cellcolor{blue!60}{2$-$3$^\circ$C} & \cellcolor{black!20} & \cellcolor{black!20} & \cellcolor{blue!60}{2$-$3$^\circ$C} & \cellcolor{black!20} & \cellcolor{black!20} \\
+
+\hline \textbf{DR} & \cellcolor{black!20} & \cellcolor{red!60}{2$-$4$^\circ$C}  &  \cellcolor{red!60}{60$\%$} & \cellcolor{black!20} & \cellcolor{red!60}{2$-$4$^\circ$C}  &  \cellcolor{red!30}{30$\%$} \\
+
+%\hline \hline \small\textbf{Notes:} & can capture the spatial standard deviation of JJA temperature and variability in monthly average Tavg & Tmin & & & &\\
+\hline
+\end{tabular*}
+
+\begin{tabular}{p{6in}}
+\small\textbf{Notes:} Over California, VR-CESMs can capture the spatial standard deviation of temperature and precipitation (finer resolution performs better) and variability in monthly average Tavg and Pr (finer resolution performs better). VR-CESM can reproduce the monthly cycle of Pr (better than WRFs), though the peak month for precipitation tends to occur earlier.
+\end{tabular}
+
+\begin{tabular*}{5.5in}{l @{\extracolsep{\fill}}cccccc}
+\hline \textbf{} & \multicolumn{3}{c}{\textbf{WRF 27km}} & \multicolumn{3}{c}{\textbf{WRF 7km}} \\
+\hline & Tmax & Tmin & Pr & Tmax & Tmin & Pr  \\
+\hline \textbf{CV} & \cellcolor{red!60}{2$-$3$^\circ$C} & \cellcolor{blue!30}{1$^\circ$C} & \cellcolor{black!20} & \cellcolor{red!30}{1$-$2$^\circ$C}  & \cellcolor{black!20} & \cellcolor{red!60}{50$-$70$\%$} \\
+
+\hline \textbf{MR} &  \cellcolor{blue!60}{2$^\circ$C} & \cellcolor{red!60}{2$^\circ$C} & \cellcolor{black!20} & \cellcolor{blue!60}{3$-$4$^\circ$C}  & \cellcolor{red!60}{2$^\circ$C} &  \cellcolor{red!60}{70$-$100$\%$}  \\
+
+\hline \textbf{SC} &   \cellcolor{blue!60}{2$^\circ$C} & \cellcolor{red!30}{1$^\circ$C}  & \cellcolor{blue!30}20$-$30$\%$  &  \cellcolor{blue!60}{2$^\circ$C} & \cellcolor{red!30}{1$^\circ$C}  & \cellcolor{red!30}30$\%$ \\
+
+\hline \textbf{NC} & \cellcolor{blue!60}{2$-$4$^\circ$C} & \cellcolor{black!20} & \cellcolor{blue!30}20$\%$ & \cellcolor{blue!60}{2$-$4$^\circ$C} & \cellcolor{red!30}1$^\circ$C & \cellcolor{red!60}30$-$60$\%$ \\
+
+\hline \textbf{DR} & \cellcolor{black!20} & \cellcolor{black!20}  &  \cellcolor{blue!30}{20$-$40$\%$} & \cellcolor{blue!60}{2$-$3$^\circ$C} & \cellcolor{red!60}{2$^\circ$C}  &  \cellcolor{black!20} \\
+
+\hline \hline \small\textbf{Notes:} & Tmax & Tmin & & & &\\
+\hline
+\end{tabular*}
+
+\begin{tabular}{p{6in}}
+\small\textbf{Notes:} Over California, WRF 27km can also capture the spatial standard deviation of temperature. And WRF 27km can also reproduce monthly cycle of Tavg, and interannual variability of Tavg and Pr (better than VR-CESMs).
+\end{tabular}
+
+\end{center}
+\end{table}
+
 \clearpage
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
